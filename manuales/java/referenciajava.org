@@ -57,16 +57,17 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
 #+END_SRC
 * Tipos de datos
 Los tipos de datos primitivos en java son los siguientes:
-| tipo    | descripción                                   | clase asociada |
-|---------+-----------------------------------------------+----------------|
-| byte    | número entero de 8 bits (-128 a 127)          | Byte           |
-| short   | número entero de 16 bits (-32768 a 32767      | Short          |
-| int     | número entero de 32 bits ($-2{32}$ a $2{32}$) | Integer        |
-| long    | número entero de 64 bits ($-2{64}$ a $2{64}$) | Long           |
-| float   | número decimal de 32 bits                     | Float          |
-| double  | número decimal de 64 bits                     | Double         |
-| boolean | valor booleano o lógico (verdadero o falso)   | Boolean        |
-| char    | caracter de texto (único)                     | Character      |
+| tipo    | descripción                                     | clase asociada |
+|---------+-------------------------------------------------+----------------|
+| byte    | número entero de 8 bits (-128 a 127)            | Byte           |
+| short   | número entero de 16 bits (-32768 a 32767        | Short          |
+| int     | número entero de 32 bits ($-2^{32}$ a $2^{32}$) | Integer        |
+| long    | número entero de 64 bits ($-2^{64}$ a $2^{64}$) | Long           |
+| float   | número decimal de 32 bits                       | Float          |
+| double  | número decimal de 64 bits                       | Double         |
+| boolean | valor booleano o lógico (verdadero o falso)     | Boolean        |
+| char    | caracter de texto (único)                       | Character      |
+ 
 
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 * Operadores
@@ -205,7 +206,131 @@ Los operadores de incremento y decremento (*++* y *--*) actuan de manera diferen
       }
   }
 #+END_SRC
+** Lógicos
+Son operadores que devuelven valores lógicos (verdadero o falso)
+| Operador   | Descripción              |
+|------------+--------------------------|
+| ==         | igual que                |
+| !=         | distinto que             |
+| >          | mayor que                |
+| >=         | mayor o igual que        |
+| <          | menor que                |
+| <=         | menor o igual que        |
+| &&         | Y lógico                 |
+| \vert\vert | Ó lógico                 |
+| instanceof | Objeto pertenece a clase |
+
+Normalmente estos operadores se utilizarán en sentencias que requieran un valor lógico, como los condicionales o los bucles, de los que hablaremos más adelante, en este ejemplo vemos como, en base a los valores 1 y 2, que operaciones se ejecutan y cuales no:
+
+#+NAME: Comparacion
+#+BEGIN_SRC java :results output
+  class Comparacion {
+
+      public static void main(String[] args){
+	  int valor1 = 1;
+	  int valor2 = 2;
+	  System.out.println ("valor1="+valor1+", valor2="+valor2);
+	  if(valor1 == valor2) {
+	      System.out.println("valor1 == valor2 --> " + (valor1 == valor2));
+	  }
+	  if (valor1 != valor2) {
+	      System.out.println("valor1 != valor2 --> " + (valor1 != valor2));
+	  }
+	  if (valor1 > valor2) {
+	      System.out.println("valor1 > valor2 --> " + (valor1 > valor2));
+	  }
+	  if (valor1 < valor2) {
+	      System.out.println("valor1 < valor2 --> " + (valor1 < valor2));
+	  }
+	  if (valor1 <= valor2) {
+	      System.out.println("valor1 <= valor2 --> " + (valor1 <= valor2));
+	  }
+      }
+  }
+#+END_SRC
+
+A veces es interesante comprobar si una comprobación cumple mas de una condición o si una sentencia se ejecutará si se cumple alguna de las condiciones posibles, es en este caso que utilizaremos los operadores lógicos ~&&~ y ~||~.
+
+#+CAPTION: Operadores Condicionales
+#+BEGIN_SRC java
+  class Condicionales {
+
+      public static void main(String[] args){
+	  int valor1 = 1;
+	  int valor2 = 2;
+	  if((valor1 == 1) && (valor2 == 2))
+	      System.out.println("valor1 es 1 AND (Y) valor2 es 2");
+	  if((valor1 == 1) || (valor2 == 1))
+	      System.out.println("valor1 es 1 OR (O) valor2 es 1");
+      }
+  }
+#+END_SRC
+
 * Condicionales
+En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias ~if~ y ~else~, y la segunda es la sentencia ~switch~.
+
+La sentencia ~if~ se escribe de la siguiente manera:
+#+BEGIN_SRC java
+if (condicion) {
+    proceso;
+}
+#+END_SRC
+Donde ~condicion~ es un valor booleano (lógico), que puede ser una variable de tipo boolean, un valor ~true~ o ~false~ directamente, aunque no tuviera mucho sentido en este caso, o el resultado de una comparación como las que acabamos de ver.
+
+Si la condición se cumple el ~proceso~ (que puede ser un número indeterminado de sentencias) se ejecuta, si no se cumple, no se ejecuta, decimos que se produce un salto condicional.
+
+Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia ~else~ que tiene una forma parecida al ~if~, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el ~if~.
+
+#+BEGIN_SRC java
+if (condicion) {
+    proceso;
+} else {
+    otroProceso;
+}
+#+END_SRC
+
+Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un ~if~ primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos /anidando/ sentencias ~if~ o ~else~:
+#+BEGIN_SRC java
+if (condicion1) {
+    proceso1;
+    if (condicion2) {
+        proceso2;
+    }
+    proceso3;
+} else {
+    if (condicion3) {
+        proceso4;
+    }
+}
+#+END_SRC
+
+Si nos fijamos en el ~else~ (aunque esto puede ocurrir en cualquier otra parte, incluido el bloque del ~if~), podemos observar que, en caso de no cumplirse la ~condicion1~, podemos tener dentro otra estructura completa de sentencias ~if~ y cada una puede tener sus respectivos ~else~ y así indefinidamente, una manera de organizar mejor esté código es utilizando la sentencia compuesta ~else if~ que nos permite hacer varias comprobaciones sin aumentar el nivel de anidación, por ejemplo:
+
+#+BEGIN_SRC java
+  class Elseif {
+    public static void main (String [] args) {
+      int val = 10;
+      if (val == 0) {
+	System.out.println("val = 0");
+      } else if (val == 1) {
+	System.out.println("val = 1");
+      } else if (val == 2) {
+	System.out.println("val = 2");
+      } else if (val == 3) {
+	System.out.println("val = 3");
+      } else if (val == 4) {
+	System.out.println("val = 4");
+      } else if (val == 5) {
+	System.out.println("val = 5");
+      } else {
+	System.out.pritnln("val > 5");
+      }
+    }
+  }
+#+END_SRC
+
+En este caso como el valor de la variable ~val~ es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia ~else~ si hiciéramos esto anidando sentencias ~if~ y ~else~ el código se /iría/ muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia ~switch~.
+
 * Bucles
 * Métodos
 * Objetos

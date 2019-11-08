@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-11-08 vie 15:30 -->
+<!-- 2019-11-08 vie 16:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Manual JAVA</title>
@@ -256,38 +256,39 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf8d3631">1. Introducción</a>
+<li><a href="#org02b43f2">1. Introducción</a>
 <ul>
-<li><a href="#orgc314704">1.1. Estructura de un programa</a></li>
+<li><a href="#org58dd39f">1.1. Estructura de un programa</a></li>
 </ul>
 </li>
-<li><a href="#orgf432e7e">2. Tipos de datos</a></li>
-<li><a href="#org9d2f72f">3. Operadores</a>
+<li><a href="#orge46ea24">2. Tipos de datos</a></li>
+<li><a href="#org344d5d2">3. Operadores</a>
 <ul>
-<li><a href="#org1647454">3.1. Asignación</a></li>
-<li><a href="#orga80030f">3.2. Aritméticos</a>
+<li><a href="#orgfe37e83">3.1. Asignación</a></li>
+<li><a href="#org9b25a76">3.2. Aritméticos</a>
 <ul>
-<li><a href="#orgbf439e5">3.2.1. Operadores unarios</a></li>
+<li><a href="#org0ed73bf">3.2.1. Operadores unarios</a></li>
 </ul>
 </li>
+<li><a href="#org4cc47fa">3.3. Lógicos</a></li>
 </ul>
 </li>
-<li><a href="#org4b55635">4. Condicionales</a></li>
-<li><a href="#orgd3fac00">5. Bucles</a></li>
-<li><a href="#org065e579">6. Métodos</a></li>
-<li><a href="#orgd3c1fb7">7. Objetos</a></li>
+<li><a href="#org289c9cd">4. Condicionales</a></li>
+<li><a href="#org60ff132">5. Bucles</a></li>
+<li><a href="#org336cde3">6. Métodos</a></li>
+<li><a href="#org47d7788">7. Objetos</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf8d3631" class="outline-2">
-<h2 id="orgf8d3631"><span class="section-number-2">1</span> Introducción</h2>
+<div id="outline-container-org02b43f2" class="outline-2">
+<h2 id="org02b43f2"><span class="section-number-2">1</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de <i>Java Virtual Machine</i>) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 </p>
 </div>
-<div id="outline-container-orgc314704" class="outline-3">
-<h3 id="orgc314704"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
+<div id="outline-container-org58dd39f" class="outline-3">
+<h3 id="org58dd39f"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
@@ -346,8 +347,8 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
 </div>
 </div>
 </div>
-<div id="outline-container-orgf432e7e" class="outline-2">
-<h2 id="orgf432e7e"><span class="section-number-2">2</span> Tipos de datos</h2>
+<div id="outline-container-orge46ea24" class="outline-2">
+<h2 id="orge46ea24"><span class="section-number-2">2</span> Tipos de datos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Los tipos de datos primitivos en java son los siguientes:
@@ -384,13 +385,13 @@ Los tipos de datos primitivos en java son los siguientes:
 
 <tr>
 <td class="org-left">int</td>
-<td class="org-left">número entero de 32 bits (\(-2{32}\) a \(2{32}\))</td>
+<td class="org-left">número entero de 32 bits (\(-2^{32}\) a \(2^{32}\))</td>
 <td class="org-left">Integer</td>
 </tr>
 
 <tr>
 <td class="org-left">long</td>
-<td class="org-left">número entero de 64 bits (\(-2{64}\) a \(2{64}\))</td>
+<td class="org-left">número entero de 64 bits (\(-2^{64}\) a \(2^{64}\))</td>
 <td class="org-left">Long</td>
 </tr>
 
@@ -420,17 +421,18 @@ Los tipos de datos primitivos en java son los siguientes:
 </tbody>
 </table>
 
+
 <p>
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 </p>
 </div>
 </div>
-<div id="outline-container-org9d2f72f" class="outline-2">
-<h2 id="org9d2f72f"><span class="section-number-2">3</span> Operadores</h2>
+<div id="outline-container-org344d5d2" class="outline-2">
+<h2 id="org344d5d2"><span class="section-number-2">3</span> Operadores</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1647454" class="outline-3">
-<h3 id="org1647454"><span class="section-number-3">3.1</span> Asignación</h3>
+<div id="outline-container-orgfe37e83" class="outline-3">
+<h3 id="orgfe37e83"><span class="section-number-3">3.1</span> Asignación</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 El operador <b>=</b> se usa para asignar valores a variables:
@@ -441,8 +443,8 @@ El operador <b>=</b> se usa para asignar valores a variables:
 </div>
 </div>
 </div>
-<div id="outline-container-orga80030f" class="outline-3">
-<h3 id="orga80030f"><span class="section-number-3">3.2</span> Aritméticos</h3>
+<div id="outline-container-org9b25a76" class="outline-3">
+<h3 id="org9b25a76"><span class="section-number-3">3.2</span> Aritméticos</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
@@ -555,8 +557,8 @@ Como vimos anteriormente, el operador suma <b>+</b> se puede utilizar también p
 </pre>
 </div>
 </div>
-<div id="outline-container-orgbf439e5" class="outline-4">
-<h4 id="orgbf439e5"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
+<div id="outline-container-org0ed73bf" class="outline-4">
+<h4 id="org0ed73bf"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
@@ -661,23 +663,229 @@ Los operadores de incremento y decremento (<b>++</b> y <b>--</b>) actuan de mane
 </div>
 </div>
 </div>
+<div id="outline-container-org4cc47fa" class="outline-3">
+<h3 id="org4cc47fa"><span class="section-number-3">3.3</span> Lógicos</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Son operadores que devuelven valores lógicos (verdadero o falso)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operador</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">igual que</td>
+</tr>
+
+<tr>
+<td class="org-left">!=</td>
+<td class="org-left">distinto que</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;</td>
+<td class="org-left">mayor que</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;=</td>
+<td class="org-left">mayor o igual que</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;</td>
+<td class="org-left">menor que</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;=</td>
+<td class="org-left">menor o igual que</td>
+</tr>
+
+<tr>
+<td class="org-left">&amp;&amp;</td>
+<td class="org-left">Y lógico</td>
+</tr>
+
+<tr>
+<td class="org-left">&vert;&vert;</td>
+<td class="org-left">Ó lógico</td>
+</tr>
+
+<tr>
+<td class="org-left">instanceof</td>
+<td class="org-left">Objeto pertenece a clase</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Normalmente estos operadores se utilizarán en sentencias que requieran un valor lógico, como los condicionales o los bucles, de los que hablaremos más adelante, en este ejemplo vemos como, en base a los valores 1 y 2, que operaciones se ejecutan y cuales no:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java" id="org2875dec"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Comparacion</span> {
+
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor2</span> = 2;
+        System.out.println (<span style="color: #2aa198;">"valor1="</span>+valor1+<span style="color: #2aa198;">", valor2="</span>+valor2);
+        <span style="color: #268bd2; font-weight: bold;">if</span>(valor1 == valor2) {
+            System.out.println(<span style="color: #2aa198;">"valor1 == valor2 --&gt; "</span> + (valor1 == valor2));
+        }
+        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 != valor2) {
+            System.out.println(<span style="color: #2aa198;">"valor1 != valor2 --&gt; "</span> + (valor1 != valor2));
+        }
+        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &gt; valor2) {
+            System.out.println(<span style="color: #2aa198;">"valor1 &gt; valor2 --&gt; "</span> + (valor1 &gt; valor2));
+        }
+        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &lt; <span style="color: #df005f; font-weight: bold;">valor2</span>) {
+            System.out.println(<span style="color: #2aa198;">"valor1 &lt; valor2 --&gt; "</span> + (valor1 &lt; <span style="color: #df005f; font-weight: bold;">valor2</span>));
+        }
+        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &lt;= valor2) {
+            System.out.println(<span style="color: #2aa198;">"valor1 &lt;= valor2 --&gt; "</span> + (valor1 &lt;= valor2));
+        }
+    }
+}
+</pre>
 </div>
-<div id="outline-container-org4b55635" class="outline-2">
-<h2 id="org4b55635"><span class="section-number-2">4</span> Condicionales</h2>
+
+<p>
+A veces es interesante comprobar si una comprobación cumple mas de una condición o si una sentencia se ejecutará si se cumple alguna de las condiciones posibles, es en este caso que utilizaremos los operadores lógicos <code>&amp;&amp;</code> y <code>||</code>.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Operadores Condicionales</label><pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Condicionales</span> {
+
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor2</span> = 2;
+        <span style="color: #268bd2; font-weight: bold;">if</span>((valor1 == 1) &amp;&amp; (valor2 == 2))
+            System.out.println(<span style="color: #2aa198;">"valor1 es 1 AND (Y) valor2 es 2"</span>);
+        <span style="color: #268bd2; font-weight: bold;">if</span>((valor1 == 1) || (valor2 == 1))
+            System.out.println(<span style="color: #2aa198;">"valor1 es 1 OR (O) valor2 es 1"</span>);
+    }
+}
+</pre>
 </div>
-<div id="outline-container-orgd3fac00" class="outline-2">
-<h2 id="orgd3fac00"><span class="section-number-2">5</span> Bucles</h2>
 </div>
-<div id="outline-container-org065e579" class="outline-2">
-<h2 id="org065e579"><span class="section-number-2">6</span> Métodos</h2>
 </div>
-<div id="outline-container-orgd3c1fb7" class="outline-2">
-<h2 id="orgd3c1fb7"><span class="section-number-2">7</span> Objetos</h2>
+</div>
+
+<div id="outline-container-org289c9cd" class="outline-2">
+<h2 id="org289c9cd"><span class="section-number-2">4</span> Condicionales</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias <code>if</code> y <code>else</code>, y la segunda es la sentencia <code>switch</code>.
+</p>
+
+<p>
+La sentencia <code>if</code> se escribe de la siguiente manera:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion) {
+    proceso;
+}
+</pre>
+</div>
+<p>
+Donde <code>condicion</code> es un valor booleano (lógico), que puede ser una variable de tipo boolean, un valor <code>true</code> o <code>false</code> directamente, aunque no tuviera mucho sentido en este caso, o el resultado de una comparación como las que acabamos de ver.
+</p>
+
+<p>
+Si la condición se cumple el <code>proceso</code> (que puede ser un número indeterminado de sentencias) se ejecuta, si no se cumple, no se ejecuta, decimos que se produce un salto condicional.
+</p>
+
+<p>
+Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia <code>else</code> que tiene una forma parecida al <code>if</code>, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el <code>if</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion) {
+    proceso;
+} <span style="color: #268bd2; font-weight: bold;">else</span> {
+    otroProceso;
+}
+</pre>
+</div>
+
+<p>
+Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un <code>if</code> primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos <i>anidando</i> sentencias <code>if</code> o <code>else</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion1) {
+    proceso1;
+    <span style="color: #268bd2; font-weight: bold;">if</span> (condicion2) {
+        proceso2;
+    }
+    proceso3;
+} <span style="color: #268bd2; font-weight: bold;">else</span> {
+    <span style="color: #268bd2; font-weight: bold;">if</span> (condicion3) {
+        proceso4;
+    }
+}
+</pre>
+</div>
+
+<p>
+Si nos fijamos en el <code>else</code> (aunque esto puede ocurrir en cualquier otra parte, incluido el bloque del <code>if</code>), podemos observar que, en caso de no cumplirse la <code>condicion1</code>, podemos tener dentro otra estructura completa de sentencias <code>if</code> y cada una puede tener sus respectivos <code>else</code> y así indefinidamente, una manera de organizar mejor esté código es utilizando la sentencia compuesta <code>else if</code> que nos permite hacer varias comprobaciones sin aumentar el nivel de anidación, por ejemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Elseif</span> {
+  <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
+    <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">val</span> = 10;
+    <span style="color: #268bd2; font-weight: bold;">if</span> (val == 0) {
+      System.out.println(<span style="color: #2aa198;">"val = 0"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 1) {
+      System.out.println(<span style="color: #2aa198;">"val = 1"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 2) {
+      System.out.println(<span style="color: #2aa198;">"val = 2"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 3) {
+      System.out.println(<span style="color: #2aa198;">"val = 3"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 4) {
+      System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 5) {
+      System.out.println(<span style="color: #2aa198;">"val = 5"</span>);
+    } <span style="color: #268bd2; font-weight: bold;">else</span> {
+      System.out.pritnln(<span style="color: #2aa198;">"val &gt; 5"</span>);
+    }
+  }
+}
+</pre>
+</div>
+
+<p>
+En este caso como el valor de la variable <code>val</code> es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia <code>else</code> si hiciéramos esto anidando sentencias <code>if</code> y <code>else</code> el código se <i>iría</i> muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia <code>switch</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60ff132" class="outline-2">
+<h2 id="org60ff132"><span class="section-number-2">5</span> Bucles</h2>
+</div>
+<div id="outline-container-org336cde3" class="outline-2">
+<h2 id="org336cde3"><span class="section-number-2">6</span> Métodos</h2>
+</div>
+<div id="outline-container-org47d7788" class="outline-2">
+<h2 id="org47d7788"><span class="section-number-2">7</span> Objetos</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Víctor Chico Rodríguez</p>
-<p class="date">Created: 2019-11-08 vie 15:30</p>
+<p class="date">Created: 2019-11-08 vie 16:42</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
