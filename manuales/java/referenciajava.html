@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-11-08 vie 15:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manual JAVA</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Víctor Chico Rodríguez" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Manual JAVA</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf8d3631">1. Introducción</a>
+<ul>
+<li><a href="#orgc314704">1.1. Estructura de un programa</a></li>
+</ul>
+</li>
+<li><a href="#orgf432e7e">2. Tipos de datos</a></li>
+<li><a href="#org9d2f72f">3. Operadores</a>
+<ul>
+<li><a href="#org1647454">3.1. Asignación</a></li>
+<li><a href="#orga80030f">3.2. Aritméticos</a>
+<ul>
+<li><a href="#orgbf439e5">3.2.1. Operadores unarios</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4b55635">4. Condicionales</a></li>
+<li><a href="#orgd3fac00">5. Bucles</a></li>
+<li><a href="#org065e579">6. Métodos</a></li>
+<li><a href="#orgd3c1fb7">7. Objetos</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf8d3631" class="outline-2">
+<h2 id="orgf8d3631"><span class="section-number-2">1</span> Introducción</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de <i>Java Virtual Machine</i>) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
+</p>
+</div>
+<div id="outline-container-orgc314704" class="outline-3">
+<h3 id="orgc314704"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
+<span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+
+<span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Esto es una importaci&#243;n de la clase Scanner del paquete java.io</span>
+<span style="color: #268bd2; font-weight: bold;">import</span> <span style="color: #d75fd7;">java</span>.<span style="color: #d75fd7;">io</span>.<span style="color: #df005f; font-weight: bold;">Scanner</span>;
+
+<span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Esto es una clase p&#250;blica que se llama HolaMundo</span>
+<span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">HolaMundo</span> {
+
+    <span style="color: #008787; background-color: #262626;">/*</span><span style="color: #008787; background-color: #262626;">Este es el m&#233;todo main (principal), </span>
+<span style="color: #008787; background-color: #262626;">es un m&#233;todo especial que servir&#225; comom punto de entrada a la aplicaci&#243;n. </span>
+<span style="color: #008787; background-color: #262626;">Este m&#233;todo es:</span>
+<span style="color: #008787; background-color: #262626;">- p&#250;blico (puede ser accedido desde cualquier clase)</span>
+<span style="color: #008787; background-color: #262626;">- est&#225;tico (puede ser accedido sin necesidad de crear un objeto de la clase</span>
+<span style="color: #008787; background-color: #262626;">-  no devuelve nada (tipo void)</span>
+<span style="color: #008787; background-color: #262626;">- recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)</span>
+<span style="color: #008787; background-color: #262626;">*/</span>
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este es un objeto de la clase Scanner que se llama scan</span>
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este objeto se inicializa con la palabra reservada new y</span>
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">recibe como argumento System.in (Entrada del sistema)</span>
+        <span style="color: #df005f; font-weight: bold;">Scanner</span> <span style="color: #8787d7;">scan</span> = <span style="color: #268bd2; font-weight: bold;">new</span> <span style="color: #df005f; font-weight: bold;">Scanner</span>(System.in);
+
+        <span style="color: #008787; background-color: #262626;">/*</span>
+<span style="color: #008787; background-color: #262626;">          Esto es una llamada a un m&#233;todo, concretamente al m&#233;todo print(String)</span>
+<span style="color: #008787; background-color: #262626;">          del atributo out de la clase System, este m&#233;todo imprime en la pantalla</span>
+<span style="color: #008787; background-color: #262626;">          (consola de texto) el texto que se le pase como par&#225;metro y contin&#250;a</span>
+<span style="color: #008787; background-color: #262626;">          en la misma l&#237;nea.</span>
+<span style="color: #008787; background-color: #262626;">          Como par&#225;metro se le pasa la cadena de texto (String) "&#191;C&#243;mo te llamas?"</span>
+<span style="color: #008787; background-color: #262626;">          Los valores de tipo String van siempre entre comillas dobles "</span>
+<span style="color: #008787; background-color: #262626;">         */</span>
+        System.out.print(<span style="color: #2aa198;">"&#191;C&#243;mo te llamas?"</span>);
+
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este es un objeto de la clase String (cadena de texto) que se llama nombre.</span>
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este objeto se inicializa autom&#225;ticamente con el valor que devuleve</span>
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">el m&#233;todo readLine() (M&#233;todo sin argumentos) del objeto scan.</span>
+        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">nombre</span> = scan.readLine();
+
+        <span style="color: #008787; background-color: #262626;">/*</span>
+<span style="color: #008787; background-color: #262626;">          Esto es otra llamada a un m&#233;todo, en este caso al println del atributo</span>
+<span style="color: #008787; background-color: #262626;">          out de la clase System, n&#243;tese la diferencia con la llamada anterior</span>
+<span style="color: #008787; background-color: #262626;">          (print -- println), ese ln a&#241;adido lo que hace es saltar de l&#237;nea una</span>
+<span style="color: #008787; background-color: #262626;">          vez haya impreso lo que le pasemos como par&#225;metro.</span>
+
+<span style="color: #008787; background-color: #262626;">          En este caso, como par&#225;metro se le pasa una cadena de texto (igual que antes)</span>
+<span style="color: #008787; background-color: #262626;">          con el valor "Hola, " a lo que le concatenamos (sumamos) el valor de </span>
+<span style="color: #008787; background-color: #262626;">          la variable nombre</span>
+<span style="color: #008787; background-color: #262626;">         */</span>
+        System.out.println(<span style="color: #2aa198;">"Hola, "</span>+nombre);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf432e7e" class="outline-2">
+<h2 id="orgf432e7e"><span class="section-number-2">2</span> Tipos de datos</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Los tipos de datos primitivos en java son los siguientes:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">tipo</th>
+<th scope="col" class="org-left">descripción</th>
+<th scope="col" class="org-left">clase asociada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">byte</td>
+<td class="org-left">número entero de 8 bits (-128 a 127)</td>
+<td class="org-left">Byte</td>
+</tr>
+
+<tr>
+<td class="org-left">short</td>
+<td class="org-left">número entero de 16 bits (-32768 a 32767</td>
+<td class="org-left">Short</td>
+</tr>
+
+<tr>
+<td class="org-left">int</td>
+<td class="org-left">número entero de 32 bits (\(-2{32}\) a \(2{32}\))</td>
+<td class="org-left">Integer</td>
+</tr>
+
+<tr>
+<td class="org-left">long</td>
+<td class="org-left">número entero de 64 bits (\(-2{64}\) a \(2{64}\))</td>
+<td class="org-left">Long</td>
+</tr>
+
+<tr>
+<td class="org-left">float</td>
+<td class="org-left">número decimal de 32 bits</td>
+<td class="org-left">Float</td>
+</tr>
+
+<tr>
+<td class="org-left">double</td>
+<td class="org-left">número decimal de 64 bits</td>
+<td class="org-left">Double</td>
+</tr>
+
+<tr>
+<td class="org-left">boolean</td>
+<td class="org-left">valor booleano o lógico (verdadero o falso)</td>
+<td class="org-left">Boolean</td>
+</tr>
+
+<tr>
+<td class="org-left">char</td>
+<td class="org-left">caracter de texto (único)</td>
+<td class="org-left">Character</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
+</p>
+</div>
+</div>
+<div id="outline-container-org9d2f72f" class="outline-2">
+<h2 id="org9d2f72f"><span class="section-number-2">3</span> Operadores</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org1647454" class="outline-3">
+<h3 id="org1647454"><span class="section-number-3">3.1</span> Asignación</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+El operador <b>=</b> se usa para asignar valores a variables:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">a</span> = 0;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga80030f" class="outline-3">
+<h3 id="orga80030f"><span class="section-number-3">3.2</span> Aritméticos</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operador</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>+</b></td>
+<td class="org-left">Operador de suma</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>-</b></td>
+<td class="org-left">Operador de resta</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>*</b></td>
+<td class="org-left">Operador de multiplicación</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>/</b></td>
+<td class="org-left">Operador de división</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>%</b></td>
+<td class="org-left">Operador de resto de la división</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+El siguiente código es una pequeña demostración de los operadores mencionados:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Aritmeticos</span> {
+
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
+
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Variable de tipo int que tendr&#225; como valor el resultado de 1 + 2</span>
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = 1 + 2;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
+        System.out.println(<span style="color: #2aa198;">"1 + 2 = "</span> + resultado);
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado_original</span> = resultado;
+
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Los operadores se pueden usar entre variables (num&#233;ricas) y n&#250;meros</span>
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">en este caso se resta 1 al valor de resultado primero y se asigna a</span>
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">la variable resultado despu&#233;s</span>
+        resultado = resultado - 1;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
+        System.out.println(resultado_original + <span style="color: #2aa198;">" - 1 = "</span> + resultado);
+        resultado_original = resultado;
+
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable</span>
+        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">resultado</span>
+        resultado = resultado * 2;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 4</span>
+        System.out.println(resultado_original + <span style="color: #2aa198;">" * 2 = "</span> + resultado);
+        resultado_original = resultado;
+
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 2 y lo asignamos</span>
+        resultado = resultado / 2;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
+        System.out.println(resultado_original + <span style="color: #2aa198;">" / 2 = "</span> + resultado);
+        resultado_original = resultado;
+
+        resultado = resultado + 8;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 10</span>
+        System.out.println(resultado_original + <span style="color: #2aa198;">" + 8 = "</span> + resultado);
+        resultado_original = resultado;
+
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo</span>
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">asignamos</span>
+        resultado = resultado % 7;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
+        System.out.println(resultado_original + <span style="color: #2aa198;">" % 7 = "</span> + resultado);
+    }
+}
+</pre>
+</div>
+
+<p>
+Como vimos anteriormente, el operador suma <b>+</b> se puede utilizar también para concatenar texto:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Concatenacion</span> {
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
+        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">firstString</span> = <span style="color: #2aa198;">"Esto es"</span>;
+        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">secondString</span> = <span style="color: #2aa198;">" una cadena de texto concatenada."</span>;
+        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">thirdString</span> = firstString+secondString;
+        System.out.println(thirdString);
+    }
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-orgbf439e5" class="outline-4">
+<h4 id="orgbf439e5"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operador</th>
+<th scope="col" class="org-left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">Indica un valor positivo</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">Indica un valor negativo</td>
+</tr>
+
+<tr>
+<td class="org-left">++</td>
+<td class="org-left">Incrementa en 1 el valor</td>
+</tr>
+
+<tr>
+<td class="org-left">--</td>
+<td class="org-left">Decrementa en 1 el valor</td>
+</tr>
+
+<tr>
+<td class="org-left">!</td>
+<td class="org-left">Invierte el valor de un booleano</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Unarios</span> {
+
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
+
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = +1;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 1</span>
+        System.out.println(resultado);
+
+        resultado--;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 0</span>
+        System.out.println(resultado);
+
+        resultado++;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 1</span>
+        System.out.println(resultado);
+
+        resultado = -resultado;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es -1</span>
+        System.out.println(resultado);
+
+        <span style="color: #df005f; font-weight: bold;">boolean</span> <span style="color: #8787d7;">exito</span> = <span style="color: #d75fd7;">false</span>;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">false</span>
+        System.out.println(exito);
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">true</span>
+        System.out.println(<span style="color: #d75fd7;">!</span>exito);
+    }
+}
+</pre>
+</div>
+
+<p>
+Los operadores de incremento y decremento (<b>++</b> y <b>--</b>) actuan de manera diferente dependiendo de si se ponen delante o detrás del valor a modificar, si se usan de manera prefija <code>++variable</code> el valor se incrementa primero y la variable se usa después (ya incrementada), si se usa de manera postfija <code>variable++</code> se utilizará el valor de la variable sin incrementar y luego se incrementará:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">PrePost</span> {
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
+        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">i</span> = 3;
+        i++;
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 4</span>
+        System.out.println(i);
+        ++i;                       
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 5</span>
+        System.out.println(i);
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 6</span>
+        System.out.println(++i);
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 6</span>
+        System.out.println(i++);
+        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 7</span>
+        System.out.println(i);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b55635" class="outline-2">
+<h2 id="org4b55635"><span class="section-number-2">4</span> Condicionales</h2>
+</div>
+<div id="outline-container-orgd3fac00" class="outline-2">
+<h2 id="orgd3fac00"><span class="section-number-2">5</span> Bucles</h2>
+</div>
+<div id="outline-container-org065e579" class="outline-2">
+<h2 id="org065e579"><span class="section-number-2">6</span> Métodos</h2>
+</div>
+<div id="outline-container-orgd3c1fb7" class="outline-2">
+<h2 id="orgd3c1fb7"><span class="section-number-2">7</span> Objetos</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Víctor Chico Rodríguez</p>
+<p class="date">Created: 2019-11-08 vie 15:30</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
