@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-11-11 lun 16:20 -->
+<!-- 2019-11-11 lun 18:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Manual JAVA</title>
@@ -256,99 +256,112 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcfac3f2">1. Introducción</a>
+<li><a href="#orgaa7b210">1. Introducción</a>
 <ul>
-<li><a href="#org4e502db">1.1. Estructura de un programa</a></li>
+<li><a href="#org1e9749e">1.1. Estructura de un programa</a></li>
 </ul>
 </li>
-<li><a href="#org9cfa2c2">2. Tipos de datos</a></li>
-<li><a href="#orgb60d907">3. Operadores</a>
+<li><a href="#orgcaf419f">2. Tipos de datos</a></li>
+<li><a href="#orgede1dcb">3. Operadores</a>
 <ul>
-<li><a href="#org3079548">3.1. Asignación</a></li>
-<li><a href="#org24bdb9a">3.2. Aritméticos</a>
+<li><a href="#orgf19614c">3.1. Asignación</a></li>
+<li><a href="#org6d8c66a">3.2. Aritméticos</a>
 <ul>
-<li><a href="#orgaa79db2">3.2.1. Operadores unarios</a></li>
+<li><a href="#org22a9d45">3.2.1. Operadores unarios</a></li>
 </ul>
 </li>
-<li><a href="#orgd120489">3.3. Lógicos</a></li>
+<li><a href="#org66d864e">3.3. Lógicos</a></li>
 </ul>
 </li>
-<li><a href="#orgbb59304">4. Condicionales</a></li>
-<li><a href="#org5353a35">5. Bucles</a></li>
-<li><a href="#org894acc0">6. Métodos</a></li>
-<li><a href="#org2198ec0">7. Objetos</a></li>
+<li><a href="#org790be37">4. Condicionales</a>
+<ul>
+<li><a href="#org86ecc0c">4.1. if y else</a></li>
+<li><a href="#org4838a2c">4.2. switch</a></li>
+<li><a href="#org7c447e8">4.3. Condicional ternario</a></li>
+</ul>
+</li>
+<li><a href="#orgcef708b">5. Bucles</a></li>
+<li><a href="#orgab5ebfc">6. Métodos</a></li>
+<li><a href="#org2edf9aa">7. Objetos</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcfac3f2" class="outline-2">
-<h2 id="orgcfac3f2"><span class="section-number-2">1</span> Introducción</h2>
+<div id="outline-container-orgaa7b210" class="outline-2">
+<h2 id="orgaa7b210"><span class="section-number-2">1</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de <i>Java Virtual Machine</i>) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 </p>
 </div>
-<div id="outline-container-org4e502db" class="outline-3">
-<h3 id="org4e502db"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
+<div id="outline-container-org1e9749e" class="outline-3">
+<h3 id="org1e9749e"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Hola Mundo</label><pre class="src src-java" id="orgc39d711"><span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
-<span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Hola Mundo</label><pre class="src src-java" id="org1b4ae84"><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
+<span style="color: #4f97d7; font-weight: bold;">package</span> curso.java.<span style="color: #a45bad;">manual</span>;
 
-<span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Esto es una importaci&#243;n de la clase Scanner del paquete java.io</span>
-<span style="color: #268bd2; font-weight: bold;">import</span> <span style="color: #d75fd7;">java</span>.<span style="color: #d75fd7;">io</span>.<span style="color: #df005f; font-weight: bold;">Scanner</span>;
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Esto es una importaci&#243;n de la clase Scanner del paquete java.io</span>
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">java</span>.<span style="color: #a45bad;">io</span>.<span style="color: #ce537a; font-weight: bold;">Scanner</span>;
 
-<span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Esto es una clase p&#250;blica que se llama HolaMundo</span>
-<span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">HolaMundo</span> {
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Esto es una clase p&#250;blica que se llama HolaMundo</span>
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">HolaMundo</span> {
 
-    <span style="color: #008787; background-color: #262626;">/*</span><span style="color: #008787; background-color: #262626;">Este es el m&#233;todo main (principal), </span>
-<span style="color: #008787; background-color: #262626;">es un m&#233;todo especial que servir&#225; comom punto de entrada a la aplicaci&#243;n. </span>
-<span style="color: #008787; background-color: #262626;">Este m&#233;todo es:</span>
-<span style="color: #008787; background-color: #262626;">- p&#250;blico (puede ser accedido desde cualquier clase)</span>
-<span style="color: #008787; background-color: #262626;">- est&#225;tico (puede ser accedido sin necesidad de crear un objeto de la clase</span>
-<span style="color: #008787; background-color: #262626;">-  no devuelve nada (tipo void)</span>
-<span style="color: #008787; background-color: #262626;">- recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)</span>
-<span style="color: #008787; background-color: #262626;">*/</span>
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este es un objeto de la clase Scanner que se llama scan</span>
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este objeto se inicializa con la palabra reservada new y</span>
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">recibe como argumento System.in (Entrada del sistema)</span>
-        <span style="color: #df005f; font-weight: bold;">Scanner</span> <span style="color: #8787d7;">scan</span> = <span style="color: #268bd2; font-weight: bold;">new</span> <span style="color: #df005f; font-weight: bold;">Scanner</span>(System.in);
+    <span style="color: #2aa1ae; background-color: #292e34;">/*</span><span style="color: #2aa1ae; background-color: #292e34;">Este es el m&#233;todo main (principal), </span>
+<span style="color: #2aa1ae; background-color: #292e34;">es un m&#233;todo especial que servir&#225; comom punto de entrada a la aplicaci&#243;n. </span>
+<span style="color: #2aa1ae; background-color: #292e34;">Este m&#233;todo es:</span>
+<span style="color: #2aa1ae; background-color: #292e34;">- p&#250;blico (puede ser accedido desde cualquier clase)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">- est&#225;tico (puede ser accedido sin necesidad de crear un objeto de la clase</span>
+<span style="color: #2aa1ae; background-color: #292e34;">-  no devuelve nada (tipo void)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">- recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">*/</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span> (<span style="color: #ce537a; font-weight: bold;">String</span> [] <span style="color: #7590db;">args</span>) {
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Este es un objeto de la clase Scanner que se llama scan</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Este objeto se inicializa con la palabra reservada new y</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">recibe como argumento System.in (Entrada del sistema)</span>
+        <span style="color: #ce537a; font-weight: bold;">Scanner</span> <span style="color: #7590db;">scan</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Scanner</span>(System.in);
 
-        <span style="color: #008787; background-color: #262626;">/*</span>
-<span style="color: #008787; background-color: #262626;">          Esto es una llamada a un m&#233;todo, concretamente al m&#233;todo print(String)</span>
-<span style="color: #008787; background-color: #262626;">          del atributo out de la clase System, este m&#233;todo imprime en la pantalla</span>
-<span style="color: #008787; background-color: #262626;">          (consola de texto) el texto que se le pase como par&#225;metro y contin&#250;a</span>
-<span style="color: #008787; background-color: #262626;">          en la misma l&#237;nea.</span>
-<span style="color: #008787; background-color: #262626;">          Como par&#225;metro se le pasa la cadena de texto (String) "&#191;C&#243;mo te llamas?"</span>
-<span style="color: #008787; background-color: #262626;">          Los valores de tipo String van siempre entre comillas dobles "</span>
-<span style="color: #008787; background-color: #262626;">         */</span>
-        System.out.print(<span style="color: #2aa198;">"&#191;C&#243;mo te llamas?"</span>);
+        <span style="color: #2aa1ae; background-color: #292e34;">/*</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          Esto es una llamada a un m&#233;todo, concretamente al m&#233;todo print(String)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          del atributo out de la clase System, este m&#233;todo imprime en la pantalla</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          (consola de texto) el texto que se le pase como par&#225;metro y contin&#250;a</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          en la misma l&#237;nea.</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          Como par&#225;metro se le pasa la cadena de texto (String) "&#191;C&#243;mo te llamas?"</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          Los valores de tipo String van siempre entre comillas dobles "</span>
+<span style="color: #2aa1ae; background-color: #292e34;">         */</span>
+        System.out.print(<span style="color: #2d9574;">"&#191;C&#243;mo te llamas?"</span>);
 
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este es un objeto de la clase String (cadena de texto) que se llama nombre.</span>
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este objeto se inicializa autom&#225;ticamente con el valor que devuleve</span>
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">el m&#233;todo readLine() (M&#233;todo sin argumentos) del objeto scan.</span>
-        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">nombre</span> = scan.nextString();
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Este es un objeto de la clase String (cadena de texto) que se llama nombre.</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Este objeto se inicializa autom&#225;ticamente con el valor que devuleve</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">el m&#233;todo readLine() (M&#233;todo sin argumentos) del objeto scan.</span>
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">nombre</span> = scan.nextString();
 
-        <span style="color: #008787; background-color: #262626;">/*</span>
-<span style="color: #008787; background-color: #262626;">          Esto es otra llamada a un m&#233;todo, en este caso al println del atributo</span>
-<span style="color: #008787; background-color: #262626;">          out de la clase System, n&#243;tese la diferencia con la llamada anterior</span>
-<span style="color: #008787; background-color: #262626;">          (print -- println), ese ln a&#241;adido lo que hace es saltar de l&#237;nea una</span>
-<span style="color: #008787; background-color: #262626;">          vez haya impreso lo que le pasemos como par&#225;metro.</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">/*</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          Esto es otra llamada a un m&#233;todo, en este caso al println del atributo</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          out de la clase System, n&#243;tese la diferencia con la llamada anterior</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          (print -- println), ese ln a&#241;adido lo que hace es saltar de l&#237;nea una</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          vez haya impreso lo que le pasemos como par&#225;metro.</span>
 
-<span style="color: #008787; background-color: #262626;">          En este caso, como par&#225;metro se le pasa una cadena de texto (igual que antes)</span>
-<span style="color: #008787; background-color: #262626;">          con el valor "Hola, " a lo que le concatenamos (sumamos) el valor de </span>
-<span style="color: #008787; background-color: #262626;">          la variable nombre</span>
-<span style="color: #008787; background-color: #262626;">         */</span>
-        System.out.println(<span style="color: #2aa198;">"Hola, "</span>+nombre);
+<span style="color: #2aa1ae; background-color: #292e34;">          En este caso, como par&#225;metro se le pasa una cadena de texto (igual que antes)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">          con el valor "Hola, " a lo que le concatenamos (sumamos) el valor de </span>
+<span style="color: #2aa1ae; background-color: #292e34;">          la variable nombre</span>
+<span style="color: #2aa1ae; background-color: #292e34;">         */</span>
+        System.out.println(<span style="color: #2d9574;">"Hola, "</span>+nombre);
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+¿Cómo te llamas? Víctor
+Hola, Víctor
+
+</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9cfa2c2" class="outline-2">
-<h2 id="org9cfa2c2"><span class="section-number-2">2</span> Tipos de datos</h2>
+
+<div id="outline-container-orgcaf419f" class="outline-2">
+<h2 id="orgcaf419f"><span class="section-number-2">2</span> Tipos de datos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Los tipos de datos primitivos en java son los siguientes:
@@ -427,24 +440,24 @@ Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se
 </p>
 </div>
 </div>
-<div id="outline-container-orgb60d907" class="outline-2">
-<h2 id="orgb60d907"><span class="section-number-2">3</span> Operadores</h2>
+<div id="outline-container-orgede1dcb" class="outline-2">
+<h2 id="orgede1dcb"><span class="section-number-2">3</span> Operadores</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org3079548" class="outline-3">
-<h3 id="org3079548"><span class="section-number-3">3.1</span> Asignación</h3>
+<div id="outline-container-orgf19614c" class="outline-3">
+<h3 id="orgf19614c"><span class="section-number-3">3.1</span> Asignación</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 El operador <b>=</b> se usa para asignar valores a variables:
 </p>
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">a</span> = 0;
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span> = 0;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org24bdb9a" class="outline-3">
-<h3 id="org24bdb9a"><span class="section-number-3">3.2</span> Aritméticos</h3>
+<div id="outline-container-org6d8c66a" class="outline-3">
+<h3 id="org6d8c66a"><span class="section-number-3">3.2</span> Aritméticos</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
@@ -496,74 +509,88 @@ El siguiente código es una pequeña demostración de los operadores mencionados
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 2: </span>Aritmeticos</label><pre class="src src-java" id="orgc955c34"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Aritmeticos</label><pre class="src src-java" id="org6903d32">
+<span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Aritmeticos</span> {
 
-<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Aritmeticos</span> {
+     <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span> (<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
 
-      <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Variable de tipo int que tendr&#225; como valor el resultado de 1 + 2</span>
+         <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">resultado</span> = 1 + 2;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 3</span>
+         System.out.println(<span style="color: #2d9574;">"1 + 2 = "</span> + resultado);
+         <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">resultado_original</span> = resultado;
 
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Variable de tipo int que tendr&#225; como valor el resultado de 1 + 2</span>
-          <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = 1 + 2;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
-          System.out.println(<span style="color: #2aa198;">"1 + 2 = "</span> + resultado);
-          <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado_original</span> = resultado;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Los operadores se pueden usar entre variables (num&#233;ricas) y n&#250;meros</span>
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">en este caso se resta 1 al valor de resultado primero y se asigna a</span>
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">la variable resultado despu&#233;s</span>
+         resultado = resultado - 1;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 2</span>
+         System.out.println(resultado_original + <span style="color: #2d9574;">" - 1 = "</span> + resultado);
+         resultado_original = resultado;
 
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Los operadores se pueden usar entre variables (num&#233;ricas) y n&#250;meros</span>
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">en este caso se resta 1 al valor de resultado primero y se asigna a</span>
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">la variable resultado despu&#233;s</span>
-          resultado = resultado - 1;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
-          System.out.println(resultado_original + <span style="color: #2aa198;">" - 1 = "</span> + resultado);
-          resultado_original = resultado;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable</span>
+         <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">resultado</span>
+         resultado = resultado * 2;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 4</span>
+         System.out.println(resultado_original + <span style="color: #2d9574;">" * 2 = "</span> + resultado);
+         resultado_original = resultado;
 
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable</span>
-          <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">resultado</span>
-          resultado = resultado * 2;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 4</span>
-          System.out.println(resultado_original + <span style="color: #2aa198;">" * 2 = "</span> + resultado);
-          resultado_original = resultado;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Dividimos el resultado entre 2 y lo asignamos</span>
+         resultado = resultado / 2;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 2</span>
+         System.out.println(resultado_original + <span style="color: #2d9574;">" / 2 = "</span> + resultado);
+         resultado_original = resultado;
 
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 2 y lo asignamos</span>
-          resultado = resultado / 2;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
-          System.out.println(resultado_original + <span style="color: #2aa198;">" / 2 = "</span> + resultado);
-          resultado_original = resultado;
+         resultado = resultado + 8;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 10</span>
+         System.out.println(resultado_original + <span style="color: #2d9574;">" + 8 = "</span> + resultado);
+         resultado_original = resultado;
 
-          resultado = resultado + 8;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 10</span>
-          System.out.println(resultado_original + <span style="color: #2aa198;">" + 8 = "</span> + resultado);
-          resultado_original = resultado;
-
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo</span>
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">asignamos</span>
-          resultado = resultado % 7;
-          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
-          System.out.println(resultado_original + <span style="color: #2aa198;">" % 7 = "</span> + resultado);
-      }
-  }
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo</span>
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">asignamos</span>
+         resultado = resultado % 7;
+         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El valor de resultado es 3</span>
+         System.out.println(resultado_original + <span style="color: #2d9574;">" % 7 = "</span> + resultado);
+     }
+ }
 </pre>
 </div>
+
+<pre class="example">
+1 + 2 = 3
+3 - 1 = 2
+2 * 2 = 4
+4 / 2 = 2
+2 + 8 = 10
+10 % 7 = 3
+
+</pre>
 
 <p>
 Como vimos anteriormente, el operador suma <b>+</b> se puede utilizar también para concatenar texto:
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 3: </span>Concatenación</label><pre class="src src-java" id="orgcdcd29a"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
-
-<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Concatenacion</span> {
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
-        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">firstString</span> = <span style="color: #2aa198;">"Esto es"</span>;
-        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">secondString</span> = <span style="color: #2aa198;">" una cadena de texto concatenada."</span>;
-        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">thirdString</span> = firstString+secondString;
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Concatenación</label><pre class="src src-java" id="orgd217280"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Concatenacion</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>){
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">firstString</span> = <span style="color: #2d9574;">"Esto es"</span>;
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">secondString</span> = <span style="color: #2d9574;">" una cadena de texto concatenada."</span>;
+        <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">thirdString</span> = firstString+secondString;
         System.out.println(thirdString);
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+Esto es una cadena de texto concatenada.
+
+</pre>
 </div>
-<div id="outline-container-orgaa79db2" class="outline-4">
-<h4 id="orgaa79db2"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
+
+
+<div id="outline-container-org22a9d45" class="outline-4">
+<h4 id="org22a9d45"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
@@ -611,69 +638,83 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 </table>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 4: </span>Unarios</label><pre class="src src-java" id="orgd78234b"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
-
-<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Unarios</span> {
-
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
-
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = +1;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 1</span>
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>Unarios</label><pre class="src src-java" id="org37eecf9"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Unarios</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>) {
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">resultado</span> = +1;
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El resultado es 1</span>
         System.out.println(resultado);
 
         resultado--;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 0</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El resultado es 0</span>
         System.out.println(resultado);
 
         resultado++;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es 1</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El resultado es 1</span>
         System.out.println(resultado);
 
         resultado = -resultado;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El resultado es -1</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">El resultado es -1</span>
         System.out.println(resultado);
 
-        <span style="color: #df005f; font-weight: bold;">boolean</span> <span style="color: #8787d7;">exito</span> = <span style="color: #d75fd7;">false</span>;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">false</span>
+        <span style="color: #ce537a; font-weight: bold;">boolean</span> <span style="color: #7590db;">exito</span> = <span style="color: #a45bad;">false</span>;
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">false</span>
         System.out.println(exito);
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">true</span>
-        System.out.println(<span style="color: #d75fd7;">!</span>exito);
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">true</span>
+        System.out.println(<span style="color: #a45bad;">!</span>exito);
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+1
+0
+1
+-1
+false
+true
+
+</pre>
 
 <p>
 Los operadores de incremento y decremento (<b>++</b> y <b>--</b>) actuan de manera diferente dependiendo de si se ponen delante o detrás del valor a modificar, si se usan de manera prefija <code>++variable</code> el valor se incrementa primero y la variable se usa después (ya incrementada), si se usa de manera postfija <code>variable++</code> se utilizará el valor de la variable sin incrementar y luego se incrementará:
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 5: </span>Prefijos y Postfijos</label><pre class="src src-java" id="orgb60750d"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
-
-<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">PrePost</span> {
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">i</span> = 3;
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>Prefijos y Postfijos</label><pre class="src src-java" id="orge506318"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">PrePost</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>){
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = 3;
         i++;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 4</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">imprime 4</span>
         System.out.println(i);
         ++i;                       
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 5</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">imprime 5</span>
         System.out.println(i);
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 6</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">imprime 6</span>
         System.out.println(++i);
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 6</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">imprime 6</span>
         System.out.println(i++);
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">imprime 7</span>
+        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">imprime 7</span>
         System.out.println(i);
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+4
+5
+6
+6
+7
+
+</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd120489" class="outline-3">
-<h3 id="orgd120489"><span class="section-number-3">3.3</span> Lógicos</h3>
+
+<div id="outline-container-org66d864e" class="outline-3">
+<h3 id="org66d864e"><span class="section-number-3">3.3</span> Lógicos</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Son operadores que devuelven valores lógicos (verdadero o falso)
@@ -745,66 +786,84 @@ Normalmente estos operadores se utilizarán en sentencias que requieran un valor
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 6: </span>Comparación</label><pre class="src src-java" id="org1020b5f"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Comparacion</span> {
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>Comparación</label><pre class="src src-java" id="org553b567"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Comparacion</span> {
 
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor2</span> = 2;
-        System.out.println (<span style="color: #2aa198;">"valor1="</span>+valor1+<span style="color: #2aa198;">", valor2="</span>+valor2);
-        <span style="color: #268bd2; font-weight: bold;">if</span>(valor1 == valor2) {
-            System.out.println(<span style="color: #2aa198;">"valor1 == valor2 --&gt; "</span> + (valor1 == valor2));
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>){
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">valor1</span> = 1;
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">valor2</span> = 2;
+        System.out.println (<span style="color: #2d9574;">"valor1="</span>+valor1+<span style="color: #2d9574;">", valor2="</span>+valor2);
+        <span style="color: #4f97d7; font-weight: bold;">if</span>(valor1 == valor2) {
+            System.out.println(<span style="color: #2d9574;">"valor1 == valor2 --&gt; "</span> + (valor1 == valor2));
         }
-        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 != valor2) {
-            System.out.println(<span style="color: #2aa198;">"valor1 != valor2 --&gt; "</span> + (valor1 != valor2));
+        <span style="color: #4f97d7; font-weight: bold;">if</span> (valor1 != valor2) {
+            System.out.println(<span style="color: #2d9574;">"valor1 != valor2 --&gt; "</span> + (valor1 != valor2));
         }
-        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &gt; valor2) {
-            System.out.println(<span style="color: #2aa198;">"valor1 &gt; valor2 --&gt; "</span> + (valor1 &gt; valor2));
+        <span style="color: #4f97d7; font-weight: bold;">if</span> (valor1 &gt; valor2) {
+            System.out.println(<span style="color: #2d9574;">"valor1 &gt; valor2 --&gt; "</span> + (valor1 &gt; valor2));
         }
-        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &lt; <span style="color: #df005f; font-weight: bold;">valor2</span>) {
-            System.out.println(<span style="color: #2aa198;">"valor1 &lt; valor2 --&gt; "</span> + (valor1 &lt; <span style="color: #df005f; font-weight: bold;">valor2</span>));
+        <span style="color: #4f97d7; font-weight: bold;">if</span> (valor1 &lt; <span style="color: #ce537a; font-weight: bold;">valor2</span>) {
+            System.out.println(<span style="color: #2d9574;">"valor1 &lt; valor2 --&gt; "</span> + (valor1 &lt; <span style="color: #ce537a; font-weight: bold;">valor2</span>));
         }
-        <span style="color: #268bd2; font-weight: bold;">if</span> (valor1 &lt;= valor2) {
-            System.out.println(<span style="color: #2aa198;">"valor1 &lt;= valor2 --&gt; "</span> + (valor1 &lt;= valor2));
+        <span style="color: #4f97d7; font-weight: bold;">if</span> (valor1 &lt;= valor2) {
+            System.out.println(<span style="color: #2d9574;">"valor1 &lt;= valor2 --&gt; "</span> + (valor1 &lt;= valor2));
         }
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+valor1=1, valor2=2
+valor1 != valor2 --&gt; true
+valor1 &lt; valor2 --&gt; true
+valor1 &lt;= valor2 --&gt; true
+
+</pre>
 
 <p>
 A veces es interesante comprobar si una comprobación cumple mas de una condición o si una sentencia se ejecutará si se cumple alguna de las condiciones posibles, es en este caso que utilizaremos los operadores lógicos <code>&amp;&amp;</code> y <code>||</code>.
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 7: </span>Operadores Condicionales</label><pre class="src src-java" id="orgd5a9d55"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Condicionales</span> {
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>Operadores Condicionales</label><pre class="src src-java" id="orgd1d8ebc"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Condicionales</span> {
 
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor2</span> = 2;
-        <span style="color: #268bd2; font-weight: bold;">if</span>((valor1 == 1) &amp;&amp; (valor2 == 2))
-            System.out.println(<span style="color: #2aa198;">"valor1 es 1 AND (Y) valor2 es 2"</span>);
-        <span style="color: #268bd2; font-weight: bold;">if</span>((valor1 == 1) || (valor2 == 1))
-            System.out.println(<span style="color: #2aa198;">"valor1 es 1 OR (O) valor2 es 1"</span>);
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>(<span style="color: #ce537a; font-weight: bold;">String</span>[] <span style="color: #7590db;">args</span>){
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">valor1</span> = 1;
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">valor2</span> = 2;
+        <span style="color: #4f97d7; font-weight: bold;">if</span>((valor1 == 1) &amp;&amp; (valor2 == 2))
+            System.out.println(<span style="color: #2d9574;">"valor1 es 1 AND (Y) valor2 es 2"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">if</span>((valor1 == 1) || (valor2 == 1))
+            System.out.println(<span style="color: #2d9574;">"valor1 es 1 OR (O) valor2 es 1"</span>);
     }
 }
 </pre>
 </div>
+
+<pre class="example">
+valor1 es 1 AND (Y) valor2 es 2
+valor1 es 1 OR (O) valor2 es 1
+
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbb59304" class="outline-2">
-<h2 id="orgbb59304"><span class="section-number-2">4</span> Condicionales</h2>
+<div id="outline-container-org790be37" class="outline-2">
+<h2 id="org790be37"><span class="section-number-2">4</span> Condicionales</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias <code>if</code> y <code>else</code>, y la segunda es la sentencia <code>switch</code>.
 </p>
+</div>
 
+<div id="outline-container-org86ecc0c" class="outline-3">
+<h3 id="org86ecc0c"><span class="section-number-3">4.1</span> if y else</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 La sentencia <code>if</code> se escribe de la siguiente manera:
 </p>
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion) {
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">if</span> (condicion) {
     proceso;
 }
 </pre>
@@ -822,9 +881,9 @@ Hay veces que queremos que si se cumple una condición se ejecute un determinado
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion) {
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">if</span> (condicion) {
     proceso;
-} <span style="color: #268bd2; font-weight: bold;">else</span> {
+} <span style="color: #4f97d7; font-weight: bold;">else</span> {
     otroProceso;
 }
 </pre>
@@ -834,14 +893,14 @@ Hay veces que queremos que si se cumple una condición se ejecute un determinado
 Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un <code>if</code> primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos <i>anidando</i> sentencias <code>if</code> o <code>else</code>:
 </p>
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">if</span> (condicion1) {
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">if</span> (condicion1) {
     proceso1;
-    <span style="color: #268bd2; font-weight: bold;">if</span> (condicion2) {
+    <span style="color: #4f97d7; font-weight: bold;">if</span> (condicion2) {
         proceso2;
     }
     proceso3;
-} <span style="color: #268bd2; font-weight: bold;">else</span> {
-    <span style="color: #268bd2; font-weight: bold;">if</span> (condicion3) {
+} <span style="color: #4f97d7; font-weight: bold;">else</span> {
+    <span style="color: #4f97d7; font-weight: bold;">if</span> (condicion3) {
         proceso4;
     }
 }
@@ -853,61 +912,71 @@ Si nos fijamos en el <code>else</code> (aunque esto puede ocurrir en cualquier o
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 8: </span>Else-If</label><pre class="src src-java" id="orgcc6cbbe"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Elseif</span> {
-  <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
-    <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">val</span> = 10;
-    <span style="color: #268bd2; font-weight: bold;">if</span> (val == 0) {
-      System.out.println(<span style="color: #2aa198;">"val = 0"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 1) {
-      System.out.println(<span style="color: #2aa198;">"val = 1"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 2) {
-      System.out.println(<span style="color: #2aa198;">"val = 2"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 3) {
-      System.out.println(<span style="color: #2aa198;">"val = 3"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 4) {
-      System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> <span style="color: #268bd2; font-weight: bold;">if</span> (val == 5) {
-      System.out.println(<span style="color: #2aa198;">"val = 5"</span>);
-    } <span style="color: #268bd2; font-weight: bold;">else</span> {
-      System.out.pritnln(<span style="color: #2aa198;">"val &gt; 5"</span>);
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>Else-If</label><pre class="src src-java" id="orgd4ceaa0"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Elseif</span> {
+  <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span> (<span style="color: #ce537a; font-weight: bold;">String</span> [] <span style="color: #7590db;">args</span>) {
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">val</span> = 10;
+    <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 0) {
+      System.out.println(<span style="color: #2d9574;">"val = 0"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 1) {
+      System.out.println(<span style="color: #2d9574;">"val = 1"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 2) {
+      System.out.println(<span style="color: #2d9574;">"val = 2"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 3) {
+      System.out.println(<span style="color: #2d9574;">"val = 3"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 4) {
+      System.out.println(<span style="color: #2d9574;">"val = 4"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #4f97d7; font-weight: bold;">if</span> (val == 5) {
+      System.out.println(<span style="color: #2d9574;">"val = 5"</span>);
+    } <span style="color: #4f97d7; font-weight: bold;">else</span> {
+      System.out.println(<span style="color: #2d9574;">"val &gt; 5"</span>);
     }
   }
 }
 </pre>
 </div>
 
+<pre class="example">
+val &gt; 5
+
+</pre>
+
 <p>
 En este caso como el valor de la variable <code>val</code> es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia <code>else</code> si hiciéramos esto anidando sentencias <code>if</code> y <code>else</code> el código se <i>iría</i> muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia <code>switch</code>.
 </p>
+</div>
+</div>
 
+<div id="outline-container-org4838a2c" class="outline-3">
+<h3 id="org4838a2c"><span class="section-number-3">4.2</span> switch</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 </p>
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 9: </span>Switch</label><pre class="src src-java" id="org8649721"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Switch</span> {
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
-      <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">val</span> = 10;
-      <span style="color: #268bd2; font-weight: bold;">switch</span>(val) {
-      <span style="color: #268bd2; font-weight: bold;">case</span> 0:
-        System.out.println(<span style="color: #2aa198;">"val = 0"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">case</span> 1:
-        System.out.println(<span style="color: #2aa198;">"val = 1"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">case</span> 2:
-        System.out.println(<span style="color: #2aa198;">"val = 2"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">case</span> 3:
-        System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">case</span> 4:
-        System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">case</span> 5:
-        System.out.println(<span style="color: #2aa198;">"val = 5"</span>);
-        <span style="color: #268bd2; font-weight: bold;">break</span>;
-      <span style="color: #268bd2; font-weight: bold;">default</span>:
-        System.out.println(<span style="color: #2aa198;">"val &gt; 5"</span>);
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>Switch</label><pre class="src src-java" id="orgb3e67ea"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Switch</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span> (<span style="color: #ce537a; font-weight: bold;">String</span> [] <span style="color: #7590db;">args</span>) {
+      <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">val</span> = 10;
+      <span style="color: #4f97d7; font-weight: bold;">switch</span>(val) {
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 0:
+        System.out.println(<span style="color: #2d9574;">"val = 0"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 1:
+        System.out.println(<span style="color: #2d9574;">"val = 1"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 2:
+        System.out.println(<span style="color: #2d9574;">"val = 2"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 3:
+        System.out.println(<span style="color: #2d9574;">"val = 3"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 4:
+        System.out.println(<span style="color: #2d9574;">"val = 4"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 5:
+        System.out.println(<span style="color: #2d9574;">"val = 5"</span>);
+        <span style="color: #4f97d7; font-weight: bold;">break</span>;
+      <span style="color: #4f97d7; font-weight: bold;">default</span>:
+        System.out.println(<span style="color: #2d9574;">"val &gt; 5"</span>);
       }
     }
   }
@@ -920,27 +989,114 @@ val &gt; 5
 </pre>
 
 <p>
-Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, <code>switch</code>, y esta, en base al valor que tenga la variable, entrará por un <code>case</code> o por otro y, en caso de que no coincida con ninguno, entrará por el <code>default</code>.
+Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, <code>switch</code>, y esta, en base al valor que tenga la variable, entrará por un <code>case</code> o por otro y, en caso de que no coincida con ninguno, entrará por el <code>default</code>. Si, por ejemplo, cambiásemos el valor de <code>val</code> a 3, la salida que nos mostraría el programa sería la siguiente:
 </p>
+
+<pre class="example">
+val = 3
+
+</pre>
 
 <p>
 Podemos observar también una sentencia que no habíamos visto antes, la sentencia <code>break</code>, esta sentencia <i>rompe</i> la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia <code>switch</code> es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras <code>if-else</code>, que están englobadas con llaves que nos hacen de corte, los <code>case</code> y <code>default</code> son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia <code>break</code> en un <code>switch</code>.
 </p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 10: </span>Switch2</label><pre class="src src-java" id="orgf87cc34"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Switch2</span> {
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span> (<span style="color: #ce537a; font-weight: bold;">String</span> [] <span style="color: #7590db;">args</span>) {
+      <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">val</span> = 2;
+      <span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">Inicializamos un contador para saber por cuantos cases pasamos;</span>
+      <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">contador</span> = 0;
+      <span style="color: #4f97d7; font-weight: bold;">switch</span>(val) {
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 0:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 1:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 2:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 3:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 4:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 5:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 6:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 7:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 8:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 9:
+        contador++;
+      <span style="color: #4f97d7; font-weight: bold;">case</span> 10:
+        contador++;
+        System.out.println(<span style="color: #2d9574;">"He pasado por "</span>+contador+<span style="color: #2d9574;">" cases. El n&#250;mero es menor o igual que 10"</span>);
+      }
+    }
+  }
+</pre>
+</div>
+
+<pre class="example">
+He pasado por 9 cases. El número es menor o igual que 10
+
+</pre>
+
+<p>
+¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia <code>break</code> para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta <code>default</code> no es imprescindible, como en la instrucción <code>if</code> no es imprescindible el <code>else</code>, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
+</p>
 </div>
 </div>
-<div id="outline-container-org5353a35" class="outline-2">
-<h2 id="org5353a35"><span class="section-number-2">5</span> Bucles</h2>
+
+<div id="outline-container-org7c447e8" class="outline-3">
+<h3 id="org7c447e8"><span class="section-number-3">4.3</span> Condicional ternario</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">miString</span> = (condicion)?<span style="color: #2d9574;">"condicion es verdadera"</span>:<span style="color: #2d9574;">"condicion es falsa"</span>;
+</pre>
 </div>
-<div id="outline-container-org894acc0" class="outline-2">
-<h2 id="org894acc0"><span class="section-number-2">6</span> Métodos</h2>
+
+<p>
+Analizando por partes tenemos, a la izquierda del igual, una declaración de variable de tipo <code>String</code> como las que hemos visto hasta ahora, a la derecha tenemos, primero una condición lógica (del mismo tipo que las que se usan en las sentencias <code>if</code>, luego un signo de interrogación <code>?</code> que es el que nos indica que ese valor lógico no es para asignar a la variable, como hemos visto cuando asignábamos variables de tipo <code>boolean</code>, sino que es la condición para asignar la variable, el siguiente valor <code>"condicion es verdadera"</code> es el valor que tomará la variable <code>miString</code> si <code>(condicion)</code> es verdadera. Luego encontramos un signo de dos puntos <code>:</code> que separa las condiciones verdadera y falsa y, por último <code>"condicion el falsa"</code> que, como se puede intuir, es el valor que tomará <code>miString</code> si <code>(condicion)</code> es falsa.
+</p>
+
+<p>
+Este condicional puede ser escrito con sentencias <code>if-else</code> de la siguiente manera (el resultado del código será el mismo):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">miString</span>;
+<span style="color: #4f97d7; font-weight: bold;">if</span> (condicion) {
+  miString = <span style="color: #2d9574;">"condicion es verdadera"</span>;
+} <span style="color: #4f97d7; font-weight: bold;">else</span> {
+  miString = <span style="color: #2d9574;">"condicion es falsa"</span>;
+}
+</pre>
 </div>
-<div id="outline-container-org2198ec0" class="outline-2">
-<h2 id="org2198ec0"><span class="section-number-2">7</span> Objetos</h2>
+
+<p>
+La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcef708b" class="outline-2">
+<h2 id="orgcef708b"><span class="section-number-2">5</span> Bucles</h2>
+</div>
+<div id="outline-container-orgab5ebfc" class="outline-2">
+<h2 id="orgab5ebfc"><span class="section-number-2">6</span> Métodos</h2>
+</div>
+<div id="outline-container-org2edf9aa" class="outline-2">
+<h2 id="org2edf9aa"><span class="section-number-2">7</span> Objetos</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Víctor Chico Rodríguez</p>
-<p class="date">Created: 2019-11-11 lun 16:20</p>
+<p class="date">Created: 2019-11-11 lun 18:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
