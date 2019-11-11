@@ -2,7 +2,9 @@
 * Introducción
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 ** Estructura de un programa
-#+BEGIN_SRC java
+
+#+CAPTION: Hola Mundo
+#+BEGIN_SRC java :eval no-export
   //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
   package curso.java.manual;
 
@@ -39,7 +41,7 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
 	  //Este es un objeto de la clase String (cadena de texto) que se llama nombre.
 	  //Este objeto se inicializa automáticamente con el valor que devuleve
 	  //el método readLine() (Método sin argumentos) del objeto scan.
-	  String nombre = scan.readLine();
+	  String nombre = scan.nextString();
 
 	  /*
 	    Esto es otra llamada a un método, en este caso al println del atributo
@@ -55,6 +57,19 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
       }
   }
 #+END_SRC
+#+NAME: HolaMundo
+#+BEGIN_SRC java :exports results :classname HolaMundo
+    public class HolaMundo {
+
+	public static void main (String [] args) {
+	    System.out.print("¿Cómo te llamas? ");
+	    String nombre = "Víctor";
+	    System.out.print(nombre);
+	    System.out.println("Hola, "+nombre);
+	}
+    }
+#+END_SRC
+
 * Tipos de datos
 Los tipos de datos primitivos en java son los siguientes:
 | tipo    | descripción                                     | clase asociada |
@@ -73,7 +88,7 @@ Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se
 * Operadores
 ** Asignación
 El operador *=* se usa para asignar valores a variables:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :eval no-export
 int a = 0;
 #+END_SRC
 ** Aritméticos
@@ -87,8 +102,11 @@ En java se pueden realizar multitud de operaciones matemáticas con la misma pre
 | *%*      | Operador de resto de la división |
 
 El siguiente código es una pequeña demostración de los operadores mencionados:
-#+BEGIN_SRC java
-  class Aritmeticos {
+
+#+CAPTION: Aritmeticos
+#+NAME: Aritmeticos
+#+BEGIN_SRC java :exports both :classname Aritmeticos
+class Aritmeticos {
 
       public static void main (String[] args) {
 
@@ -133,9 +151,13 @@ El siguiente código es una pequeña demostración de los operadores mencionados
   }
 #+END_SRC
 
+#+RESULTS: Aritmeticos
+
 Como vimos anteriormente, el operador suma *+* se puede utilizar también para concatenar texto:
 
-#+BEGIN_SRC java
+#+CAPTION: Concatenación
+#+NAME: Concatenacion
+#+BEGIN_SRC java :exports both :classname Concatenacion
 class Concatenacion {
     public static void main(String[] args){
         String firstString = "Esto es";
@@ -155,7 +177,9 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 | --       | Decrementa en 1 el valor         |
 | !        | Invierte el valor de un booleano |
 
-#+BEGIN_SRC java
+#+CAPTION: Unarios
+#+NAME: Unarios
+#+BEGIN_SRC java :exports both :classname Unarios
   class Unarios {
 
       public static void main(String[] args) {
@@ -187,7 +211,9 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 
 Los operadores de incremento y decremento (*++* y *--*) actuan de manera diferente dependiendo de si se ponen delante o detrás del valor a modificar, si se usan de manera prefija ~++variable~ el valor se incrementa primero y la variable se usa después (ya incrementada), si se usa de manera postfija ~variable++~ se utilizará el valor de la variable sin incrementar y luego se incrementará:
 
-#+BEGIN_SRC java
+#+CAPTION: Prefijos y Postfijos
+#+NAME: PrePost
+#+BEGIN_SRC java :exports both :classname PrePost
   class PrePost {
       public static void main(String[] args){
 	  int i = 3;
@@ -223,7 +249,8 @@ Son operadores que devuelven valores lógicos (verdadero o falso)
 Normalmente estos operadores se utilizarán en sentencias que requieran un valor lógico, como los condicionales o los bucles, de los que hablaremos más adelante, en este ejemplo vemos como, en base a los valores 1 y 2, que operaciones se ejecutan y cuales no:
 
 #+NAME: Comparacion
-#+BEGIN_SRC java :results output
+#+CAPTION: Comparación
+#+BEGIN_SRC java :exports both :classname Comparacion
   class Comparacion {
 
       public static void main(String[] args){
@@ -251,8 +278,9 @@ Normalmente estos operadores se utilizarán en sentencias que requieran un valor
 
 A veces es interesante comprobar si una comprobación cumple mas de una condición o si una sentencia se ejecutará si se cumple alguna de las condiciones posibles, es en este caso que utilizaremos los operadores lógicos ~&&~ y ~||~.
 
+#+NAME: Condicionales
 #+CAPTION: Operadores Condicionales
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :classname Condicionales
   class Condicionales {
 
       public static void main(String[] args){
@@ -270,7 +298,7 @@ A veces es interesante comprobar si una comprobación cumple mas de una condici�
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias ~if~ y ~else~, y la segunda es la sentencia ~switch~.
 
 La sentencia ~if~ se escribe de la siguiente manera:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :eval no-export
 if (condicion) {
     proceso;
 }
@@ -281,7 +309,7 @@ Si la condición se cumple el ~proceso~ (que puede ser un número indeterminado 
 
 Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia ~else~ que tiene una forma parecida al ~if~, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el ~if~.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC java :eval no-export
 if (condicion) {
     proceso;
 } else {
@@ -290,7 +318,7 @@ if (condicion) {
 #+END_SRC
 
 Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un ~if~ primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos /anidando/ sentencias ~if~ o ~else~:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :eval no-export
 if (condicion1) {
     proceso1;
     if (condicion2) {
@@ -306,7 +334,9 @@ if (condicion1) {
 
 Si nos fijamos en el ~else~ (aunque esto puede ocurrir en cualquier otra parte, incluido el bloque del ~if~), podemos observar que, en caso de no cumplirse la ~condicion1~, podemos tener dentro otra estructura completa de sentencias ~if~ y cada una puede tener sus respectivos ~else~ y así indefinidamente, una manera de organizar mejor esté código es utilizando la sentencia compuesta ~else if~ que nos permite hacer varias comprobaciones sin aumentar el nivel de anidación, por ejemplo:
 
-#+BEGIN_SRC java
+#+NAME: Elseif
+#+CAPTION: Else-If
+#+BEGIN_SRC java :exports both :classname Elseif
   class Elseif {
     public static void main (String [] args) {
       int val = 10;
@@ -331,6 +361,42 @@ Si nos fijamos en el ~else~ (aunque esto puede ocurrir en cualquier otra parte, 
 
 En este caso como el valor de la variable ~val~ es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia ~else~ si hiciéramos esto anidando sentencias ~if~ y ~else~ el código se /iría/ muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia ~switch~.
 
+El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
+#+CAPTION: Switch
+#+NAME: Switch
+#+BEGIN_SRC java :exports both :classname Switch
+  class Switch {
+      public static void main (String [] args) {
+	int val = 10;
+	switch(val) {
+	case 0:
+	  System.out.println("val = 0");
+	  break;
+	case 1:
+	  System.out.println("val = 1");
+	  break;
+	case 2:
+	  System.out.println("val = 2");
+	  break;
+	case 3:
+	  System.out.println("val = 4");
+	  break;
+	case 4:
+	  System.out.println("val = 4");
+	  break;
+	case 5:
+	  System.out.println("val = 5");
+	  break;
+	default:
+	  System.out.println("val > 5");
+	}
+      }
+    }
+#+END_SRC
+
+Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, ~switch~, y esta, en base al valor que tenga la variable, entrará por un ~case~ o por otro y, en caso de que no coincida con ninguno, entrará por el ~default~.
+
+Podemos observar también una sentencia que no habíamos visto antes, la sentencia ~break~, esta sentencia /rompe/ la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia ~switch~ es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras ~if-else~, que están englobadas con llaves que nos hacen de corte, los ~case~ y ~default~ son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia ~break~ en un ~switch~.
 * Bucles
 * Métodos
 * Objetos

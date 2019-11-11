@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-11-08 vie 16:42 -->
+<!-- 2019-11-11 lun 16:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Manual JAVA</title>
@@ -256,42 +256,42 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org02b43f2">1. Introducción</a>
+<li><a href="#orgcfac3f2">1. Introducción</a>
 <ul>
-<li><a href="#org58dd39f">1.1. Estructura de un programa</a></li>
+<li><a href="#org4e502db">1.1. Estructura de un programa</a></li>
 </ul>
 </li>
-<li><a href="#orge46ea24">2. Tipos de datos</a></li>
-<li><a href="#org344d5d2">3. Operadores</a>
+<li><a href="#org9cfa2c2">2. Tipos de datos</a></li>
+<li><a href="#orgb60d907">3. Operadores</a>
 <ul>
-<li><a href="#orgfe37e83">3.1. Asignación</a></li>
-<li><a href="#org9b25a76">3.2. Aritméticos</a>
+<li><a href="#org3079548">3.1. Asignación</a></li>
+<li><a href="#org24bdb9a">3.2. Aritméticos</a>
 <ul>
-<li><a href="#org0ed73bf">3.2.1. Operadores unarios</a></li>
+<li><a href="#orgaa79db2">3.2.1. Operadores unarios</a></li>
 </ul>
 </li>
-<li><a href="#org4cc47fa">3.3. Lógicos</a></li>
+<li><a href="#orgd120489">3.3. Lógicos</a></li>
 </ul>
 </li>
-<li><a href="#org289c9cd">4. Condicionales</a></li>
-<li><a href="#org60ff132">5. Bucles</a></li>
-<li><a href="#org336cde3">6. Métodos</a></li>
-<li><a href="#org47d7788">7. Objetos</a></li>
+<li><a href="#orgbb59304">4. Condicionales</a></li>
+<li><a href="#org5353a35">5. Bucles</a></li>
+<li><a href="#org894acc0">6. Métodos</a></li>
+<li><a href="#org2198ec0">7. Objetos</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org02b43f2" class="outline-2">
-<h2 id="org02b43f2"><span class="section-number-2">1</span> Introducción</h2>
+<div id="outline-container-orgcfac3f2" class="outline-2">
+<h2 id="orgcfac3f2"><span class="section-number-2">1</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de <i>Java Virtual Machine</i>) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 </p>
 </div>
-<div id="outline-container-org58dd39f" class="outline-3">
-<h3 id="org58dd39f"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
+<div id="outline-container-org4e502db" class="outline-3">
+<h3 id="org4e502db"><span class="section-number-3">1.1</span> Estructura de un programa</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Hola Mundo</label><pre class="src src-java" id="orgc39d711"><span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)</span>
 <span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
 
 <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Esto es una importaci&#243;n de la clase Scanner del paquete java.io</span>
@@ -327,7 +327,7 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
         <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este es un objeto de la clase String (cadena de texto) que se llama nombre.</span>
         <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">Este objeto se inicializa autom&#225;ticamente con el valor que devuleve</span>
         <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">el m&#233;todo readLine() (M&#233;todo sin argumentos) del objeto scan.</span>
-        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">nombre</span> = scan.readLine();
+        <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">nombre</span> = scan.nextString();
 
         <span style="color: #008787; background-color: #262626;">/*</span>
 <span style="color: #008787; background-color: #262626;">          Esto es otra llamada a un m&#233;todo, en este caso al println del atributo</span>
@@ -347,8 +347,8 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
 </div>
 </div>
 </div>
-<div id="outline-container-orge46ea24" class="outline-2">
-<h2 id="orge46ea24"><span class="section-number-2">2</span> Tipos de datos</h2>
+<div id="outline-container-org9cfa2c2" class="outline-2">
+<h2 id="org9cfa2c2"><span class="section-number-2">2</span> Tipos de datos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Los tipos de datos primitivos en java son los siguientes:
@@ -427,12 +427,12 @@ Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se
 </p>
 </div>
 </div>
-<div id="outline-container-org344d5d2" class="outline-2">
-<h2 id="org344d5d2"><span class="section-number-2">3</span> Operadores</h2>
+<div id="outline-container-orgb60d907" class="outline-2">
+<h2 id="orgb60d907"><span class="section-number-2">3</span> Operadores</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgfe37e83" class="outline-3">
-<h3 id="orgfe37e83"><span class="section-number-3">3.1</span> Asignación</h3>
+<div id="outline-container-org3079548" class="outline-3">
+<h3 id="org3079548"><span class="section-number-3">3.1</span> Asignación</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 El operador <b>=</b> se usa para asignar valores a variables:
@@ -443,8 +443,8 @@ El operador <b>=</b> se usa para asignar valores a variables:
 </div>
 </div>
 </div>
-<div id="outline-container-org9b25a76" class="outline-3">
-<h3 id="org9b25a76"><span class="section-number-3">3.2</span> Aritméticos</h3>
+<div id="outline-container-org24bdb9a" class="outline-3">
+<h3 id="org24bdb9a"><span class="section-number-3">3.2</span> Aritméticos</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
@@ -494,50 +494,53 @@ En java se pueden realizar multitud de operaciones matemáticas con la misma pre
 <p>
 El siguiente código es una pequeña demostración de los operadores mencionados:
 </p>
+
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Aritmeticos</span> {
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Aritmeticos</label><pre class="src src-java" id="orgc955c34"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
 
-    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
+<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Aritmeticos</span> {
 
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Variable de tipo int que tendr&#225; como valor el resultado de 1 + 2</span>
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = 1 + 2;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
-        System.out.println(<span style="color: #2aa198;">"1 + 2 = "</span> + resultado);
-        <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado_original</span> = resultado;
+      <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
 
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Los operadores se pueden usar entre variables (num&#233;ricas) y n&#250;meros</span>
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">en este caso se resta 1 al valor de resultado primero y se asigna a</span>
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">la variable resultado despu&#233;s</span>
-        resultado = resultado - 1;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
-        System.out.println(resultado_original + <span style="color: #2aa198;">" - 1 = "</span> + resultado);
-        resultado_original = resultado;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Variable de tipo int que tendr&#225; como valor el resultado de 1 + 2</span>
+          <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado</span> = 1 + 2;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
+          System.out.println(<span style="color: #2aa198;">"1 + 2 = "</span> + resultado);
+          <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">resultado_original</span> = resultado;
 
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable</span>
-        <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">resultado</span>
-        resultado = resultado * 2;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 4</span>
-        System.out.println(resultado_original + <span style="color: #2aa198;">" * 2 = "</span> + resultado);
-        resultado_original = resultado;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Los operadores se pueden usar entre variables (num&#233;ricas) y n&#250;meros</span>
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">en este caso se resta 1 al valor de resultado primero y se asigna a</span>
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">la variable resultado despu&#233;s</span>
+          resultado = resultado - 1;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
+          System.out.println(resultado_original + <span style="color: #2aa198;">" - 1 = "</span> + resultado);
+          resultado_original = resultado;
 
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 2 y lo asignamos</span>
-        resultado = resultado / 2;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
-        System.out.println(resultado_original + <span style="color: #2aa198;">" / 2 = "</span> + resultado);
-        resultado_original = resultado;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable</span>
+          <span style="color: #008787; background-color: #262626;">//</span><span style="color: #008787; background-color: #262626;">resultado</span>
+          resultado = resultado * 2;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 4</span>
+          System.out.println(resultado_original + <span style="color: #2aa198;">" * 2 = "</span> + resultado);
+          resultado_original = resultado;
 
-        resultado = resultado + 8;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 10</span>
-        System.out.println(resultado_original + <span style="color: #2aa198;">" + 8 = "</span> + resultado);
-        resultado_original = resultado;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 2 y lo asignamos</span>
+          resultado = resultado / 2;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 2</span>
+          System.out.println(resultado_original + <span style="color: #2aa198;">" / 2 = "</span> + resultado);
+          resultado_original = resultado;
 
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo</span>
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">asignamos</span>
-        resultado = resultado % 7;
-        <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
-        System.out.println(resultado_original + <span style="color: #2aa198;">" % 7 = "</span> + resultado);
-    }
-}
+          resultado = resultado + 8;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 10</span>
+          System.out.println(resultado_original + <span style="color: #2aa198;">" + 8 = "</span> + resultado);
+          resultado_original = resultado;
+
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo</span>
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">asignamos</span>
+          resultado = resultado % 7;
+          <span style="color: #008787; background-color: #262626;">// </span><span style="color: #008787; background-color: #262626;">El valor de resultado es 3</span>
+          System.out.println(resultado_original + <span style="color: #2aa198;">" % 7 = "</span> + resultado);
+      }
+  }
 </pre>
 </div>
 
@@ -546,7 +549,9 @@ Como vimos anteriormente, el operador suma <b>+</b> se puede utilizar también p
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Concatenacion</span> {
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Concatenación</label><pre class="src src-java" id="orgcdcd29a"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+
+<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Concatenacion</span> {
     <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
         <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">firstString</span> = <span style="color: #2aa198;">"Esto es"</span>;
         <span style="color: #df005f; font-weight: bold;">String</span> <span style="color: #8787d7;">secondString</span> = <span style="color: #2aa198;">" una cadena de texto concatenada."</span>;
@@ -557,8 +562,8 @@ Como vimos anteriormente, el operador suma <b>+</b> se puede utilizar también p
 </pre>
 </div>
 </div>
-<div id="outline-container-org0ed73bf" class="outline-4">
-<h4 id="org0ed73bf"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
+<div id="outline-container-orgaa79db2" class="outline-4">
+<h4 id="orgaa79db2"><span class="section-number-4">3.2.1</span> Operadores unarios</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
@@ -606,7 +611,9 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 </table>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Unarios</span> {
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>Unarios</label><pre class="src src-java" id="orgd78234b"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+
+<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Unarios</span> {
 
     <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>) {
 
@@ -641,7 +648,9 @@ Los operadores de incremento y decremento (<b>++</b> y <b>--</b>) actuan de mane
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">PrePost</span> {
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>Prefijos y Postfijos</label><pre class="src src-java" id="orgb60750d"><span style="color: #268bd2; font-weight: bold;">package</span> curso.java.<span style="color: #d75fd7;">manual</span>;
+
+<span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">PrePost</span> {
     <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
         <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">i</span> = 3;
         i++;
@@ -663,8 +672,8 @@ Los operadores de incremento y decremento (<b>++</b> y <b>--</b>) actuan de mane
 </div>
 </div>
 </div>
-<div id="outline-container-org4cc47fa" class="outline-3">
-<h3 id="org4cc47fa"><span class="section-number-3">3.3</span> Lógicos</h3>
+<div id="outline-container-orgd120489" class="outline-3">
+<h3 id="orgd120489"><span class="section-number-3">3.3</span> Lógicos</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Son operadores que devuelven valores lógicos (verdadero o falso)
@@ -736,7 +745,7 @@ Normalmente estos operadores se utilizarán en sentencias que requieran un valor
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java" id="org2875dec"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Comparacion</span> {
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>Comparación</label><pre class="src src-java" id="org1020b5f"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Comparacion</span> {
 
     <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
         <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
@@ -767,7 +776,7 @@ A veces es interesante comprobar si una comprobación cumple mas de una condici�
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Operadores Condicionales</label><pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Condicionales</span> {
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>Operadores Condicionales</label><pre class="src src-java" id="orgd5a9d55"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Condicionales</span> {
 
     <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span>(<span style="color: #df005f; font-weight: bold;">String</span>[] <span style="color: #8787d7;">args</span>){
         <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">valor1</span> = 1;
@@ -784,8 +793,8 @@ A veces es interesante comprobar si una comprobación cumple mas de una condici�
 </div>
 </div>
 
-<div id="outline-container-org289c9cd" class="outline-2">
-<h2 id="org289c9cd"><span class="section-number-2">4</span> Condicionales</h2>
+<div id="outline-container-orgbb59304" class="outline-2">
+<h2 id="orgbb59304"><span class="section-number-2">4</span> Condicionales</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias <code>if</code> y <code>else</code>, y la segunda es la sentencia <code>switch</code>.
@@ -844,7 +853,7 @@ Si nos fijamos en el <code>else</code> (aunque esto puede ocurrir en cualquier o
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Elseif</span> {
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>Else-If</label><pre class="src src-java" id="orgcc6cbbe"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Elseif</span> {
   <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
     <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">val</span> = 10;
     <span style="color: #268bd2; font-weight: bold;">if</span> (val == 0) {
@@ -870,22 +879,68 @@ Si nos fijamos en el <code>else</code> (aunque esto puede ocurrir en cualquier o
 <p>
 En este caso como el valor de la variable <code>val</code> es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia <code>else</code> si hiciéramos esto anidando sentencias <code>if</code> y <code>else</code> el código se <i>iría</i> muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia <code>switch</code>.
 </p>
-</div>
+
+<p>
+El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>Switch</label><pre class="src src-java" id="org8649721"><span style="color: #268bd2; font-weight: bold;">class</span> <span style="color: #df005f; font-weight: bold;">Switch</span> {
+    <span style="color: #268bd2; font-weight: bold;">public</span> <span style="color: #268bd2; font-weight: bold;">static</span> <span style="color: #df005f; font-weight: bold;">void</span> <span style="color: #d75fd7; font-weight: bold;">main</span> (<span style="color: #df005f; font-weight: bold;">String</span> [] <span style="color: #8787d7;">args</span>) {
+      <span style="color: #df005f; font-weight: bold;">int</span> <span style="color: #8787d7;">val</span> = 10;
+      <span style="color: #268bd2; font-weight: bold;">switch</span>(val) {
+      <span style="color: #268bd2; font-weight: bold;">case</span> 0:
+        System.out.println(<span style="color: #2aa198;">"val = 0"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">case</span> 1:
+        System.out.println(<span style="color: #2aa198;">"val = 1"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">case</span> 2:
+        System.out.println(<span style="color: #2aa198;">"val = 2"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">case</span> 3:
+        System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">case</span> 4:
+        System.out.println(<span style="color: #2aa198;">"val = 4"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">case</span> 5:
+        System.out.println(<span style="color: #2aa198;">"val = 5"</span>);
+        <span style="color: #268bd2; font-weight: bold;">break</span>;
+      <span style="color: #268bd2; font-weight: bold;">default</span>:
+        System.out.println(<span style="color: #2aa198;">"val &gt; 5"</span>);
+      }
+    }
+  }
+</pre>
 </div>
 
-<div id="outline-container-org60ff132" class="outline-2">
-<h2 id="org60ff132"><span class="section-number-2">5</span> Bucles</h2>
+<pre class="example">
+val &gt; 5
+
+</pre>
+
+<p>
+Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, <code>switch</code>, y esta, en base al valor que tenga la variable, entrará por un <code>case</code> o por otro y, en caso de que no coincida con ninguno, entrará por el <code>default</code>.
+</p>
+
+<p>
+Podemos observar también una sentencia que no habíamos visto antes, la sentencia <code>break</code>, esta sentencia <i>rompe</i> la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia <code>switch</code> es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras <code>if-else</code>, que están englobadas con llaves que nos hacen de corte, los <code>case</code> y <code>default</code> son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia <code>break</code> en un <code>switch</code>.
+</p>
 </div>
-<div id="outline-container-org336cde3" class="outline-2">
-<h2 id="org336cde3"><span class="section-number-2">6</span> Métodos</h2>
 </div>
-<div id="outline-container-org47d7788" class="outline-2">
-<h2 id="org47d7788"><span class="section-number-2">7</span> Objetos</h2>
+<div id="outline-container-org5353a35" class="outline-2">
+<h2 id="org5353a35"><span class="section-number-2">5</span> Bucles</h2>
+</div>
+<div id="outline-container-org894acc0" class="outline-2">
+<h2 id="org894acc0"><span class="section-number-2">6</span> Métodos</h2>
+</div>
+<div id="outline-container-org2198ec0" class="outline-2">
+<h2 id="org2198ec0"><span class="section-number-2">7</span> Objetos</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Víctor Chico Rodríguez</p>
-<p class="date">Created: 2019-11-08 vie 16:42</p>
+<p class="date">Created: 2019-11-11 lun 16:20</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
