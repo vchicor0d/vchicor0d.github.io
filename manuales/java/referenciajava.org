@@ -10,7 +10,7 @@ Java es un lenguage de programación orientado a objetos, se creó en 1996 y est
 
 #+CAPTION: Hola Mundo
 #+NAME: HolaMundo
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
 package curso.java.manual;
 
@@ -86,7 +86,7 @@ Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se
 * Operadores
 ** Asignación
 El operador *=* se usa para asignar valores a variables:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 int a = 0;
 #+END_SRC
 ** Aritméticos
@@ -103,7 +103,7 @@ El siguiente código es una pequeña demostración de los operadores mencionados
 
 #+CAPTION: Aritmeticos
 #+NAME: Aritmeticos
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 
 public class Aritmeticos {
 
@@ -162,7 +162,7 @@ Como vimos anteriormente, el operador suma *+* se puede utilizar también para c
 
 #+CAPTION: Concatenación
 #+NAME: Concatenacion
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :classname Concatenacion
 class Concatenacion {
     public static void main(String[] args){
 	String firstString = "Esto es";
@@ -189,7 +189,7 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 
 #+CAPTION: Unarios
 #+NAME: Unarios
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class Unarios {
     public static void main(String[] args) {
 	int resultado = +1;
@@ -229,7 +229,7 @@ Los operadores de incremento y decremento (*++* y *--*) actuan de manera diferen
 
 #+CAPTION: Prefijos y Postfijos
 #+NAME: PrePost
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class PrePost {
     public static void main(String[] args){
 	int i = 3;
@@ -274,7 +274,7 @@ Normalmente estos operadores se utilizarán en sentencias que requieran un valor
 
 #+NAME: Comparacion
 #+CAPTION: Comparación
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class Comparacion {
 
     public static void main(String[] args){
@@ -310,7 +310,7 @@ A veces es interesante comprobar si una comprobación cumple mas de una condici�
 
 #+NAME: Condicionales
 #+CAPTION: Operadores Condicionales
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class Condicionales {
 
     public static void main(String[] args){
@@ -333,7 +333,7 @@ En java tenemos principalmente dos estructuras condicionales, la primera es la q
 
 ** if y else
 La sentencia ~if~ se escribe de la siguiente manera:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 if (condicion) {
     proceso;
 }
@@ -344,7 +344,7 @@ Si la condición se cumple el ~proceso~ (que puede ser un número indeterminado 
 
 Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia ~else~ que tiene una forma parecida al ~if~, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el ~if~.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 if (condicion) {
     proceso;
 } else {
@@ -353,7 +353,7 @@ if (condicion) {
 #+END_SRC
 
 Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un ~if~ primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos /anidando/ sentencias ~if~ o ~else~:
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 if (condicion1) {
     proceso1;
     if (condicion2) {
@@ -371,7 +371,7 @@ Si nos fijamos en el ~else~ (aunque esto puede ocurrir en cualquier otra parte, 
 
 #+NAME: Elseif
 #+CAPTION: Else-If
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :classname Elseif
 class Elseif {
   public static void main (String [] args) {
     int val = 10;
@@ -404,7 +404,7 @@ En este caso como el valor de la variable ~val~ es 10, pasaría por cada una de 
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 #+CAPTION: Switch
 #+NAME: Switch
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class Switch {
     public static void main (String [] args) {
       int val = 10;
@@ -444,7 +444,7 @@ Como se puede observar, el código es mucho más claro, tenemos una sola sentenc
 Podemos observar también una sentencia que no habíamos visto antes, la sentencia ~break~, esta sentencia /rompe/ la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia ~switch~ es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras ~if-else~, que están englobadas con llaves que nos hacen de corte, los ~case~ y ~default~ son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia ~break~ en un ~switch~.
 #+CAPTION: Switch2
 #+NAME: Switch2
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :classname Switch2
 class Switch2 {
     public static void main (String [] args) {
       int val = 2;
@@ -487,7 +487,7 @@ class Switch2 {
 ** Condicional ternario
 Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
 
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 String miString = (condicion)?"condicion es verdadera":"condicion es falsa";
 #+END_SRC
 
@@ -495,7 +495,7 @@ Analizando por partes tenemos, a la izquierda del igual, una declaración de var
 
 Este condicional puede ser escrito con sentencias ~if-else~ de la siguiente manera (el resultado del código será el mismo):
 
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports src :eval no-export
 String miString;
 if (condicion) {
   miString = "condicion es verdadera";
@@ -560,7 +560,7 @@ El bucle ~for~ es un caso especial del bucle ~while~, este bucle se va a ejecuta
 
 #+NAME: BucleFor
 #+CAPTION: Bucle For
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class BucleFor {
 
     public static void main (String[] args) {
@@ -590,7 +590,7 @@ La decisión de utiliar un tipo de bucle u otro depende del programador, pero se
 
 #+NAME: BucleForSinInicializacion
 #+CAPTION: Bucle For sin inicialización en la cabecera
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class BucleForSinInicializacion {
 
     public static void main (String[] args) {
@@ -605,7 +605,7 @@ class BucleForSinInicializacion {
 
 #+NAME: BucleForSinModificacion
 #+CAPTION: Bucle For Sin Modificacion en la cabecera
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class BucleForSinModificacion {
 
     public static void main (String[] args) {
@@ -622,7 +622,7 @@ Y, por supuesto, si sacamos de la cabecera tanto la inicialización como la modi
 
 #+NAME: BucleForSinInicializacionNiModificacion
 #+CAPTION: Bucle For Sin inicialización ni Modificacion en la cabecera
-#+BEGIN_SRC java
+#+BEGIN_SRC java :exports both :eval no-export
 class BucleForSinInicializacionNiModificacion {
 
     public static void main (String[] args) {
