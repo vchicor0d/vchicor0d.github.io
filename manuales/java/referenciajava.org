@@ -1,7 +1,7 @@
 #+TITLE: Referencia JAVA
 #+LANGUAGE: es
 
-[[./referenciajava.org][Descargar archivo fuente .org]] \\
+[[./referenciajava.org][Descargar archivo fuente .org]]\\
 [[./referenciajava.pdf][Descargar como PDF]]
 
 * Introducción
@@ -514,8 +514,8 @@ El tipo de bucle más simple que nos encontramos es el bucle ~while~, este bucle
 Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
 
 La estructura de un bucle ~while~ es la siguiente:
-#+RESULTS:
-[[file:whileloop.png]]
+#+CAPTION: Diagrama de un bucle while
+[[file:while.png]]
 
 Por ejemplo, si queremos un programa que muestre por pantalla los números del 1 al 10, podemos hacer lo siguiente:
 
@@ -641,7 +641,80 @@ Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinad
 
 Este bucle se trata de un bucle ~while~ en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
 
+#+CAPTION: Diagrama de un bucle do-while
+file:do-while.png
 
-* Métodos
-* Objetos
+Podemos continuar con nuestro ejemplo de contar de 1 a 10, veamos como se haría con un bucle do-while:
+
+#+CAPTION: Bucle do-while
+#+NAME: BucleDoWhile
+#+BEGIN_SRC java :export both :eval no-export
+  class DoWhile {
+
+    public static void main(String[] args) {
+      //Inicializamos la variable fuera del bucle
+      int numeroActual=1;
+      do {
+        //Imprimimos su valor
+	System.out.println(numeroActual);
+	//Aumentamos la variable
+	numeroActual++;
+	//Comprobamos la condición, como ya se ejecuta una vez como mínimo
+	//es necesario poner menor (<) y no menor o igual (<=), si lo hiciéramos
+	//cuando el valor de numeroActual fuera 10 cumpliría y volvería a ejecutar
+	//el código, por lo tanto contaría hasta 11
+      } while (numeroActual < 10);
+    }
+
+  }
+#+END_SRC
+
+#+RESULTS: BucleDoWhile
+: 1
+: 2
+: 3
+: 4
+: 5
+: 6
+: 7
+: 8
+: 9
+: 10 
+
+* Métodos y funciones
+Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo /de arriba a abajo/, estamos en lo que se conoce como *programación estructurada*, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, con los métodos podemos ejecutar el mismo código pero con *parámetros* diferentes, veamos un ejemplo sencillo:
+
+#+Caption:Mi primer método
+#+Name: MiPrimerMetodo
+#+BEGIN_SRC java :export both :eval no-export
+  class MiPrimerMetodo {
+
+    //Aquí tenemos el método main, no devuelve nada (void)
+    //y recibe como parámetro un array de Strings (varias cadenas de texto)
+    public static void main(String [] args) {
+      //Creamos una variable llamada nombre y la inicializamos
+      String nombre = "Bimo";
+      //Llamamos a nuestro método y le pasamos como parámetro la variable
+      saludar(nombre);
+      //Cambiamos el valor de la variable
+      nombre = "Kirby";
+      //Y volvemos a llamar al método
+      saludar(kirby);
+    }
+
+    //Aquí tenemos nuestro método, se llama saludar y no devuelve nada,
+    //recibe como parámetro una cadena de texto llamada nombre,
+    //cada vez que se ejecute saludará a quien venga escrito en la variable nombre
+    static void saludar(String nombre) {
+      System.out.println("Hola, "+nombre);
+    }
+
+  }
+#+END_SRC
+
+#+RESULTS: MiPrimerMetodo
+: Hola, Bimo
+: Hola, Kirby
+
+* Clases y objetos
 
