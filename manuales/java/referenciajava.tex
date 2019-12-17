@@ -1,4 +1,4 @@
-% Created 2019-11-08 vie 15:16
+% Created 2019-12-17 mar 12:00
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -30,10 +30,11 @@
 \tableofcontents
 
 \section{Introducción}
-\label{sec:orgafbdf17}
+\label{sec:org8dc5c37}
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de \emph{Java Virtual Machine}) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 \subsection{Estructura de un programa}
-\label{sec:org18b9140}
+\label{sec:org8182c6c}
+
 \begin{verbatim}
 //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
 package curso.java.manual;
@@ -71,7 +72,7 @@ Este método es:
 	//Este es un objeto de la clase String (cadena de texto) que se llama nombre.
 	//Este objeto se inicializa automáticamente con el valor que devuleve
 	//el método readLine() (Método sin argumentos) del objeto scan.
-	String nombre = scan.readLine();
+	String nombre = scan.nextString();
 
 	/*
 	  Esto es otra llamada a un método, en este caso al println del atributo
@@ -87,8 +88,16 @@ Este método es:
     }
 }
 \end{verbatim}
+\captionof{figure}{\label{org5b133a2}
+Hola Mundo}
+
+\begin{verbatim}
+¿Cómo te llamas? Víctor
+Hola, Víctor
+\end{verbatim}
+
 \section{Tipos de datos}
-\label{sec:orga83ad0b}
+\label{sec:orgfa11fb7}
 Los tipos de datos primitivos en java son los siguientes:
 \begin{center}
 \begin{tabular}{lll}
@@ -96,8 +105,8 @@ tipo & descripción & clase asociada\\
 \hline
 byte & número entero de 8 bits (-128 a 127) & Byte\\
 short & número entero de 16 bits (-32768 a 32767 & Short\\
-int & número entero de 32 bits (\(-2{32}\) a \(2{32}\)) & Integer\\
-long & número entero de 64 bits (\(-2{64}\) a \(2{64}\)) & Long\\
+int & número entero de 32 bits (\(-2^{32}\) a \(2^{32}\)) & Integer\\
+long & número entero de 64 bits (\(-2^{64}\) a \(2^{64}\)) & Long\\
 float & número decimal de 32 bits & Float\\
 double & número decimal de 64 bits & Double\\
 boolean & valor booleano o lógico (verdadero o falso) & Boolean\\
@@ -105,17 +114,18 @@ char & caracter de texto (único) & Character\\
 \end{tabular}
 \end{center}
 
+
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 \section{Operadores}
-\label{sec:org7301fdc}
+\label{sec:org99b7abb}
 \subsection{Asignación}
-\label{sec:orgcbeabb2}
+\label{sec:orga362a89}
 El operador \textbf{=} se usa para asignar valores a variables:
 \begin{verbatim}
 int a = 0;
 \end{verbatim}
 \subsection{Aritméticos}
-\label{sec:orgd7417f2}
+\label{sec:org2f6b483}
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
 \begin{center}
 \begin{tabular}{ll}
@@ -130,50 +140,63 @@ Operador & Descripción\\
 \end{center}
 
 El siguiente código es una pequeña demostración de los operadores mencionados:
+
 \begin{verbatim}
-class Aritmeticos {
 
-    public static void main (String[] args) {
+public class Aritmeticos {
 
-	// Variable de tipo int que tendrá como valor el resultado de 1 + 2
-	int resultado = 1 + 2;
-	// El valor de resultado es 3
-	System.out.println("1 + 2 = " + resultado);
-	int resultado_original = resultado;
+     public static void main (String[] args) {
 
-	// Los operadores se pueden usar entre variables (numéricas) y números
-	// en este caso se resta 1 al valor de resultado primero y se asigna a
-	// la variable resultado después
-	resultado = resultado - 1;
-	// El valor de resultado es 2
-	System.out.println(resultado_original + " - 1 = " + resultado);
-	resultado_original = resultado;
+	 // Variable de tipo int que tendrá como valor el resultado de 1 + 2
+	 int resultado = 1 + 2;
+	 // El valor de resultado es 3
+	 System.out.println("1 + 2 = " + resultado);
+	 int resultado_original = resultado;
 
-	// Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable
-	//resultado
-	resultado = resultado * 2;
-	// El valor de resultado es 4
-	System.out.println(resultado_original + " * 2 = " + resultado);
-	resultado_original = resultado;
+	 // Los operadores se pueden usar entre variables (numéricas) y números
+	 // en este caso se resta 1 al valor de resultado primero y se asigna a
+	 // la variable resultado después
+	 resultado = resultado - 1;
+	 // El valor de resultado es 2
+	 System.out.println(resultado_original + " - 1 = " + resultado);
+	 resultado_original = resultado;
 
-	// Dividimos el resultado entre 2 y lo asignamos
-	resultado = resultado / 2;
-	// El valor de resultado es 2
-	System.out.println(resultado_original + " / 2 = " + resultado);
-	resultado_original = resultado;
+	 // Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable
+	 //resultado
+	 resultado = resultado * 2;
+	 // El valor de resultado es 4
+	 System.out.println(resultado_original + " * 2 = " + resultado);
+	 resultado_original = resultado;
 
-	resultado = resultado + 8;
-	// El valor de resultado es 10
-	System.out.println(resultado_original + " + 8 = " + resultado);
-	resultado_original = resultado;
+	 // Dividimos el resultado entre 2 y lo asignamos
+	 resultado = resultado / 2;
+	 // El valor de resultado es 2
+	 System.out.println(resultado_original + " / 2 = " + resultado);
+	 resultado_original = resultado;
 
-	// Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo
-	// asignamos
-	resultado = resultado % 7;
-	// El valor de resultado es 3
-	System.out.println(resultado_original + " % 7 = " + resultado);
-    }
-}
+	 resultado = resultado + 8;
+	 // El valor de resultado es 10
+	 System.out.println(resultado_original + " + 8 = " + resultado);
+	 resultado_original = resultado;
+
+	 // Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo
+	 // asignamos
+	 resultado = resultado % 7;
+	 // El valor de resultado es 3
+	 System.out.println(resultado_original + " % 7 = " + resultado);
+     }
+ }
+\end{verbatim}
+\captionof{figure}{\label{orgc204174}
+Aritmeticos}
+
+\begin{verbatim}
+1 + 2 = 3
+3 - 1 = 2
+2 * 2 = 4
+4 / 2 = 2
+2 + 8 = 10
+10 % 7 = 3
 \end{verbatim}
 
 Como vimos anteriormente, el operador suma \textbf{+} se puede utilizar también para concatenar texto:
@@ -188,8 +211,16 @@ class Concatenacion {
     }
 }
 \end{verbatim}
+\captionof{figure}{\label{org19f27e5}
+Concatenación}
+
+\begin{verbatim}
+Esto es una cadena de texto concatenada.
+\end{verbatim}
+
+
 \subsubsection{Operadores unarios}
-\label{sec:orgf5b7adc}
+\label{sec:org302f5ca}
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
 \begin{center}
 \begin{tabular}{ll}
@@ -205,9 +236,7 @@ Operador & Descripción\\
 
 \begin{verbatim}
 class Unarios {
-
     public static void main(String[] args) {
-
 	int resultado = +1;
 	// El resultado es 1
 	System.out.println(resultado);
@@ -232,6 +261,17 @@ class Unarios {
     }
 }
 \end{verbatim}
+\captionof{figure}{\label{orge8c8af8}
+Unarios}
+
+\begin{verbatim}
+1
+0
+1
+-1
+false
+true
+\end{verbatim}
 
 Los operadores de incremento y decremento (\textbf{++} y \textbf{--}) actuan de manera diferente dependiendo de si se ponen delante o detrás del valor a modificar, si se usan de manera prefija \texttt{++variable} el valor se incrementa primero y la variable se usa después (ya incrementada), si se usa de manera postfija \texttt{variable++} se utilizará el valor de la variable sin incrementar y luego se incrementará:
 
@@ -254,12 +294,409 @@ class PrePost {
     }
 }
 \end{verbatim}
+\captionof{figure}{\label{orgb002877}
+Prefijos y Postfijos}
+
+\begin{verbatim}
+4
+5
+6
+6
+7
+\end{verbatim}
+
+\subsection{Lógicos}
+\label{sec:org503b652}
+Son operadores que devuelven valores lógicos (verdadero o falso)
+\begin{center}
+\begin{tabular}{ll}
+Operador & Descripción\\
+\hline
+== & igual que\\
+!= & distinto que\\
+> & mayor que\\
+>= & mayor o igual que\\
+< & menor que\\
+<= & menor o igual que\\
+\&\& & Y lógico\\
+\(\vert{} \vert{}\) & Ó lógico\\
+instanceof & Objeto pertenece a clase\\
+\end{tabular}
+\end{center}
+
+Normalmente estos operadores se utilizarán en sentencias que requieran un valor lógico, como los condicionales o los bucles, de los que hablaremos más adelante, en este ejemplo vemos como, en base a los valores 1 y 2, que operaciones se ejecutan y cuales no:
+
+\begin{verbatim}
+class Comparacion {
+
+    public static void main(String[] args){
+	int valor1 = 1;
+	int valor2 = 2;
+	System.out.println ("valor1="+valor1+", valor2="+valor2);
+	if(valor1 == valor2) {
+	    System.out.println("valor1 == valor2 --> " + (valor1 == valor2));
+	}
+	if (valor1 != valor2) {
+	    System.out.println("valor1 != valor2 --> " + (valor1 != valor2));
+	}
+	if (valor1 > valor2) {
+	    System.out.println("valor1 > valor2 --> " + (valor1 > valor2));
+	}
+	if (valor1 < valor2) {
+	    System.out.println("valor1 < valor2 --> " + (valor1 < valor2));
+	}
+	if (valor1 <= valor2) {
+	    System.out.println("valor1 <= valor2 --> " + (valor1 <= valor2));
+	}
+    }
+}
+\end{verbatim}
+\captionof{figure}{\label{org56e26fb}
+Comparación}
+
+\begin{verbatim}
+valor1=1, valor2=2
+valor1 != valor2 --> true
+valor1 < valor2 --> true
+valor1 <= valor2 --> true
+\end{verbatim}
+
+A veces es interesante comprobar si una comprobación cumple mas de una condición o si una sentencia se ejecutará si se cumple alguna de las condiciones posibles, es en este caso que utilizaremos los operadores lógicos \texttt{\&\&} y \texttt{||}.
+
+\begin{verbatim}
+class Condicionales {
+
+    public static void main(String[] args){
+	int valor1 = 1;
+	int valor2 = 2;
+	if((valor1 == 1) && (valor2 == 2))
+	    System.out.println("valor1 es 1 AND (Y) valor2 es 2");
+	if((valor1 == 1) || (valor2 == 1))
+	    System.out.println("valor1 es 1 OR (O) valor2 es 1");
+    }
+}
+\end{verbatim}
+\captionof{figure}{\label{org6f00e0c}
+Operadores Condicionales}
+
+\begin{verbatim}
+valor1 es 1 AND (Y) valor2 es 2
+valor1 es 1 OR (O) valor2 es 1
+\end{verbatim}
+
 \section{Condicionales}
-\label{sec:orgf5f104e}
+\label{sec:org5f46916}
+En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias \texttt{if} y \texttt{else}, y la segunda es la sentencia \texttt{switch}.
+
+\subsection{if y else}
+\label{sec:orgbace0cc}
+La sentencia \texttt{if} se escribe de la siguiente manera:
+\begin{verbatim}
+if (condicion) {
+    proceso;
+}
+\end{verbatim}
+Donde \texttt{condicion} es un valor booleano (lógico), que puede ser una variable de tipo boolean, un valor \texttt{true} o \texttt{false} directamente, aunque no tuviera mucho sentido en este caso, o el resultado de una comparación como las que acabamos de ver.
+
+Si la condición se cumple el \texttt{proceso} (que puede ser un número indeterminado de sentencias) se ejecuta, si no se cumple, no se ejecuta, decimos que se produce un salto condicional.
+
+Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia \texttt{else} que tiene una forma parecida al \texttt{if}, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el \texttt{if}.
+
+\begin{verbatim}
+if (condicion) {
+    proceso;
+} else {
+    otroProceso;
+}
+\end{verbatim}
+
+Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un \texttt{if} primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos \emph{anidando} sentencias \texttt{if} o \texttt{else}:
+\begin{verbatim}
+if (condicion1) {
+    proceso1;
+    if (condicion2) {
+	proceso2;
+    }
+    proceso3;
+} else {
+    if (condicion3) {
+	proceso4;
+    }
+}
+\end{verbatim}
+
+Si nos fijamos en el \texttt{else} (aunque esto puede ocurrir en cualquier otra parte, incluido el bloque del \texttt{if}), podemos observar que, en caso de no cumplirse la \texttt{condicion1}, podemos tener dentro otra estructura completa de sentencias \texttt{if} y cada una puede tener sus respectivos \texttt{else} y así indefinidamente, una manera de organizar mejor esté código es utilizando la sentencia compuesta \texttt{else if} que nos permite hacer varias comprobaciones sin aumentar el nivel de anidación, por ejemplo:
+
+\begin{verbatim}
+class Elseif {
+  public static void main (String [] args) {
+    int val = 10;
+    if (val == 0) {
+      System.out.println("val = 0");
+    } else if (val == 1) {
+      System.out.println("val = 1");
+    } else if (val == 2) {
+      System.out.println("val = 2");
+    } else if (val == 3) {
+      System.out.println("val = 3");
+    } else if (val == 4) {
+      System.out.println("val = 4");
+    } else if (val == 5) {
+      System.out.println("val = 5");
+    } else {
+      System.out.println("val > 5");
+    }
+  }
+}
+\end{verbatim}
+\captionof{figure}{\label{orgf61e419}
+Else-If}
+
+\begin{verbatim}
+val > 5
+\end{verbatim}
+
+En este caso como el valor de la variable \texttt{val} es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia \texttt{else} si hiciéramos esto anidando sentencias \texttt{if} y \texttt{else} el código se \emph{iría} muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia \texttt{switch}.
+
+\subsection{switch}
+\label{sec:orgf57ea8c}
+
+El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
+\begin{verbatim}
+class Switch {
+    public static void main (String [] args) {
+      int val = 10;
+      switch(val) {
+      case 0:
+	System.out.println("val = 0");
+	break;
+      case 1:
+	System.out.println("val = 1");
+	break;
+      case 2:
+	System.out.println("val = 2");
+	break;
+      case 3:
+	System.out.println("val = 3");
+	break;
+      case 4:
+	System.out.println("val = 4");
+	break;
+      case 5:
+	System.out.println("val = 5");
+	break;
+      default:
+	System.out.println("val > 5");
+      }
+    }
+  }
+\end{verbatim}
+\captionof{figure}{\label{org49ed85c}
+Switch}
+
+\begin{verbatim}
+val > 5
+\end{verbatim}
+
+Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, \texttt{switch}, y esta, en base al valor que tenga la variable, entrará por un \texttt{case} o por otro y, en caso de que no coincida con ninguno, entrará por el \texttt{default}. Si, por ejemplo, cambiásemos el valor de \texttt{val} a 3, la salida que nos mostraría el programa sería la siguiente:
+
+\begin{verbatim}
+val = 3
+\end{verbatim}
+
+Podemos observar también una sentencia que no habíamos visto antes, la sentencia \texttt{break}, esta sentencia \emph{rompe} la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia \texttt{switch} es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras \texttt{if-else}, que están englobadas con llaves que nos hacen de corte, los \texttt{case} y \texttt{default} son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia \texttt{break} en un \texttt{switch}.
+\begin{verbatim}
+class Switch2 {
+    public static void main (String [] args) {
+      int val = 2;
+      //Inicializamos un contador para saber por cuantos cases pasamos;
+      int contador = 0;
+      switch(val) {
+      case 0:
+	contador++;
+      case 1:
+	contador++;
+      case 2:
+	contador++;
+      case 3:
+	contador++;
+      case 4:
+	contador++;
+      case 5:
+	contador++;
+      case 6:
+	contador++;
+      case 7:
+	contador++;
+      case 8:
+	contador++;
+      case 9:
+	contador++;
+      case 10:
+	contador++;
+	System.out.println("He pasado por "+contador+" cases. El número es menor o igual que 10");
+      }
+    }
+  }
+\end{verbatim}
+\captionof{figure}{\label{org3faad7b}
+Switch2}
+
+\begin{verbatim}
+He pasado por 9 cases. El número es menor o igual que 10
+\end{verbatim}
+
+¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia \texttt{break} para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta \texttt{default} no es imprescindible, como en la instrucción \texttt{if} no es imprescindible el \texttt{else}, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
+
+\subsection{Condicional ternario}
+\label{sec:org518ee0e}
+Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
+
+\begin{verbatim}
+String miString = (condicion)?"condicion es verdadera":"condicion es falsa";
+\end{verbatim}
+
+Analizando por partes tenemos, a la izquierda del igual, una declaración de variable de tipo \texttt{String} como las que hemos visto hasta ahora, a la derecha tenemos, primero una condición lógica (del mismo tipo que las que se usan en las sentencias \texttt{if}, luego un signo de interrogación \texttt{?} que es el que nos indica que ese valor lógico no es para asignar a la variable, como hemos visto cuando asignábamos variables de tipo \texttt{boolean}, sino que es la condición para asignar la variable, el siguiente valor \texttt{"condicion es verdadera"} es el valor que tomará la variable \texttt{miString} si \texttt{(condicion)} es verdadera. Luego encontramos un signo de dos puntos \texttt{:} que separa las condiciones verdadera y falsa y, por último \texttt{"condicion el falsa"} que, como se puede intuir, es el valor que tomará \texttt{miString} si \texttt{(condicion)} es falsa.
+
+Este condicional puede ser escrito con sentencias \texttt{if-else} de la siguiente manera (el resultado del código será el mismo):
+
+\begin{verbatim}
+String miString;
+if (condicion) {
+  miString = "condicion es verdadera";
+} else {
+  miString = "condicion es falsa";
+}
+\end{verbatim}
+
+La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
+
 \section{Bucles}
-\label{sec:org6f58d08}
+\label{sec:org60d8c6f}
+La ejecució normal de un programa en java (y en casi cualquier lenguaje de programación) se hace \emph{de arriba a abajo} desde que empieza hasta que termina, los bucles son estructuras de control que permiten que una parte del código se ejecute más de una vez en base a una condición.
+\subsection{El bucle while}
+\label{sec:org37c95a3}
+El tipo de bucle más simple que nos encontramos es el bucle \texttt{while}, este bucle se va a ejecutar \emph{mientras} (while) la condición se cumpla y, una vez esta deje de cumplirse, seguirá desde el final del mismo.
+
+Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
+
+La estructura de un bucle \texttt{while} es la siguiente:
+\begin{center}
+\includegraphics[width=.9\linewidth]{whileloop.png}
+\end{center}
+
+Por ejemplo, si queremos un programa que muestre por pantalla los números del 1 al 10, podemos hacer lo siguiente:
+
+\begin{verbatim}
+class BucleWhile {
+
+    public static void main(String[] args) {
+	//Ponemos el número con el valor que queremos al principio
+	int numeroActual=1;
+
+	//Bucle while
+	//Condición: que numeroActual sea menor o igual que 10
+	while (numeroActual<=10) {
+
+	    //Imprimimos por pantalla el número con su valor en este momento
+	    System.out.println(numeroActual);
+
+	    //Aumentamos el valor del número
+	    //Si no lo hacemos, el valor de númeroActual siempre será menor o igual a 10 y tendremos un bucle infinito
+	    numeroActual++;
+	}
+    }
+
+}
+\end{verbatim}
+\captionof{figure}{\label{org4eefdf4}
+Bucle While}
+
+\begin{verbatim}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 
+\end{verbatim}
+\subsection{El bucle for}
+\label{sec:org816602b}
+El bucle \texttt{for} es un caso especial del bucle \texttt{while}, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle \texttt{for} lo haríamos así:
+
+\begin{verbatim}
+class BucleFor {
+
+    public static void main (String[] args) {
+	for (int numeroActual=1; numeroActual<=10; numeroActual++) {
+	    System.out.println(numeroActual);
+	}
+    }
+
+}
+\end{verbatim}
+\captionof{figure}{\label{orgad31e40}
+Bucle For}
+
+Como podemos ver, el resultado de este programa será exáctamente el mismo que el anterior:
+
+\begin{verbatim}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 
+\end{verbatim}
+
+La decisión de utiliar un tipo de bucle u otro depende del programador, pero se suele utiliar el bucle \texttt{for} para situaciones en las que haya que \emph{contar}, como en el caso que hemos puesto porque nos permite crear y deshechar la variable en la propia cabecera sin tener que llevar datos innecesarios, aunque por supuesto podemos usar una variable que tengamos de antes como en el bucle \texttt{while} e, incluso, no modificar la variable en la cabecera y hacerlo en el cuerpo.
+
+\begin{verbatim}
+class BucleForSinInicializacion {
+
+    public static void main (String[] args) {
+    int numeroActual=1;
+    for (; numeroActual<=10; numeroActual++) {
+	    System.out.println(numeroActual);
+	}
+    }
+
+}
+\end{verbatim}
+\captionof{figure}{\label{orga4cda71}
+Bucle For sin inicialización en la cabecera}
+
+\begin{verbatim}
+class BucleForSinModificacion {
+
+    public static void main (String[] args) {
+	for (int numeroActual=1; numeroActual<=10;) {
+	    System.out.println(numeroActual);
+	    numeroActual++;
+	}
+    }
+
+}
+\end{verbatim}
+\captionof{figure}{\label{orge6901f1}
+Bucle For Sin Modificacion en la cabecera}
+\subsection{El bucle do-while}
+\label{sec:orgbc6f51f}
+Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle \texttt{do-while}.
+
+Este bucle se trata de un bucle \texttt{while} en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
+
+
 \section{Métodos}
-\label{sec:org6c843bf}
+\label{sec:org9352243}
 \section{Objetos}
-\label{sec:org9c8b5a6}
+\label{sec:org5275f81}
 \end{document}

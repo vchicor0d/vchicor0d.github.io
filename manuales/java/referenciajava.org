@@ -1,62 +1,67 @@
-#+TITLE: Manual JAVA
+#+TITLE: Referencia JAVA
+#+LANGUAGE: es
+
+[[./referenciajava.org][Descargar archivo fuente .org]] \\
+[[./referenciajava.pdf][Descargar como PDF]]
+
 * Introducción
 Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
 ** Estructura de un programa
 
 #+CAPTION: Hola Mundo
 #+NAME: HolaMundo
-#+BEGIN_SRC java :exports both :eval no-export
-  //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
-  package curso.java.manual;
+#+BEGIN_SRC java
+//Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
+package curso.java.manual;
 
-  //Esto es una importación de la clase Scanner del paquete java.io
-  import java.io.Scanner;
+//Esto es una importación de la clase Scanner del paquete java.io
+import java.io.Scanner;
 
-  //Esto es una clase pública que se llama HolaMundo
-  public class HolaMundo {
+//Esto es una clase pública que se llama HolaMundo
+public class HolaMundo {
 
-      /*Este es el método main (principal), 
-  es un método especial que servirá comom punto de entrada a la aplicación. 
-  Este método es:
-  - público (puede ser accedido desde cualquier clase)
-  - estático (puede ser accedido sin necesidad de crear un objeto de la clase
-  -  no devuelve nada (tipo void)
-  - recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)
-  ,*/
-      public static void main (String [] args) {
-	  //Este es un objeto de la clase Scanner que se llama scan
-	  //Este objeto se inicializa con la palabra reservada new y
-	  //recibe como argumento System.in (Entrada del sistema)
-	  Scanner scan = new Scanner(System.in);
+    /*Este es el método main (principal), 
+es un método especial que servirá comom punto de entrada a la aplicación. 
+Este método es:
+- público (puede ser accedido desde cualquier clase)
+- estático (puede ser accedido sin necesidad de crear un objeto de la clase
+-  no devuelve nada (tipo void)
+- recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)
+,*/
+    public static void main (String [] args) {
+	//Este es un objeto de la clase Scanner que se llama scan
+	//Este objeto se inicializa con la palabra reservada new y
+	//recibe como argumento System.in (Entrada del sistema)
+	Scanner scan = new Scanner(System.in);
 
-	  /*
-	    Esto es una llamada a un método, concretamente al método print(String)
-	    del atributo out de la clase System, este método imprime en la pantalla
-	    (consola de texto) el texto que se le pase como parámetro y continúa
-	    en la misma línea.
-	    Como parámetro se le pasa la cadena de texto (String) "¿Cómo te llamas?"
-	    Los valores de tipo String van siempre entre comillas dobles "
-	   ,*/
-	  System.out.print("¿Cómo te llamas?");
+	/*
+	  Esto es una llamada a un método, concretamente al método print(String)
+	  del atributo out de la clase System, este método imprime en la pantalla
+	  (consola de texto) el texto que se le pase como parámetro y continúa
+	  en la misma línea.
+	  Como parámetro se le pasa la cadena de texto (String) "¿Cómo te llamas?"
+	  Los valores de tipo String van siempre entre comillas dobles "
+	 ,*/
+	System.out.print("¿Cómo te llamas?");
 
-	  //Este es un objeto de la clase String (cadena de texto) que se llama nombre.
-	  //Este objeto se inicializa automáticamente con el valor que devuleve
-	  //el método readLine() (Método sin argumentos) del objeto scan.
-	  String nombre = scan.nextString();
+	//Este es un objeto de la clase String (cadena de texto) que se llama nombre.
+	//Este objeto se inicializa automáticamente con el valor que devuleve
+	//el método readLine() (Método sin argumentos) del objeto scan.
+	String nombre = scan.nextString();
 
-	  /*
-	    Esto es otra llamada a un método, en este caso al println del atributo
-	    out de la clase System, nótese la diferencia con la llamada anterior
-	    (print -- println), ese ln añadido lo que hace es saltar de línea una
-	    vez haya impreso lo que le pasemos como parámetro.
+	/*
+	  Esto es otra llamada a un método, en este caso al println del atributo
+	  out de la clase System, nótese la diferencia con la llamada anterior
+	  (print -- println), ese ln añadido lo que hace es saltar de línea una
+	  vez haya impreso lo que le pasemos como parámetro.
 
-	    En este caso, como parámetro se le pasa una cadena de texto (igual que antes)
-	    con el valor "Hola, " a lo que le concatenamos (sumamos) el valor de 
-	    la variable nombre
-	   ,*/
-	  System.out.println("Hola, "+nombre);
-      }
-  }
+	  En este caso, como parámetro se le pasa una cadena de texto (igual que antes)
+	  con el valor "Hola, " a lo que le concatenamos (sumamos) el valor de 
+	  la variable nombre
+	 ,*/
+	System.out.println("Hola, "+nombre);
+    }
+}
 #+END_SRC
 
 #+RESULTS: HolaMundo
@@ -81,7 +86,7 @@ Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se
 * Operadores
 ** Asignación
 El operador *=* se usa para asignar valores a variables:
-#+BEGIN_SRC java :eval no-export
+#+BEGIN_SRC java
 int a = 0;
 #+END_SRC
 ** Aritméticos
@@ -98,51 +103,51 @@ El siguiente código es una pequeña demostración de los operadores mencionados
 
 #+CAPTION: Aritmeticos
 #+NAME: Aritmeticos
-#+BEGIN_SRC java :exports both :eval no-export
+#+BEGIN_SRC java
 
- public class Aritmeticos {
+public class Aritmeticos {
 
-      public static void main (String[] args) {
+     public static void main (String[] args) {
 
-	  // Variable de tipo int que tendrá como valor el resultado de 1 + 2
-	  int resultado = 1 + 2;
-	  // El valor de resultado es 3
-	  System.out.println("1 + 2 = " + resultado);
-	  int resultado_original = resultado;
+	 // Variable de tipo int que tendrá como valor el resultado de 1 + 2
+	 int resultado = 1 + 2;
+	 // El valor de resultado es 3
+	 System.out.println("1 + 2 = " + resultado);
+	 int resultado_original = resultado;
 
-	  // Los operadores se pueden usar entre variables (numéricas) y números
-	  // en este caso se resta 1 al valor de resultado primero y se asigna a
-	  // la variable resultado después
-	  resultado = resultado - 1;
-	  // El valor de resultado es 2
-	  System.out.println(resultado_original + " - 1 = " + resultado);
-	  resultado_original = resultado;
+	 // Los operadores se pueden usar entre variables (numéricas) y números
+	 // en este caso se resta 1 al valor de resultado primero y se asigna a
+	 // la variable resultado después
+	 resultado = resultado - 1;
+	 // El valor de resultado es 2
+	 System.out.println(resultado_original + " - 1 = " + resultado);
+	 resultado_original = resultado;
 
-	  // Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable
-	  //resultado
-	  resultado = resultado * 2;
-	  // El valor de resultado es 4
-	  System.out.println(resultado_original + " * 2 = " + resultado);
-	  resultado_original = resultado;
+	 // Multiplicamos el resultado por 2 y lo volvemos a asignar a la variable
+	 //resultado
+	 resultado = resultado * 2;
+	 // El valor de resultado es 4
+	 System.out.println(resultado_original + " * 2 = " + resultado);
+	 resultado_original = resultado;
 
-	  // Dividimos el resultado entre 2 y lo asignamos
-	  resultado = resultado / 2;
-	  // El valor de resultado es 2
-	  System.out.println(resultado_original + " / 2 = " + resultado);
-	  resultado_original = resultado;
+	 // Dividimos el resultado entre 2 y lo asignamos
+	 resultado = resultado / 2;
+	 // El valor de resultado es 2
+	 System.out.println(resultado_original + " / 2 = " + resultado);
+	 resultado_original = resultado;
 
-	  resultado = resultado + 8;
-	  // El valor de resultado es 10
-	  System.out.println(resultado_original + " + 8 = " + resultado);
-	  resultado_original = resultado;
+	 resultado = resultado + 8;
+	 // El valor de resultado es 10
+	 System.out.println(resultado_original + " + 8 = " + resultado);
+	 resultado_original = resultado;
 
-	  // Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo
-	  // asignamos
-	  resultado = resultado % 7;
-	  // El valor de resultado es 3
-	  System.out.println(resultado_original + " % 7 = " + resultado);
-      }
-  }
+	 // Dividimos el resultado entre 7 y nos quedamos con el resto, luego lo
+	 // asignamos
+	 resultado = resultado % 7;
+	 // El valor de resultado es 3
+	 System.out.println(resultado_original + " % 7 = " + resultado);
+     }
+ }
 #+END_SRC
 
 #+RESULTS: Aritmeticos
@@ -157,16 +162,19 @@ Como vimos anteriormente, el operador suma *+* se puede utilizar también para c
 
 #+CAPTION: Concatenación
 #+NAME: Concatenacion
-#+BEGIN_SRC java :exports both :classname Concatenacion
+#+BEGIN_SRC java
 class Concatenacion {
     public static void main(String[] args){
-        String firstString = "Esto es";
-        String secondString = " una cadena de texto concatenada.";
-        String thirdString = firstString+secondString;
-        System.out.println(thirdString);
+	String firstString = "Esto es";
+	String secondString = " una cadena de texto concatenada.";
+	String thirdString = firstString+secondString;
+	System.out.println(thirdString);
     }
 }
 #+END_SRC
+
+#+RESULTS: Concatenacion
+: Esto es una cadena de texto concatenada.
 
 
 *** Operadores unarios
@@ -181,10 +189,10 @@ En java hay un tipo de operadores aritméticos que sólo se utilizan en un opera
 
 #+CAPTION: Unarios
 #+NAME: Unarios
-#+BEGIN_SRC java :exports both :eval no-export
+#+BEGIN_SRC java
 class Unarios {
     public static void main(String[] args) {
-        int resultado = +1;
+	int resultado = +1;
 	// El resultado es 1
 	System.out.println(resultado);
 
@@ -221,24 +229,24 @@ Los operadores de incremento y decremento (*++* y *--*) actuan de manera diferen
 
 #+CAPTION: Prefijos y Postfijos
 #+NAME: PrePost
-#+BEGIN_SRC java :exports both :eval no-export
-  class PrePost {
-      public static void main(String[] args){
-	  int i = 3;
-	  i++;
-	  // imprime 4
-	  System.out.println(i);
-	  ++i;			   
-	  // imprime 5
-	  System.out.println(i);
-	  // imprime 6
-	  System.out.println(++i);
-	  // imprime 6
-	  System.out.println(i++);
-	  // imprime 7
-	  System.out.println(i);
-      }
-  }
+#+BEGIN_SRC java
+class PrePost {
+    public static void main(String[] args){
+	int i = 3;
+	i++;
+	// imprime 4
+	System.out.println(i);
+	++i;			   
+	// imprime 5
+	System.out.println(i);
+	// imprime 6
+	System.out.println(++i);
+	// imprime 6
+	System.out.println(i++);
+	// imprime 7
+	System.out.println(i);
+    }
+}
 #+END_SRC
 
 #+RESULTS: PrePost
@@ -266,30 +274,30 @@ Normalmente estos operadores se utilizarán en sentencias que requieran un valor
 
 #+NAME: Comparacion
 #+CAPTION: Comparación
-#+BEGIN_SRC java :exports both :eval no-export
-  class Comparacion {
+#+BEGIN_SRC java
+class Comparacion {
 
-      public static void main(String[] args){
-	  int valor1 = 1;
-	  int valor2 = 2;
-	  System.out.println ("valor1="+valor1+", valor2="+valor2);
-	  if(valor1 == valor2) {
-	      System.out.println("valor1 == valor2 --> " + (valor1 == valor2));
-	  }
-	  if (valor1 != valor2) {
-	      System.out.println("valor1 != valor2 --> " + (valor1 != valor2));
-	  }
-	  if (valor1 > valor2) {
-	      System.out.println("valor1 > valor2 --> " + (valor1 > valor2));
-	  }
-	  if (valor1 < valor2) {
-	      System.out.println("valor1 < valor2 --> " + (valor1 < valor2));
-	  }
-	  if (valor1 <= valor2) {
-	      System.out.println("valor1 <= valor2 --> " + (valor1 <= valor2));
-	  }
-      }
-  }
+    public static void main(String[] args){
+	int valor1 = 1;
+	int valor2 = 2;
+	System.out.println ("valor1="+valor1+", valor2="+valor2);
+	if(valor1 == valor2) {
+	    System.out.println("valor1 == valor2 --> " + (valor1 == valor2));
+	}
+	if (valor1 != valor2) {
+	    System.out.println("valor1 != valor2 --> " + (valor1 != valor2));
+	}
+	if (valor1 > valor2) {
+	    System.out.println("valor1 > valor2 --> " + (valor1 > valor2));
+	}
+	if (valor1 < valor2) {
+	    System.out.println("valor1 < valor2 --> " + (valor1 < valor2));
+	}
+	if (valor1 <= valor2) {
+	    System.out.println("valor1 <= valor2 --> " + (valor1 <= valor2));
+	}
+    }
+}
 #+END_SRC
 
 #+RESULTS: Comparacion
@@ -302,18 +310,18 @@ A veces es interesante comprobar si una comprobación cumple mas de una condici�
 
 #+NAME: Condicionales
 #+CAPTION: Operadores Condicionales
-#+BEGIN_SRC java :exports both :eval no-export
-  class Condicionales {
+#+BEGIN_SRC java
+class Condicionales {
 
-      public static void main(String[] args){
-	  int valor1 = 1;
-	  int valor2 = 2;
-	  if((valor1 == 1) && (valor2 == 2))
-	      System.out.println("valor1 es 1 AND (Y) valor2 es 2");
-	  if((valor1 == 1) || (valor2 == 1))
-	      System.out.println("valor1 es 1 OR (O) valor2 es 1");
-      }
-  }
+    public static void main(String[] args){
+	int valor1 = 1;
+	int valor2 = 2;
+	if((valor1 == 1) && (valor2 == 2))
+	    System.out.println("valor1 es 1 AND (Y) valor2 es 2");
+	if((valor1 == 1) || (valor2 == 1))
+	    System.out.println("valor1 es 1 OR (O) valor2 es 1");
+    }
+}
 #+END_SRC
 
 #+RESULTS: Condicionales
@@ -325,7 +333,7 @@ En java tenemos principalmente dos estructuras condicionales, la primera es la q
 
 ** if y else
 La sentencia ~if~ se escribe de la siguiente manera:
-#+BEGIN_SRC java :eval no-export
+#+BEGIN_SRC java
 if (condicion) {
     proceso;
 }
@@ -336,7 +344,7 @@ Si la condición se cumple el ~proceso~ (que puede ser un número indeterminado 
 
 Hay veces que queremos que si se cumple una condición se ejecute un determinado código y, si no se cumple, otro, esto lo conseguimos con la sentencia ~else~ que tiene una forma parecida al ~if~, pero en este caso no se especifica condición, sino que la condición es que no se cumpla el ~if~.
 
-#+BEGIN_SRC java :eval no-export
+#+BEGIN_SRC java
 if (condicion) {
     proceso;
 } else {
@@ -345,16 +353,16 @@ if (condicion) {
 #+END_SRC
 
 Puede suceder que queramos comprobar una cosa y luego, independientemente otra, en ese caso solo tendríamos que tener un ~if~ primero y, una vez cerrado, otro con otra condición, en ese caso serían sentencias independientes y no habría ningún problema, pero podemos querer comprobar algo y, si se cumple, otra cosa después, esto lo hacemos /anidando/ sentencias ~if~ o ~else~:
-#+BEGIN_SRC java :eval no-export
+#+BEGIN_SRC java
 if (condicion1) {
     proceso1;
     if (condicion2) {
-        proceso2;
+	proceso2;
     }
     proceso3;
 } else {
     if (condicion3) {
-        proceso4;
+	proceso4;
     }
 }
 #+END_SRC
@@ -363,28 +371,31 @@ Si nos fijamos en el ~else~ (aunque esto puede ocurrir en cualquier otra parte, 
 
 #+NAME: Elseif
 #+CAPTION: Else-If
-#+BEGIN_SRC java :exports both :classname Elseif
-  class Elseif {
-    public static void main (String [] args) {
-      int val = 10;
-      if (val == 0) {
-	System.out.println("val = 0");
-      } else if (val == 1) {
-	System.out.println("val = 1");
-      } else if (val == 2) {
-	System.out.println("val = 2");
-      } else if (val == 3) {
-	System.out.println("val = 3");
-      } else if (val == 4) {
-	System.out.println("val = 4");
-      } else if (val == 5) {
-	System.out.println("val = 5");
-      } else {
-	System.out.println("val > 5");
-      }
+#+BEGIN_SRC java
+class Elseif {
+  public static void main (String [] args) {
+    int val = 10;
+    if (val == 0) {
+      System.out.println("val = 0");
+    } else if (val == 1) {
+      System.out.println("val = 1");
+    } else if (val == 2) {
+      System.out.println("val = 2");
+    } else if (val == 3) {
+      System.out.println("val = 3");
+    } else if (val == 4) {
+      System.out.println("val = 4");
+    } else if (val == 5) {
+      System.out.println("val = 5");
+    } else {
+      System.out.println("val > 5");
     }
   }
+}
 #+END_SRC
+
+#+RESULTS: Elseif
+: val > 5
 
 En este caso como el valor de la variable ~val~ es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia ~else~ si hiciéramos esto anidando sentencias ~if~ y ~else~ el código se /iría/ muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia ~switch~.
 
@@ -393,35 +404,38 @@ En este caso como el valor de la variable ~val~ es 10, pasaría por cada una de 
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 #+CAPTION: Switch
 #+NAME: Switch
-#+BEGIN_SRC java :exports both :classname Switch
-  class Switch {
-      public static void main (String [] args) {
-	int val = 10;
-	switch(val) {
-	case 0:
-	  System.out.println("val = 0");
-	  break;
-	case 1:
-	  System.out.println("val = 1");
-	  break;
-	case 2:
-	  System.out.println("val = 2");
-	  break;
-	case 3:
-	  System.out.println("val = 3");
-	  break;
-	case 4:
-	  System.out.println("val = 4");
-	  break;
-	case 5:
-	  System.out.println("val = 5");
-	  break;
-	default:
-	  System.out.println("val > 5");
-	}
+#+BEGIN_SRC java
+class Switch {
+    public static void main (String [] args) {
+      int val = 10;
+      switch(val) {
+      case 0:
+	System.out.println("val = 0");
+	break;
+      case 1:
+	System.out.println("val = 1");
+	break;
+      case 2:
+	System.out.println("val = 2");
+	break;
+      case 3:
+	System.out.println("val = 3");
+	break;
+      case 4:
+	System.out.println("val = 4");
+	break;
+      case 5:
+	System.out.println("val = 5");
+	break;
+      default:
+	System.out.println("val > 5");
       }
     }
+  }
 #+END_SRC
+
+#+RESULTS: Switch
+: val > 5
 
 Como se puede observar, el código es mucho más claro, tenemos una sola sentencia condicional, ~switch~, y esta, en base al valor que tenga la variable, entrará por un ~case~ o por otro y, en caso de que no coincida con ninguno, entrará por el ~default~. Si, por ejemplo, cambiásemos el valor de ~val~ a 3, la salida que nos mostraría el programa sería la siguiente:
 
@@ -430,66 +444,204 @@ Como se puede observar, el código es mucho más claro, tenemos una sola sentenc
 Podemos observar también una sentencia que no habíamos visto antes, la sentencia ~break~, esta sentencia /rompe/ la ejecución del bloque en el que se encuentra, sería como ir a la llave de cierre, normalmente está desaconsejado su uso, pero en la sentencia ~switch~ es necesaria para cortar la ejecución donde nos interese, ya que, a diferencia de con las estructuras ~if-else~, que están englobadas con llaves que nos hacen de corte, los ~case~ y ~default~ son etiquetas, y no delimitan código, lo marcan. Veamos que pasa si no ponemos la sentencia ~break~ en un ~switch~.
 #+CAPTION: Switch2
 #+NAME: Switch2
-#+BEGIN_SRC java :exports both :classname Switch2
-  class Switch2 {
-      public static void main (String [] args) {
-	int val = 2;
-	//Inicializamos un contador para saber por cuantos cases pasamos;
-	int contador = 0;
-	switch(val) {
-	case 0:
-	  contador++;
-	case 1:
-	  contador++;
-	case 2:
-	  contador++;
-	case 3:
-	  contador++;
-	case 4:
-	  contador++;
-	case 5:
-	  contador++;
-	case 6:
-	  contador++;
-	case 7:
-	  contador++;
-	case 8:
-	  contador++;
-	case 9:
-	  contador++;
-	case 10:
-	  contador++;
-	  System.out.println("He pasado por "+contador+" cases. El número es menor o igual que 10");
-	}
+#+BEGIN_SRC java
+class Switch2 {
+    public static void main (String [] args) {
+      int val = 2;
+      //Inicializamos un contador para saber por cuantos cases pasamos;
+      int contador = 0;
+      switch(val) {
+      case 0:
+	contador++;
+      case 1:
+	contador++;
+      case 2:
+	contador++;
+      case 3:
+	contador++;
+      case 4:
+	contador++;
+      case 5:
+	contador++;
+      case 6:
+	contador++;
+      case 7:
+	contador++;
+      case 8:
+	contador++;
+      case 9:
+	contador++;
+      case 10:
+	contador++;
+	System.out.println("He pasado por "+contador+" cases. El número es menor o igual que 10");
       }
     }
+  }
 #+END_SRC
+
+#+RESULTS: Switch2
+: He pasado por 9 cases. El número es menor o igual que 10
 
 ¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia ~break~ para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta ~default~ no es imprescindible, como en la instrucción ~if~ no es imprescindible el ~else~, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
 
 ** Condicional ternario
 Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
 
-#+BEGIN_SRC java :eval no-export
-  String miString = (condicion)?"condicion es verdadera":"condicion es falsa";
+#+BEGIN_SRC java
+String miString = (condicion)?"condicion es verdadera":"condicion es falsa";
 #+END_SRC
 
 Analizando por partes tenemos, a la izquierda del igual, una declaración de variable de tipo ~String~ como las que hemos visto hasta ahora, a la derecha tenemos, primero una condición lógica (del mismo tipo que las que se usan en las sentencias ~if~, luego un signo de interrogación ~?~ que es el que nos indica que ese valor lógico no es para asignar a la variable, como hemos visto cuando asignábamos variables de tipo ~boolean~, sino que es la condición para asignar la variable, el siguiente valor ~"condicion es verdadera"~ es el valor que tomará la variable ~miString~ si ~(condicion)~ es verdadera. Luego encontramos un signo de dos puntos ~:~ que separa las condiciones verdadera y falsa y, por último ~"condicion el falsa"~ que, como se puede intuir, es el valor que tomará ~miString~ si ~(condicion)~ es falsa.
 
 Este condicional puede ser escrito con sentencias ~if-else~ de la siguiente manera (el resultado del código será el mismo):
 
-#+BEGIN_SRC java :eval no-export
-  String miString;
-  if (condicion) {
-    miString = "condicion es verdadera";
-  } else {
-    miString = "condicion es falsa";
-  }
+#+BEGIN_SRC java
+String miString;
+if (condicion) {
+  miString = "condicion es verdadera";
+} else {
+  miString = "condicion es falsa";
+}
 #+END_SRC
 
 La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
 
 * Bucles
+La ejecució normal de un programa en java (y en casi cualquier lenguaje de programación) se hace /de arriba a abajo/ desde que empieza hasta que termina, los bucles son estructuras de control que permiten que una parte del código se ejecute más de una vez en base a una condición.
+** El bucle while
+El tipo de bucle más simple que nos encontramos es el bucle ~while~, este bucle se va a ejecutar /mientras/ (while) la condición se cumpla y, una vez esta deje de cumplirse, seguirá desde el final del mismo.
+
+Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
+
+La estructura de un bucle ~while~ es la siguiente:
+#+RESULTS:
+[[file:whileloop.png]]
+
+Por ejemplo, si queremos un programa que muestre por pantalla los números del 1 al 10, podemos hacer lo siguiente:
+
+#+CAPTION: Bucle While
+#+NAME: BucleWhile
+#+BEGIN_SRC java
+class BucleWhile {
+
+    public static void main(String[] args) {
+	//Ponemos el número con el valor que queremos al principio
+	int numeroActual=1;
+
+	//Bucle while
+	//Condición: que numeroActual sea menor o igual que 10
+	while (numeroActual<=10) {
+
+	    //Imprimimos por pantalla el número con su valor en este momento
+	    System.out.println(numeroActual);
+
+	    //Aumentamos el valor del número
+	    //Si no lo hacemos, el valor de númeroActual siempre será menor o igual a 10 y tendremos un bucle infinito
+	    numeroActual++;
+	}
+    }
+
+}
+#+END_SRC
+
+#+RESULTS: BucleWhile
+: 1
+: 2
+: 3
+: 4
+: 5
+: 6
+: 7
+: 8
+: 9
+: 10 
+** El bucle for
+El bucle ~for~ es un caso especial del bucle ~while~, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle ~for~ lo haríamos así:
+
+#+NAME: BucleFor
+#+CAPTION: Bucle For
+#+BEGIN_SRC java
+class BucleFor {
+
+    public static void main (String[] args) {
+	for (int numeroActual=1; numeroActual<=10; numeroActual++) {
+	    System.out.println(numeroActual);
+	}
+    }
+
+}
+#+END_SRC
+
+Como podemos ver, el resultado de este programa será exáctamente el mismo que el anterior:
+
+#+RESULTS: BucleFor
+: 1
+: 2
+: 3
+: 4
+: 5
+: 6
+: 7
+: 8
+: 9
+: 10 
+
+La decisión de utiliar un tipo de bucle u otro depende del programador, pero se suele utiliar el bucle ~for~ para situaciones en las que haya que /contar/, como en el caso que hemos puesto porque nos permite crear y deshechar la variable en la propia cabecera sin tener que llevar datos innecesarios, aunque por supuesto podemos usar una variable que tengamos de antes como en el bucle ~while~ e, incluso, no modificar la variable en la cabecera y hacerlo en el cuerpo.
+
+#+NAME: BucleForSinInicializacion
+#+CAPTION: Bucle For sin inicialización en la cabecera
+#+BEGIN_SRC java
+class BucleForSinInicializacion {
+
+    public static void main (String[] args) {
+    int numeroActual=1;
+    for (; numeroActual<=10; numeroActual++) {
+	    System.out.println(numeroActual);
+	}
+    }
+
+}
+#+END_SRC
+
+#+NAME: BucleForSinModificacion
+#+CAPTION: Bucle For Sin Modificacion en la cabecera
+#+BEGIN_SRC java
+class BucleForSinModificacion {
+
+    public static void main (String[] args) {
+	for (int numeroActual=1; numeroActual<=10;) {
+	    System.out.println(numeroActual);
+	    numeroActual++;
+	}
+    }
+
+}
+#+END_SRC
+
+Y, por supuesto, si sacamos de la cabecera tanto la inicialización como la modificación de la variable, lo que tenemos es un bucle ~while~ con otro nombre:
+
+#+NAME: BucleForSinInicializacionNiModificacion
+#+CAPTION: Bucle For Sin inicialización ni Modificacion en la cabecera
+#+BEGIN_SRC java
+class BucleForSinInicializacionNiModificacion {
+
+    public static void main (String[] args) {
+	int numeroActual=1;
+	for (; numeroActual<=10;) {
+	    System.out.println(numeroActual);
+	    numeroActual++;
+	}
+    }
+
+}
+#+END_SRC
+
+** El bucle do-while
+Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle ~do-while~.
+
+Este bucle se trata de un bucle ~while~ en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
+
+
 * Métodos
 * Objetos
 
