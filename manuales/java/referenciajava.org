@@ -5,7 +5,7 @@
 [[./referenciajava.pdf][Descargar como PDF]]
 
 * Introducción
-Java es un lenguage de programación orientado a objetos, se creó en 1996 y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (El lenguaje de la máquina virtual)
+Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
 ** Estructura de un programa
 
 #+CAPTION: Hola Mundo
