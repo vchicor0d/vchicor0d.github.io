@@ -716,5 +716,153 @@ Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si
 : Hola, Bimo
 : Hola, Kirby
 
+En Java, se dice que los parámetros que se pasan a los métodos se hacen /por valor/, esto quiere decir que cada método hace una copia del parámetro cuando se invoca y, se asignamos un nuevo valor al parámetro dentro del método, este no cambiará en el método que lo invocó, veamos un ejemplo:
+
+#+Caption: Paso de valor
+#+Name: PasoDeValor
+#+BEGIN_SRC java :export both
+  class PasoDeValor {
+
+    //Declaramos un método al que llamaremos,
+    //Como podemos ver, podemos declararlo antes
+    //del método main, aunque se le llamará después
+    static void cambiarValor(int numero) {
+      numero = 2;
+    }
+  
+    public static void main (String [] args) {
+      //Declaramos una variable y le asignamos un valor
+      int numero = 1;
+
+      //Llamamos al métod de cambio de valor
+      cambiarValor(numero);
+
+      //Mostramos el resultado por pantalla
+      System.out.println(numero);
+    }
+  
+  }
+#+END_SRC
+
+#+RESULTS: PasoDeValor
+
+Se puede pensar que el que los valores no pasen de los métodos a quien los llamó es poco util, pero si puede hacerse, para ello usaremos la sentencia *return*, que literalmente /devuelve/ el valor que le digamos, si modificamos un poco el programa anterior lo veremos:
+
+#+Caption: Retorno de valor
+#+Name: RetornoDeValor
+#+BEGIN_SRC java :export both
+  class RetornoDeValor {
+
+    //Declaramos un método al que llamaremos,
+    //Como podemos ver, podemos declararlo antes
+    //del método main, aunque se le llamará después.
+    //En este caso hemos cambiado el tipo de retorno del método
+    // de void (no devuleve nada) a int, y hemos añadido la sentencia
+    // return con nuestra variable.
+    static int cambiarValor(int numero) {
+      numero = 2;
+      return numero;
+    }
+  
+    public static void main (String [] args) {
+      //Declaramos una variable y le asignamos un valor
+      int numero = 1;
+
+      //Llamamos al métod de cambio de valor
+      //y le asignamos el valor del retorno
+      numero = cambiarValor(numero);
+
+      //Mostramos el resultado por pantalla
+      System.out.println(numero);
+    }
+  
+  }
+#+END_SRC
+
+#+RESULTS: RetornoDeValor
+
+Ahora, para ver otra característica del paso de parámetros a los métodos, tenemos que hacerlo mediante objetos, de momento no nos preocupemos mucho de ello, básicamente lo que tenemos que tener en cuenta es que si pasamos un objeto como parámetro y cambiamos el valor de una de sus propiedades dentro de un método, esta permanecerá cambiada incluso fuera del método, esto puede parecer lo opuesto a lo que acabamos de ver, pero no es así, si en lugar de cambiar el valor de una de las propiedades del objeto lo que hiciéramos fuera instanciar un nuevo objeto en la variable (como asignar un nuevo valor en las variables que ya conocemos), el valor de la variable original permanecería intacto, veamoslo de nuevo con dos ejemplos:
+
+#+Caption: Cambio de objeto
+#+Name: CambioDeObjeto
+#+BEGIN_SRC java :export both
+  import java.util.ArrayList;
+
+  class CambioDeObjeto {
+    public static void main (String [] args) {
+      /*
+	Creamos un objeto de tipo ArrayList, este objeto consiste un una lista del tipo de objetos
+	que le digamos entre los acentos, en este caso Integer (número entero), se declara como ya
+	sabemos TipoDeObjeto nombreDeLaVariable, y luego se le asigna un valor, en este caso, un objeto
+	nuevo de la clase ArrayList, los paréntesis que aparecen al final son porque estamos llamando
+	al método constructor del objeto, sin parámetros en este caso, aunque puede haberlos.
+       ,*/
+      ArrayList<Integer> lista = new ArrayList<Integer>();
+
+      /*
+	Añadimos un objeto de la clase Integer (un 1), en el objeto lista, para ello llamamos al método
+	add de la clase ArrayList, con un parámetro de tipo entero (el 1), este método añade un objeto a      la lista.
+       ,*/
+      lista.add(1);
+
+      //Imprimimos el valor del primer elemento de la lista (posición 0), llamando al método get de la clase ArrayList
+      System.out.println(lista.get(0));
+    }
+
+    /*
+      Se asigna un nuevo valor a la variable lista 
+     ,*/
+    static void nuevoObjeto(ArrayList<Integer> lista) {
+      lista = new ArrayList<Integer>();
+      lista.add(2);
+    }
+  }
+#+END_SRC
+
+#+RESULTS: CambioDeObjeto
+
+Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
+
+#+Caption: Cambio de propiedad
+#+Name: CambioDePropiedad
+#+BEGIN_SRC java :export both
+  import java.util.ArrayList;
+
+  class CambioDePropiedad {
+    public static void main (String [] args) {
+      /*
+	Creamos un objeto de tipo ArrayList, este objeto consiste un una lista del tipo de objetos
+	que le digamos entre los acentos, en este caso Integer (número entero), se declara como ya
+	sabemos TipoDeObjeto nombreDeLaVariable, y luego se le asigna un valor, en este caso, un objeto
+	nuevo de la clase ArrayList, los paréntesis que aparecen al final son porque estamos llamando
+	al método constructor del objeto, sin parámetros en este caso, aunque puede haberlos.
+       ,*/
+      ArrayList<Integer> lista = new ArrayList<Integer>();
+
+      //Llamamos al método para asignar un nuevo valor a la propiedad
+      anadirValor(lista);
+
+      /*
+	Añadimos un objeto de la clase Integer (un 1), en el objeto lista, para ello llamamos al método
+	add de la clase ArrayList, con un parámetro de tipo entero (el 1), este método añade un objeto a la lista.
+	En este caso, se añadirá en la posición 1 (la segunda).
+       ,*/
+      lista.add(1);
+
+      //Imprimimos el valor del primer elemento de la lista (posición 0), llamando al método get de la clase ArrayList
+      System.out.println(lista.get(0));
+    }
+
+    /*
+      Se asigna un nuevo valor a la variable lista
+     ,*/
+    static void nuevoObjeto(ArrayList<Integer> lista) {
+      lista.add(2);
+    }
+  }
+#+END_SRC
+
+#+RESULTS: CambioDePropiedad
+
 * Clases y objetos
 
