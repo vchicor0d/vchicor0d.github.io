@@ -9,6 +9,8 @@
 Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
 ** Estructura de un programa
 
+A lo largo de este texto veremos varios ejemplos de código fuente Java así como su salida por pantalla, a continuación un ejemplo de código Java:
+
 #+CAPTION: Hola Mundo
 #+NAME: HolaMundo
 #+BEGIN_SRC java :exports both :eval no-export
@@ -65,11 +67,14 @@ Este método es:
 }
 #+END_SRC
 
+Y a continuación un ejemplo de como sería su salida por pantalla si le decimos que nos llamamos Víctor:
+
 #+RESULTS: HolaMundo
 : ¿Cómo te llamas? Víctor
 : Hola, Víctor
 
 * Tipos de datos
+<<sec:tiposdedatos>>
 Los tipos de datos primitivos en java son los siguientes:
 | tipo    | descripción                                     | clase asociada |
 |---------+-------------------------------------------------+----------------|
@@ -177,6 +182,44 @@ class Concatenacion {
 #+RESULTS: Concatenacion
 : Esto es una cadena de texto concatenada.
 
+*** Casteo de valores
+Muchas veces, cuando estamos haciendo una operación aritmética, el valor que necesitamos /es más pequeño/ que los posibles valores que nos puede dar como resultado la operación, con esto no queremos decir que se produzca si, por ejemplo, sumamos dos números muy grandes (ya que en ese caso, lo que podría ocurrir sería que el valor máximo del tipo de dato se excediera y /diéramos la vuelta/, es decir, nos fuéramos a los números negativos, pero Java no se quejaría de esto), sino que si, por ejemplo, sumamos dos números de tipo /long/ y queremos guardar su resultado en una variable de tipo /int/, aunque el valor de los números a sumar cupiera perfectamente en una variable de tipo /int/, Java no tiene forma de saber esto, y se quejará por ello, veamos un ejemplo:
+
+#+Caption: Valor Muy Grande
+#+Name: ValorMuyGrande
+#+BEGIN_SRC java :exports both :eval none
+  class ValorMuyGrande {
+    public static void main(String[] args) {
+      long n1 = 2;
+      long n2 = 3;
+      int suma = n1 + n2;
+      System.out.println(suma);
+    }
+  }
+#+END_SRC
+
+El resultado que nos daría el compilador sería el siguiente:
+
+#+RESULTS: ValorMuyGrande
+: ValorMuyGrande.java:5: error: incompatible types: possible lossy conversion from long to int
+:   int suma = n1 + n2;
+:                 ^
+: 1 error
+
+En los casos en los que sabemos que ese valor no excederá nuestra variable, tenemos la opción de *castear* (digamos, prometer a Java algo) que la suma devolverá un determinado tipo, esto se hace poniendo entre paréntesis el tipo de dato que devolverá una determinada función, veamos el ejemplo:
+
+#+Caption: Valor Casteado
+#+Name: ValorCasteado
+#+BEGIN_SRC java :exports both :classname ValorCasteado
+  class ValorCasteado {
+    public static void main(String[] args) {
+      long n1 = 2;
+      long n2 = 3;
+      int suma = (int) (n1 + n2);
+      System.out.println(suma);
+    }
+  }
+#+END_SRC
 
 *** Operadores unarios
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
@@ -682,6 +725,7 @@ Podemos continuar con nuestro ejemplo de contar de 1 a 10, veamos como se haría
 : 9
 : 10 
 
+* Manejo de Excepciones
 * Métodos y funciones
 Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo /de arriba a abajo/, estamos en lo que se conoce como *programación estructurada*, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, con los métodos podemos ejecutar el mismo código pero con *parámetros* diferentes, veamos un ejemplo sencillo:
 
@@ -716,6 +760,38 @@ Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si
 #+RESULTS: MiPrimerMetodo
 : Hola, Bimo
 : Hola, Kirby
+
+** Paso de parámetros
+En el ejemplo anterior hemos visto que al método /saludar/ le pasábamos un parámetro, un nombre en este caso, de tipo String, cuando declaramos un método, dentro de los paréntesis le podemos poner, separados por comas, todos los parámetros que vaya a necesitar para cumplir su función, estos parámetros se escriben de la misma manera que se creaban las variables (pero sin inicializar), y cuando se les invoca se le pasan las variables necesarias que se correspondan con los parámetros que requiere, veamos un ejemplo:
+
+#+BEGIN_SRC java :exports code :eval none
+  //Supongamos que llegamos a este método,
+  //como se ve, no tiene parámetros ni devuleve nada (void)
+  public void metodo1() {
+    System.out.println("El número es: "+metodo2());
+  }
+
+  //Este método es privado, sólo se puede invocar desde
+  //esta clase, y devuelve un número entero,
+  //tampoco recibe parámetros
+  private int metodo2() {
+    int numero = metodo3(2);
+    return numero;
+  }
+
+  //Este es otro método privado, que recibe como
+  //parámetro un número entero y llama al metodo4
+  private int metodo3(int numero) {
+    return metodo4(numero, 0.5);
+  }
+
+  //Este método recibe como parámetros un número entero
+  //y un número decimal y los multiplica, después devuleve
+  //el resultado entero.
+  private int metodo4(int numero, double factor) {
+    return (Integer)(numero * factor);
+  }
+#+END_SRC
 
 En Java, se dice que los parámetros que se pasan a los métodos se hacen /por valor/, esto quiere decir que cada método hace una copia del parámetro cuando se invoca y, se asignamos un nuevo valor al parámetro dentro del método, este no cambiará en el método que lo invocó, veamos un ejemplo:
 
@@ -861,4 +937,74 @@ Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
 
 
 * Clases y objetos
+Como ya hemos comentado anteriormente, Java es un lenguaje de programación /orientado a objetos/, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,...) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.
 
+Muchas veces se usan indistintamente los términos clase y objeto, lo correcto es llamar clase al archivo fuente .java y objeto a las /instancias/ de este.
+
+** El método constructor
+En Java (y en cualquier otro lenguaje de programación orientado a objetos), llamamos instanciar al hecho de crear un objeto de una determinada clase en nuestro código, para ello hacemos uso de un tipo de método especial llamado *constructor*.
+
+Este método es especial por varios motivos:
+
+1. Es un método sin nombre, su nombre es el nombre de la propia clase
+2. Es necesario invocarlo unido a la palabra reservada *new*
+
+Esto lo hemos visto anteriormente en el ejemplo de paso de variables por valor a los métodos de la siguiente manera:
+
+#+BEGIN_SRC java :exports code :eval none
+  ArrayList<Integer> lista = new ArrayList<Integer>();
+#+END_SRC
+
+Analizando la sentencia anterior tenemos lo siguiente:
+- ArrayList<Integer>: El tipo de objeto que vamos a crear, exáctamente igual que cuando creábamos variables de tipo int, char, boolean, String,.... En este caso, un objeto ArrayList (Un tipo de lista) de objetos de tipo Integer (o int, números enteros)
+- lista: El nombre de la variable, nada nuevo aquí.
+- new ArrayList<Integer>(): y aquí tenemos la llamada al método constructor, como podemos ver, es un método que se llama igual que la clase que queremos instanciar (ArrayList<Integer>) y que va seguido por unos paréntesis, en este caso, sin nada dentro porque no le pasamos ningún parámetro, todo ello precedido de la palabra reservada *new*, que es la que le indica a Java que lo que venga detrás será un método constructor.
+
+En Java, por convención, las clases empiezan con mayúscula, meintras que los nombres de las variables y los métodos se escriben empezando con minúscula, en ambos casos siguiendo la convención /CamelCase/ (/UpperCamelCase/, comenzando con mayúscula para las clases y /lowerCamelCase/, comenzando con minúscula para lo demás), que consiste en, si necesitamos varias palabras en el nombre, separarlas con mayúsculas y sólo usarlas en ese caso o en caso de abreviaturas conocidas, por ejemplo, podríamos tener un método que se llamase /getSQL/, ya que /SQL/ es una abreviatura bien conocida.
+
+** El caso de la clase String
+
+Anteriormente hemos instanciado una clase que es un caso especial, no lo hemos hecho mediante un método constructor, sino asignándole un valor con = como hacíamos con los tipos primitivos, se trata de la clase String.
+
+Esta clase, por ser tan extendida se crea de esta manera, que nos puede dar la impresión de que se trata de un tipo de variable primitivo:
+
+#+BEGIN_SRC java :exports code :eval none
+  String nombre = "Kirby";
+#+END_SRC
+
+Pero en realidad lo que estábamos haciendo era crear una nueva instancia (un nuevo objeto) de la clase String.
+
+La clase String, como cualquier otra clase en Java necesariamente debe tener al menos un método constructor, y así es, es sólo que Java nos ofrece esta conveniencia.
+
+** El valor null
+Hasta ahora, cuando creábamos una variable esta podía estar inicializada o no, y, si lo estaba, tenía un valor válido dentro de su tipo, el valor *null* es un valor especial, nos permite indicar que el contenido de una variable de tipo objeto es nulo, es decir, no contiene nada pero existe como variable, el valor *null* es el mismo para cualquier tipo de objeto, se puede asignar a cualquier objeto con el operador de asignación (=) y puede ser usado en operaciones de comparación, vamos a ver un ejemplo:
+
+#+Caption: Valor null
+#+Name: ValorNull
+#+BEGIN_SRC java :exports both :classname ValorNull
+  class ValorNull {
+    public static void main(String [] args) {
+
+      //Asignamos el valor null a una objeto instancia de la clase String
+      String nombre = null;
+
+      //Comprobamos si la variable nombre es nula (valor null)
+      if (nombre == null) {
+	nombre = "Kirby";
+      }
+
+      System.out.println(nombre);
+
+    }
+  }
+#+END_SRC
+
+** Clases más conocidas
+
+*** String
+Como acabamos de ver, la clase String probablemente sea la clase más conocida de Java, empezamos a trabajar con ella prácticamente en el primer programa HolaMundo que hacemos y la utilizamos tanto como a los tipos primitivos, sirve para guardar cadenas de texto y no nos detendremos mucho más en ella.
+
+*** Clases asociadas a tipos primitivos
+Como ya vimos en la sección [[sec:tiposdedatos][Tipos de datos]], los tipos primitivos tienen una clase asociada a cada uno de ellos, el nombre del tipo de dato es normalmente una abreviatura del nombre completo de la clase y se escribe en minúscula, mientras que la clase, como hemos visto antes, se escribirá en mayúscula. Estas clases son especialmente útiles, ya que, además de contener una serie de métodos que nos ofrecen funciones para trabajar con estos tipos de datos, pueden ser usados para almacenar el valor *null* en ellos, indicando así que un dato que normalmente tendría un valor por defecto, no contiene nada.
+
+*** Matrices (o Arrays)
