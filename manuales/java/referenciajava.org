@@ -720,7 +720,7 @@ En Java, se dice que los parámetros que se pasan a los métodos se hacen /por v
 
 #+Caption: Paso de valor
 #+Name: PasoDeValor
-#+BEGIN_SRC java :export both
+#+BEGIN_SRC java :export both :classname PasoDeValor
   class PasoDeValor {
 
     //Declaramos un método al que llamaremos,
@@ -750,7 +750,7 @@ Se puede pensar que el que los valores no pasen de los métodos a quien los llam
 
 #+Caption: Retorno de valor
 #+Name: RetornoDeValor
-#+BEGIN_SRC java :export both
+#+BEGIN_SRC java :export both :classname RetornoDeValor
   class RetornoDeValor {
 
     //Declaramos un método al que llamaremos,
@@ -785,7 +785,7 @@ Ahora, para ver otra característica del paso de parámetros a los métodos, ten
 
 #+Caption: Cambio de objeto
 #+Name: CambioDeObjeto
-#+BEGIN_SRC java :export both
+#+BEGIN_SRC java :export both :classname CambioDeObjeto
   import java.util.ArrayList;
 
   class CambioDeObjeto {
@@ -825,7 +825,7 @@ Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
 
 #+Caption: Cambio de propiedad
 #+Name: CambioDePropiedad
-#+BEGIN_SRC java :export both
+#+BEGIN_SRC java :export both :classname CambioDePropiedad
   import java.util.ArrayList;
 
   class CambioDePropiedad {
