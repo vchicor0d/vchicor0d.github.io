@@ -187,7 +187,7 @@ Muchas veces, cuando estamos haciendo una operación aritmética, el valor que n
 
 #+Caption: Valor Muy Grande
 #+Name: ValorMuyGrande
-#+BEGIN_SRC java :exports both :eval none
+#+BEGIN_SRC java :exports code :eval none
   class ValorMuyGrande {
     public static void main(String[] args) {
       long n1 = 2;
@@ -200,11 +200,13 @@ Muchas veces, cuando estamos haciendo una operación aritmética, el valor que n
 
 El resultado que nos daría el compilador sería el siguiente:
 
-#+RESULTS: ValorMuyGrande
+#+RESULTS:
 : ValorMuyGrande.java:5: error: incompatible types: possible lossy conversion from long to int
 :   int suma = n1 + n2;
 :                 ^
 : 1 error
+
+Es decir, Java nos está indicando que queremos meter un valor potencialmente más grande que la variable que lo va a contener, se va a producir una /pérdida/ en la conversión de ~long~ a ~int~.
 
 En los casos en los que sabemos que ese valor no excederá nuestra variable, tenemos la opción de *castear* (digamos, prometer a Java algo) que la suma devolverá un determinado tipo, esto se hace poniendo entre paréntesis el tipo de dato que devolverá una determinada función, veamos el ejemplo:
 
@@ -934,7 +936,6 @@ Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
     }
   }
 #+END_SRC
-
 
 * Clases y objetos
 Como ya hemos comentado anteriormente, Java es un lenguaje de programación /orientado a objetos/, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,...) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.

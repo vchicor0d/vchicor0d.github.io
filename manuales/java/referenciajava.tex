@@ -1,4 +1,4 @@
-% Created 2020-01-21 mar 15:20
+% Created 2020-01-21 mar 22:06
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -34,10 +34,12 @@
 \href{./referenciajava.odt}{Descargar como OpenDocument}
 
 \section{Introducción}
-\label{sec:orgb366a3c}
+\label{sec:org8c4fa79}
 Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de \emph{Java Virtual Machine}) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
 \subsection{Estructura de un programa}
-\label{sec:orgb8c3591}
+\label{sec:org19c6e47}
+
+A lo largo de este texto veremos varios ejemplos de código fuente Java así como su salida por pantalla, a continuación un ejemplo de código Java:
 
 \begin{verbatim}
 //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
@@ -92,8 +94,10 @@ Este método es:
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgeb5d93d}
+\captionof{figure}{\label{orgf959cbb}
 Hola Mundo}
+
+Y a continuación un ejemplo de como sería su salida por pantalla si le decimos que nos llamamos Víctor:
 
 \begin{verbatim}
 ¿Cómo te llamas? Víctor
@@ -101,7 +105,8 @@ Hola, Víctor
 \end{verbatim}
 
 \section{Tipos de datos}
-\label{sec:org9501a86}
+\label{sec:orgfb23567}
+\label{org248014b}
 Los tipos de datos primitivos en java son los siguientes:
 \begin{center}
 \begin{tabular}{lll}
@@ -121,15 +126,15 @@ char & caracter de texto (único) & Character\\
 
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 \section{Operadores}
-\label{sec:org1802df3}
+\label{sec:orge677e7a}
 \subsection{Asignación}
-\label{sec:org9585937}
+\label{sec:org8ebf733}
 El operador \textbf{=} se usa para asignar valores a variables:
 \begin{verbatim}
 int a = 0;
 \end{verbatim}
 \subsection{Aritméticos}
-\label{sec:org409d40f}
+\label{sec:orgb10d28e}
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
 \begin{center}
 \begin{tabular}{ll}
@@ -191,7 +196,7 @@ public class Aritmeticos {
      }
  }
 \end{verbatim}
-\captionof{figure}{\label{org939da5d}
+\captionof{figure}{\label{orga5af572}
 Aritmeticos}
 
 \begin{verbatim}
@@ -215,16 +220,62 @@ class Concatenacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org74e6eb3}
+\captionof{figure}{\label{org65e2d93}
 Concatenación}
 
 \begin{verbatim}
 Esto es una cadena de texto concatenada.
 \end{verbatim}
 
+\subsubsection{Casteo de valores}
+\label{sec:org281287a}
+Muchas veces, cuando estamos haciendo una operación aritmética, el valor que necesitamos \emph{es más pequeño} que los posibles valores que nos puede dar como resultado la operación, con esto no queremos decir que se produzca si, por ejemplo, sumamos dos números muy grandes (ya que en ese caso, lo que podría ocurrir sería que el valor máximo del tipo de dato se excediera y \emph{diéramos la vuelta}, es decir, nos fuéramos a los números negativos, pero Java no se quejaría de esto), sino que si, por ejemplo, sumamos dos números de tipo \emph{long} y queremos guardar su resultado en una variable de tipo \emph{int}, aunque el valor de los números a sumar cupiera perfectamente en una variable de tipo \emph{int}, Java no tiene forma de saber esto, y se quejará por ello, veamos un ejemplo:
+
+\begin{verbatim}
+class ValorMuyGrande {
+  public static void main(String[] args) {
+    long n1 = 2;
+    long n2 = 3;
+    int suma = n1 + n2;
+    System.out.println(suma);
+  }
+}
+\end{verbatim}
+\captionof{figure}{\label{orgc59c113}
+Valor Muy Grande}
+
+El resultado que nos daría el compilador sería el siguiente:
+
+\begin{verbatim}
+ValorMuyGrande.java:5: error: incompatible types: possible lossy conversion from long to int
+  int suma = n1 + n2;
+                ^
+1 error
+\end{verbatim}
+
+Es decir, Java nos está indicando que queremos meter un valor potencialmente más grande que la variable que lo va a contener, se va a producir una \emph{pérdida} en la conversión de \texttt{long} a \texttt{int}.
+
+En los casos en los que sabemos que ese valor no excederá nuestra variable, tenemos la opción de \textbf{castear} (digamos, prometer a Java algo) que la suma devolverá un determinado tipo, esto se hace poniendo entre paréntesis el tipo de dato que devolverá una determinada función, veamos el ejemplo:
+
+\begin{verbatim}
+class ValorCasteado {
+  public static void main(String[] args) {
+    long n1 = 2;
+    long n2 = 3;
+    int suma = (int) (n1 + n2);
+    System.out.println(suma);
+  }
+}
+\end{verbatim}
+\captionof{figure}{\label{orgc3ddcae}
+Valor Casteado}
+
+\begin{verbatim}
+5
+\end{verbatim}
 
 \subsubsection{Operadores unarios}
-\label{sec:org8849a0c}
+\label{sec:org7b22e5a}
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
 \begin{center}
 \begin{tabular}{ll}
@@ -265,7 +316,7 @@ class Unarios {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgbd6fa61}
+\captionof{figure}{\label{org82492cd}
 Unarios}
 
 \begin{verbatim}
@@ -298,7 +349,7 @@ class PrePost {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org6a5dd3d}
+\captionof{figure}{\label{org9165745}
 Prefijos y Postfijos}
 
 \begin{verbatim}
@@ -310,7 +361,7 @@ Prefijos y Postfijos}
 \end{verbatim}
 
 \subsection{Lógicos}
-\label{sec:org127fe4f}
+\label{sec:orgc4da27e}
 Son operadores que devuelven valores lógicos (verdadero o falso)
 \begin{center}
 \begin{tabular}{ll}
@@ -355,7 +406,7 @@ class Comparacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org92bb83a}
+\captionof{figure}{\label{orge2993f9}
 Comparación}
 
 \begin{verbatim}
@@ -380,7 +431,7 @@ class Condicionales {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org6b2b90d}
+\captionof{figure}{\label{org4dd81f4}
 Operadores Condicionales}
 
 \begin{verbatim}
@@ -389,11 +440,11 @@ valor1 es 1 OR (O) valor2 es 1
 \end{verbatim}
 
 \section{Condicionales}
-\label{sec:orgb0a394e}
+\label{sec:org0d6d462}
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias \texttt{if} y \texttt{else}, y la segunda es la sentencia \texttt{switch}.
 
 \subsection{if y else}
-\label{sec:org1f365c6}
+\label{sec:org73e0d99}
 La sentencia \texttt{if} se escribe de la siguiente manera:
 \begin{verbatim}
 if (condicion) {
@@ -453,7 +504,7 @@ class Elseif {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org8929eac}
+\captionof{figure}{\label{orga8dc19b}
 Else-If}
 
 \begin{verbatim}
@@ -463,7 +514,7 @@ val > 5
 En este caso como el valor de la variable \texttt{val} es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia \texttt{else} si hiciéramos esto anidando sentencias \texttt{if} y \texttt{else} el código se \emph{iría} muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia \texttt{switch}.
 
 \subsection{switch}
-\label{sec:orgf871074}
+\label{sec:org05c4f1e}
 
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 \begin{verbatim}
@@ -495,7 +546,7 @@ class Switch {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{org5a61333}
+\captionof{figure}{\label{org280b7d6}
 Switch}
 
 \begin{verbatim}
@@ -543,7 +594,7 @@ class Switch2 {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{orgec2bbec}
+\captionof{figure}{\label{org18a4864}
 Switch2}
 
 \begin{verbatim}
@@ -553,7 +604,7 @@ He pasado por 9 cases. El número es menor o igual que 10
 ¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia \texttt{break} para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta \texttt{default} no es imprescindible, como en la instrucción \texttt{if} no es imprescindible el \texttt{else}, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
 
 \subsection{Condicional ternario}
-\label{sec:org5338ef2}
+\label{sec:orgf23bb8b}
 Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
 
 \begin{verbatim}
@@ -576,10 +627,10 @@ if (condicion) {
 La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
 
 \section{Bucles}
-\label{sec:orge042460}
+\label{sec:orgf21c33f}
 La ejecució normal de un programa en java (y en casi cualquier lenguaje de programación) se hace \emph{de arriba a abajo} desde que empieza hasta que termina, los bucles son estructuras de control que permiten que una parte del código se ejecute más de una vez en base a una condición.
 \subsection{El bucle while}
-\label{sec:org718ab0f}
+\label{sec:orgae97ad3}
 El tipo de bucle más simple que nos encontramos es el bucle \texttt{while}, este bucle se va a ejecutar \emph{mientras} (while) la condición se cumpla y, una vez esta deje de cumplirse, seguirá desde el final del mismo.
 
 Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
@@ -615,10 +666,10 @@ class BucleWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org1b74001}
+\captionof{figure}{\label{org90e80e1}
 Bucle While}
 \subsection{El bucle for}
-\label{sec:orgcfac0a3}
+\label{sec:orgff111ac}
 El bucle \texttt{for} es un caso especial del bucle \texttt{while}, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle \texttt{for} lo haríamos así:
 
 \begin{verbatim}
@@ -632,7 +683,7 @@ class BucleFor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org37413ff}
+\captionof{figure}{\label{org310bc68}
 Bucle For}
 
 Como podemos ver, el resultado de este programa será exáctamente el mismo que el anterior:
@@ -664,7 +715,7 @@ class BucleForSinInicializacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org3c18753}
+\captionof{figure}{\label{orgd6699f0}
 Bucle For sin inicialización en la cabecera}
 
 \begin{verbatim}
@@ -679,7 +730,7 @@ class BucleForSinModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org722b69f}
+\captionof{figure}{\label{org7dc3be6}
 Bucle For Sin Modificacion en la cabecera}
 
 Y, por supuesto, si sacamos de la cabecera tanto la inicialización como la modificación de la variable, lo que tenemos es un bucle \texttt{while} con otro nombre:
@@ -697,11 +748,11 @@ class BucleForSinInicializacionNiModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgab6538c}
+\captionof{figure}{\label{org3e4848c}
 Bucle For Sin inicialización ni Modificacion en la cabecera}
 
 \subsection{El bucle do-while}
-\label{sec:orge21b985}
+\label{sec:orgb9ac1a7}
 Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle \texttt{do-while}.
 
 Este bucle se trata de un bucle \texttt{while} en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
@@ -734,7 +785,7 @@ class DoWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org23fb128}
+\captionof{figure}{\label{org2e53b5c}
 Bucle do-while}
 
 \begin{verbatim}
@@ -750,8 +801,10 @@ Bucle do-while}
 10 
 \end{verbatim}
 
+\section{Manejo de Excepciones}
+\label{sec:org68d37a6}
 \section{Métodos y funciones}
-\label{sec:orgf33c635}
+\label{sec:org88e2415}
 Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo \emph{de arriba a abajo}, estamos en lo que se conoce como \textbf{programación estructurada}, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, con los métodos podemos ejecutar el mismo código pero con \textbf{parámetros} diferentes, veamos un ejemplo sencillo:
 
 \begin{verbatim}
@@ -779,12 +832,45 @@ class MiPrimerMetodo {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org85140a0}
+\captionof{figure}{\label{org4608f9f}
 Mi primer método}
 
 \begin{verbatim}
 Hola, Bimo
 Hola, Kirby
+\end{verbatim}
+
+\subsection{Paso de parámetros}
+\label{sec:org063aa80}
+En el ejemplo anterior hemos visto que al método \emph{saludar} le pasábamos un parámetro, un nombre en este caso, de tipo String, cuando declaramos un método, dentro de los paréntesis le podemos poner, separados por comas, todos los parámetros que vaya a necesitar para cumplir su función, estos parámetros se escriben de la misma manera que se creaban las variables (pero sin inicializar), y cuando se les invoca se le pasan las variables necesarias que se correspondan con los parámetros que requiere, veamos un ejemplo:
+
+\begin{verbatim}
+//Supongamos que llegamos a este método,
+//como se ve, no tiene parámetros ni devuleve nada (void)
+public void metodo1() {
+  System.out.println("El número es: "+metodo2());
+}
+
+//Este método es privado, sólo se puede invocar desde
+//esta clase, y devuelve un número entero,
+//tampoco recibe parámetros
+private int metodo2() {
+  int numero = metodo3(2);
+  return numero;
+}
+
+//Este es otro método privado, que recibe como
+//parámetro un número entero y llama al metodo4
+private int metodo3(int numero) {
+  return metodo4(numero, 0.5);
+}
+
+//Este método recibe como parámetros un número entero
+//y un número decimal y los multiplica, después devuleve
+//el resultado entero.
+private int metodo4(int numero, double factor) {
+  return (Integer)(numero * factor);
+}
 \end{verbatim}
 
 En Java, se dice que los parámetros que se pasan a los métodos se hacen \emph{por valor}, esto quiere decir que cada método hace una copia del parámetro cuando se invoca y, se asignamos un nuevo valor al parámetro dentro del método, este no cambiará en el método que lo invocó, veamos un ejemplo:
@@ -812,7 +898,7 @@ class PasoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgc7ff764}
+\captionof{figure}{\label{orge15185f}
 Paso de valor}
 
 \begin{verbatim}
@@ -849,7 +935,7 @@ class RetornoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org81817ce}
+\captionof{figure}{\label{orgaa14511}
 Retorno de valor}
 
 \begin{verbatim}
@@ -891,7 +977,7 @@ class CambioDeObjeto {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orge6cd76f}
+\captionof{figure}{\label{org0e5d30b}
 Cambio de objeto}
 
 \begin{verbatim}
@@ -936,14 +1022,99 @@ class CambioDePropiedad {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgdcce2e2}
+\captionof{figure}{\label{orgbd33b7e}
 Cambio de propiedad}
 
 \begin{verbatim}
 2
 \end{verbatim}
 
-
 \section{Clases y objetos}
-\label{sec:orga220fa9}
+\label{sec:org76e9b08}
+Como ya hemos comentado anteriormente, Java es un lenguaje de programación \emph{orientado a objetos}, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,\ldots{}) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.
+
+Muchas veces se usan indistintamente los términos clase y objeto, lo correcto es llamar clase al archivo fuente .java y objeto a las \emph{instancias} de este.
+
+\subsection{El método constructor}
+\label{sec:org9370721}
+En Java (y en cualquier otro lenguaje de programación orientado a objetos), llamamos instanciar al hecho de crear un objeto de una determinada clase en nuestro código, para ello hacemos uso de un tipo de método especial llamado \textbf{constructor}.
+
+Este método es especial por varios motivos:
+
+\begin{enumerate}
+\item Es un método sin nombre, su nombre es el nombre de la propia clase
+\item Es necesario invocarlo unido a la palabra reservada \textbf{new}
+\end{enumerate}
+
+Esto lo hemos visto anteriormente en el ejemplo de paso de variables por valor a los métodos de la siguiente manera:
+
+\begin{verbatim}
+ArrayList<Integer> lista = new ArrayList<Integer>();
+\end{verbatim}
+
+Analizando la sentencia anterior tenemos lo siguiente:
+\begin{itemize}
+\item ArrayList<Integer>: El tipo de objeto que vamos a crear, exáctamente igual que cuando creábamos variables de tipo int, char, boolean, String,\ldots{}. En este caso, un objeto ArrayList (Un tipo de lista) de objetos de tipo Integer (o int, números enteros)
+\item lista: El nombre de la variable, nada nuevo aquí.
+\item new ArrayList<Integer>(): y aquí tenemos la llamada al método constructor, como podemos ver, es un método que se llama igual que la clase que queremos instanciar (ArrayList<Integer>) y que va seguido por unos paréntesis, en este caso, sin nada dentro porque no le pasamos ningún parámetro, todo ello precedido de la palabra reservada \textbf{new}, que es la que le indica a Java que lo que venga detrás será un método constructor.
+\end{itemize}
+
+En Java, por convención, las clases empiezan con mayúscula, meintras que los nombres de las variables y los métodos se escriben empezando con minúscula, en ambos casos siguiendo la convención \emph{CamelCase} (\emph{UpperCamelCase}, comenzando con mayúscula para las clases y \emph{lowerCamelCase}, comenzando con minúscula para lo demás), que consiste en, si necesitamos varias palabras en el nombre, separarlas con mayúsculas y sólo usarlas en ese caso o en caso de abreviaturas conocidas, por ejemplo, podríamos tener un método que se llamase \emph{getSQL}, ya que \emph{SQL} es una abreviatura bien conocida.
+
+\subsection{El caso de la clase String}
+\label{sec:org9f0a1de}
+
+Anteriormente hemos instanciado una clase que es un caso especial, no lo hemos hecho mediante un método constructor, sino asignándole un valor con = como hacíamos con los tipos primitivos, se trata de la clase String.
+
+Esta clase, por ser tan extendida se crea de esta manera, que nos puede dar la impresión de que se trata de un tipo de variable primitivo:
+
+\begin{verbatim}
+String nombre = "Kirby";
+\end{verbatim}
+
+Pero en realidad lo que estábamos haciendo era crear una nueva instancia (un nuevo objeto) de la clase String.
+
+La clase String, como cualquier otra clase en Java necesariamente debe tener al menos un método constructor, y así es, es sólo que Java nos ofrece esta conveniencia.
+
+\subsection{El valor null}
+\label{sec:orge07f131}
+Hasta ahora, cuando creábamos una variable esta podía estar inicializada o no, y, si lo estaba, tenía un valor válido dentro de su tipo, el valor \textbf{null} es un valor especial, nos permite indicar que el contenido de una variable de tipo objeto es nulo, es decir, no contiene nada pero existe como variable, el valor \textbf{null} es el mismo para cualquier tipo de objeto, se puede asignar a cualquier objeto con el operador de asignación (=) y puede ser usado en operaciones de comparación, vamos a ver un ejemplo:
+
+\begin{verbatim}
+class ValorNull {
+  public static void main(String [] args) {
+
+    //Asignamos el valor null a una objeto instancia de la clase String
+    String nombre = null;
+
+    //Comprobamos si la variable nombre es nula (valor null)
+    if (nombre == null) {
+      nombre = "Kirby";
+    }
+
+    System.out.println(nombre);
+
+  }
+}
+\end{verbatim}
+\captionof{figure}{\label{orgc6c3e8c}
+Valor null}
+
+\begin{verbatim}
+Kirby
+\end{verbatim}
+
+\subsection{Clases más conocidas}
+\label{sec:org254c006}
+
+\subsubsection{String}
+\label{sec:org25fdeb8}
+Como acabamos de ver, la clase String probablemente sea la clase más conocida de Java, empezamos a trabajar con ella prácticamente en el primer programa HolaMundo que hacemos y la utilizamos tanto como a los tipos primitivos, sirve para guardar cadenas de texto y no nos detendremos mucho más en ella.
+
+\subsubsection{Clases asociadas a tipos primitivos}
+\label{sec:org3f7dda2}
+Como ya vimos en la sección \hyperref[org248014b]{Tipos de datos}, los tipos primitivos tienen una clase asociada a cada uno de ellos, el nombre del tipo de dato es normalmente una abreviatura del nombre completo de la clase y se escribe en minúscula, mientras que la clase, como hemos visto antes, se escribirá en mayúscula. Estas clases son especialmente útiles, ya que, además de contener una serie de métodos que nos ofrecen funciones para trabajar con estos tipos de datos, pueden ser usados para almacenar el valor \textbf{null} en ellos, indicando así que un dato que normalmente tendría un valor por defecto, no contiene nada.
+
+\subsubsection{Matrices (o Arrays)}
+\label{sec:org54080e5}
 \end{document}
