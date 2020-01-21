@@ -183,6 +183,7 @@ class Concatenacion {
 : Esto es una cadena de texto concatenada.
 
 *** Casteo de valores
+<<sec:casteodevalores>>
 Muchas veces, cuando estamos haciendo una operación aritmética, el valor que necesitamos /es más pequeño/ que los posibles valores que nos puede dar como resultado la operación, con esto no queremos decir que se produzca si, por ejemplo, sumamos dos números muy grandes (ya que en ese caso, lo que podría ocurrir sería que el valor máximo del tipo de dato se excediera y /diéramos la vuelta/, es decir, nos fuéramos a los números negativos, pero Java no se quejaría de esto), sino que si, por ejemplo, sumamos dos números de tipo /long/ y queremos guardar su resultado en una variable de tipo /int/, aunque el valor de los números a sumar cupiera perfectamente en una variable de tipo /int/, Java no tiene forma de saber esto, y se quejará por ello, veamos un ejemplo:
 
 #+Caption: Valor Muy Grande
@@ -208,7 +209,7 @@ El resultado que nos daría el compilador sería el siguiente:
 
 Es decir, Java nos está indicando que queremos meter un valor potencialmente más grande que la variable que lo va a contener, se va a producir una /pérdida/ en la conversión de ~long~ a ~int~.
 
-En los casos en los que sabemos que ese valor no excederá nuestra variable, tenemos la opción de *castear* (digamos, prometer a Java algo) que la suma devolverá un determinado tipo, esto se hace poniendo entre paréntesis el tipo de dato que devolverá una determinada función, veamos el ejemplo:
+En los casos en los que sabemos que ese valor no excederá nuestra variable, tenemos la opción de *castear* (digamos, prometer algo a Java) que la suma devolverá un determinado tipo, esto se hace poniendo entre paréntesis el tipo de dato que devolverá una determinada función, veamos el ejemplo:
 
 #+Caption: Valor Casteado
 #+Name: ValorCasteado
@@ -728,8 +729,163 @@ Podemos continuar con nuestro ejemplo de contar de 1 a 10, veamos como se haría
 : 10 
 
 * Manejo de Excepciones
+Inevitablemente se producirán errores en nuestro código, es un hecho, muchas veces estos errores serán /en tiempo de compilación/, es decir, se producirán al tratar de compilar el código, aquí encontraremos errores de sintaxis, errores de tipos incompatibles (como el visto en el ejercicio [[sec:casteodevalores][Valor Muy Grande]]) y cosas así, sin embargo, hay otro tipo de errores llamados de /tiempo de ejecución/ que solo detectaremos una vez se esté ejecutando este código, estos errores producirán que nuestro programa termine su ejecución inesperadamente y no cumpla su función, estos errores inesperados se llaman *Excepciones*.
+
+Java lanza una *Excepción* cada vez que se produce un error de este tipo, hay excepciones de muchísimos tipos, sin entrar en detalle todavía, diremos que cada excepción es una *extensión* (una especialización) la clase ~Exception~.
+
+Veamos un ejemplo donde se lanzará una excepción:
+
+#+Caption: Excepciones
+#+Name: Excepciones
+#+BEGIN_SRC java :exports code :eval none
+  class Excepciones {
+    public static void main (String [] args) {
+      //Creamos un objeto, un array de Strings en este caso
+      String [] objeto = null;
+
+      //En este momento, si intentamos obtener un valor de
+      //este objeto, java nos dará un tipo de excepción muy concreto
+      //indicando que el objeto es nulo
+      objeto.toString(); 
+    }
+  }
+#+END_SRC
+
+#+RESULTS:
+: Exception in thread "main" java.lang.NullPointerException
+:         at Excepciones.main(Excepciones.java:9)
+
+** Los bloques try-catch
+Afortunadamente Java nos proporciona una funcionalidad para capturar y controlar estos errores, se trata de los bloques /try-catch/.
+
+Los bloques /try-catch/ se tratan de bloques que empiezan con una sentencia ~try~ y dentro de ella, un bloque donde preveemos que se puede producir una excepción, seguida por uno o más bloques ~catch~, cada uno de ellos encargado de /capturar/ una posible excepción.
+
+Veamos un ejemplo con el anterior bloque de código:
+
+#+Caption: Try-Catch
+#+Name: TryCatch
+#+BEGIN_SRC java :exports code :eval none
+  class TryCatch {
+    public static void main (String [] args) {
+      //Creamos un objeto, un array de Strings en este caso
+      String [] objeto = null;
+
+      //Abrimos un bloque try, porque sabemos que aquí se puede
+      //producir una excepción
+      try {
+	//En este momento, si intentamos obtener un valor de
+	//este objeto, java nos dará un tipo de excepción muy concreto
+	//indicando que el objeto es nulo
+	objeto.toString();
+      } catch(NullPointerException npe) {
+	//En el bloque catch, capturamos la excepción, en este caso
+	//una NullPointerException, a la que llamamos npe y que
+	//dentro de este bloque podemos usar como variable.
+	System.err.println("Se ha producido una NullPointerException");
+      }
+    }
+  }
+#+END_SRC
+
+#+Results:
+: Se ha producido una NullPointerException
+
+Si modificamos un poco el código anterior podemos ilustrar el hecho de que se pueden poner varios bloques ~catch~ en una sola sentencia ~try~, a lo que añadiremos uno más, el bloque ~finally~, que se ejecutará siempre, independientemente de que se produzca una excepción (y se entre en el bloque catch) o no se produzca (y, por lo tanto, no se entre en el bloque catch)
+
+#+Caption: Try-Catch Múltiple y Finally
+#+Name: TryCatchMultipleFinally
+#+BEGIN_SRC java :exports code :eval none
+  class TryCatchMultipleFinally {
+    public static void main(String[] args) {
+      // Creamos un objeto, un array de Strings en este caso
+      String[] objeto = null;
+
+      // Abrimos un bloque try, porque sabemos que aquí se puede
+      // producir una excepción
+      try {
+	// En este momento, si intentamos obtener un valor de
+	// este objeto, java nos dará un tipo de excepción muy concreto
+	// indicando que el objeto es nulo
+	objeto.toString();
+      } catch (NullPointerException npe) {
+	// En el bloque catch, capturamos la excepción, en este caso
+	// una NullPointerException, a la que llamamos npe y que
+	// dentro de este bloque podemos usar como variable.
+	System.err.println("Se ha producido una NullPointerException");
+      } catch (IndexOutOfBoundsException ioobe) {
+	System.err.println("Se ha producido una IndexOutofBoundsException");
+      } catch (Exception e) {
+	System.err.println("Se ha producido otro tipo de Excepción");
+      } finally {
+	System.out.println("Bloque finally");
+      }
+
+      // Inicializamos el objeto sin nada dentro
+      objeto = new String[] {};
+
+      try {
+	// Intentamos obtener el primer valor del objeto
+	System.out.println(objeto[0]);
+      } catch (NullPointerException npe) {
+	System.err.println("Se ha producido una NullPointerException");
+      } catch (IndexOutOfBoundsException ioobe) {
+	System.err.println("Se ha producido una IndexOutofBoundsException");
+      } catch (Exception e) {
+	System.err.println("Se ha producido otro tipo de Excepción");
+      } finally {
+	System.out.println("Bloque finally");
+      }
+
+      // Inicializamos el objeto con un valor
+      objeto = new String[] {"Primer Valor"};
+
+      try {
+	// Intentamos obtener el primer valor del objeto
+	System.out.println(objeto[0]);
+      } catch (NullPointerException npe) {
+	System.err.println("Se ha producido una NullPointerException");
+      } catch (IndexOutOfBoundsException ioobe) {
+	System.err.println("Se ha producido una IndexOutofBoundsException");
+      } catch (Exception e) {
+	System.err.println("Se ha producido otro tipo de Excepción");
+      } finally {
+	System.out.println("Bloque finally");
+      }
+    }
+  }
+#+END_SRC
+
+#+Results:
+: Se ha producido una NullPointerException
+: Bloque finally
+: Se ha producido una IndexOutofBoundsException
+: Bloque finally
+: Primer Valor
+: Bloque finally
+
 * Métodos y funciones
-Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo /de arriba a abajo/, estamos en lo que se conoce como *programación estructurada*, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, con los métodos podemos ejecutar el mismo código pero con *parámetros* diferentes, veamos un ejemplo sencillo:
+Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo /de arriba a abajo/, estamos en lo que se conoce como *programación estructurada*, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, la estructura de un método es la siguiente:
+
+#+Caption: Estructura de un método
+#+BEGIN_SRC java :exports code :eval none
+public static void main (String [] args)
+#+END_SRC
+
+- En azul vemos los modificadores, no nos pararemos ahora a explicarlos en detalle, digamos que es un método público (que puede ser accedido desde cualquier clase) y estático (que puede ser accedido sin necesidad de crear una instancia del método)
+- En rojo tenemos el /tipo de retorno/, puede ser cualquiera de los tipos de dato conocidos (int, char, long, boolean...), cualquier tipo de clase (como por ejemplo, String), o ~void~, que significa que el método no devolverá nada.
+- En morado vemos el nombre del método, es el que utilizaremos para invocarlo
+- A continuación tenemos los paréntesis, en estos paréntesis irán los parámetros que entrarán al método, declarados de la misma manera que se hace con las variables (tipo de variable seguido del nombre de la variable), separados por comas, o bien nada, con el paréntesis vacío si el método no necesita parámetros.
+
+Hay un tipo de paso de parámetros un poco especial, conocido como /varargs/, que consiste en que un método recibirá un número indeterminado de parámetros de un tipo, se escribe poniendo tres puntos detrás del tipo de variable, antes del espacio y el nombre y solo puede ser usado una vez por método y al final de la lista de parámetros. Como ilustración, este tipo de parámetro se escribe de la siguiente manera:
+
+#+Caption: Varargs
+#+BEGIN_SRC java :exports code :eval none
+public String varargs(String... parametros)
+#+END_SRC
+
+Esa variable ~parametros~ que tenemos en el ejemplo anterior, se accederá como si fuera un objeto de tipo array del tipo que se indique (en este caso String).
+
+Veamos ahora un ejemplo sencillo de la potencia de un método con el que podemos ejecutar un mismo código con *parámetros* diferentes:
 
 #+Caption:Mi primer método
 #+Name: MiPrimerMetodo
