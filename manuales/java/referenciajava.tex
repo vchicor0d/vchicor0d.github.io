@@ -1,4 +1,4 @@
-% Created 2020-01-21 mar 14:00
+% Created 2020-01-21 mar 15:20
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -30,13 +30,14 @@
 \tableofcontents
 
 \href{./referenciajava.org}{Descargar archivo fuente .org}\\
-\href{./referenciajava.pdf}{Descargar como PDF}
+\href{./referenciajava.pdf}{Descargar como PDF}\\
+\href{./referenciajava.odt}{Descargar como OpenDocument}
 
 \section{Introducción}
-\label{sec:orgfc853dc}
+\label{sec:orgb366a3c}
 Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de \emph{Java Virtual Machine}) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
 \subsection{Estructura de un programa}
-\label{sec:org3e9d3c6}
+\label{sec:orgb8c3591}
 
 \begin{verbatim}
 //Este fichero pertecene al paquete (carpeta) curso.java.manual (curso/java/manual)
@@ -91,7 +92,7 @@ Este método es:
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org6efa1ed}
+\captionof{figure}{\label{orgeb5d93d}
 Hola Mundo}
 
 \begin{verbatim}
@@ -100,7 +101,7 @@ Hola, Víctor
 \end{verbatim}
 
 \section{Tipos de datos}
-\label{sec:org7eb93d2}
+\label{sec:org9501a86}
 Los tipos de datos primitivos en java son los siguientes:
 \begin{center}
 \begin{tabular}{lll}
@@ -120,15 +121,15 @@ char & caracter de texto (único) & Character\\
 
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 \section{Operadores}
-\label{sec:org9bd6e5b}
+\label{sec:org1802df3}
 \subsection{Asignación}
-\label{sec:org8c05ba3}
+\label{sec:org9585937}
 El operador \textbf{=} se usa para asignar valores a variables:
 \begin{verbatim}
 int a = 0;
 \end{verbatim}
 \subsection{Aritméticos}
-\label{sec:orgc7f8b9b}
+\label{sec:org409d40f}
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
 \begin{center}
 \begin{tabular}{ll}
@@ -190,7 +191,7 @@ public class Aritmeticos {
      }
  }
 \end{verbatim}
-\captionof{figure}{\label{orgf8d4c56}
+\captionof{figure}{\label{org939da5d}
 Aritmeticos}
 
 \begin{verbatim}
@@ -214,7 +215,7 @@ class Concatenacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org5341be9}
+\captionof{figure}{\label{org74e6eb3}
 Concatenación}
 
 \begin{verbatim}
@@ -223,7 +224,7 @@ Esto es una cadena de texto concatenada.
 
 
 \subsubsection{Operadores unarios}
-\label{sec:org7a994f3}
+\label{sec:org8849a0c}
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
 \begin{center}
 \begin{tabular}{ll}
@@ -264,7 +265,7 @@ class Unarios {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org970604d}
+\captionof{figure}{\label{orgbd6fa61}
 Unarios}
 
 \begin{verbatim}
@@ -297,7 +298,7 @@ class PrePost {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org3456976}
+\captionof{figure}{\label{org6a5dd3d}
 Prefijos y Postfijos}
 
 \begin{verbatim}
@@ -309,7 +310,7 @@ Prefijos y Postfijos}
 \end{verbatim}
 
 \subsection{Lógicos}
-\label{sec:orgda36796}
+\label{sec:org127fe4f}
 Son operadores que devuelven valores lógicos (verdadero o falso)
 \begin{center}
 \begin{tabular}{ll}
@@ -354,7 +355,7 @@ class Comparacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org2f723ce}
+\captionof{figure}{\label{org92bb83a}
 Comparación}
 
 \begin{verbatim}
@@ -379,7 +380,7 @@ class Condicionales {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgdd8dbd1}
+\captionof{figure}{\label{org6b2b90d}
 Operadores Condicionales}
 
 \begin{verbatim}
@@ -388,11 +389,11 @@ valor1 es 1 OR (O) valor2 es 1
 \end{verbatim}
 
 \section{Condicionales}
-\label{sec:orgea2e505}
+\label{sec:orgb0a394e}
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias \texttt{if} y \texttt{else}, y la segunda es la sentencia \texttt{switch}.
 
 \subsection{if y else}
-\label{sec:org0e04438}
+\label{sec:org1f365c6}
 La sentencia \texttt{if} se escribe de la siguiente manera:
 \begin{verbatim}
 if (condicion) {
@@ -452,7 +453,7 @@ class Elseif {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org14b367f}
+\captionof{figure}{\label{org8929eac}
 Else-If}
 
 \begin{verbatim}
@@ -462,7 +463,7 @@ val > 5
 En este caso como el valor de la variable \texttt{val} es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia \texttt{else} si hiciéramos esto anidando sentencias \texttt{if} y \texttt{else} el código se \emph{iría} muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia \texttt{switch}.
 
 \subsection{switch}
-\label{sec:org507aafe}
+\label{sec:orgf871074}
 
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 \begin{verbatim}
@@ -494,7 +495,7 @@ class Switch {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{org442b227}
+\captionof{figure}{\label{org5a61333}
 Switch}
 
 \begin{verbatim}
@@ -542,7 +543,7 @@ class Switch2 {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{orgfa88529}
+\captionof{figure}{\label{orgec2bbec}
 Switch2}
 
 \begin{verbatim}
@@ -552,7 +553,7 @@ He pasado por 9 cases. El número es menor o igual que 10
 ¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia \texttt{break} para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta \texttt{default} no es imprescindible, como en la instrucción \texttt{if} no es imprescindible el \texttt{else}, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
 
 \subsection{Condicional ternario}
-\label{sec:orgea2f4d8}
+\label{sec:org5338ef2}
 Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
 
 \begin{verbatim}
@@ -575,10 +576,10 @@ if (condicion) {
 La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
 
 \section{Bucles}
-\label{sec:orgb045e16}
+\label{sec:orge042460}
 La ejecució normal de un programa en java (y en casi cualquier lenguaje de programación) se hace \emph{de arriba a abajo} desde que empieza hasta que termina, los bucles son estructuras de control que permiten que una parte del código se ejecute más de una vez en base a una condición.
 \subsection{El bucle while}
-\label{sec:orgba9a099}
+\label{sec:org718ab0f}
 El tipo de bucle más simple que nos encontramos es el bucle \texttt{while}, este bucle se va a ejecutar \emph{mientras} (while) la condición se cumpla y, una vez esta deje de cumplirse, seguirá desde el final del mismo.
 
 Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
@@ -614,10 +615,10 @@ class BucleWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org0df8fb3}
+\captionof{figure}{\label{org1b74001}
 Bucle While}
 \subsection{El bucle for}
-\label{sec:orgef089be}
+\label{sec:orgcfac0a3}
 El bucle \texttt{for} es un caso especial del bucle \texttt{while}, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle \texttt{for} lo haríamos así:
 
 \begin{verbatim}
@@ -631,7 +632,7 @@ class BucleFor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgbe33998}
+\captionof{figure}{\label{org37413ff}
 Bucle For}
 
 Como podemos ver, el resultado de este programa será exáctamente el mismo que el anterior:
@@ -663,7 +664,7 @@ class BucleForSinInicializacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orga37439e}
+\captionof{figure}{\label{org3c18753}
 Bucle For sin inicialización en la cabecera}
 
 \begin{verbatim}
@@ -678,7 +679,7 @@ class BucleForSinModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgeefa65e}
+\captionof{figure}{\label{org722b69f}
 Bucle For Sin Modificacion en la cabecera}
 
 Y, por supuesto, si sacamos de la cabecera tanto la inicialización como la modificación de la variable, lo que tenemos es un bucle \texttt{while} con otro nombre:
@@ -696,11 +697,11 @@ class BucleForSinInicializacionNiModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org63b3a56}
+\captionof{figure}{\label{orgab6538c}
 Bucle For Sin inicialización ni Modificacion en la cabecera}
 
 \subsection{El bucle do-while}
-\label{sec:orgeb1803b}
+\label{sec:orge21b985}
 Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle \texttt{do-while}.
 
 Este bucle se trata de un bucle \texttt{while} en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
@@ -733,11 +734,24 @@ class DoWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgada1fe5}
+\captionof{figure}{\label{org23fb128}
 Bucle do-while}
 
+\begin{verbatim}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 
+\end{verbatim}
+
 \section{Métodos y funciones}
-\label{sec:org39e6efb}
+\label{sec:orgf33c635}
 Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo \emph{de arriba a abajo}, estamos en lo que se conoce como \textbf{programación estructurada}, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, con los métodos podemos ejecutar el mismo código pero con \textbf{parámetros} diferentes, veamos un ejemplo sencillo:
 
 \begin{verbatim}
@@ -765,8 +779,13 @@ class MiPrimerMetodo {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org62724ba}
+\captionof{figure}{\label{org85140a0}
 Mi primer método}
+
+\begin{verbatim}
+Hola, Bimo
+Hola, Kirby
+\end{verbatim}
 
 En Java, se dice que los parámetros que se pasan a los métodos se hacen \emph{por valor}, esto quiere decir que cada método hace una copia del parámetro cuando se invoca y, se asignamos un nuevo valor al parámetro dentro del método, este no cambiará en el método que lo invocó, veamos un ejemplo:
 
@@ -793,8 +812,12 @@ class PasoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org13eeb9b}
+\captionof{figure}{\label{orgc7ff764}
 Paso de valor}
+
+\begin{verbatim}
+1
+\end{verbatim}
 
 Se puede pensar que el que los valores no pasen de los métodos a quien los llamó es poco util, pero si puede hacerse, para ello usaremos la sentencia \textbf{return}, que literalmente \emph{devuelve} el valor que le digamos, si modificamos un poco el programa anterior lo veremos:
 
@@ -826,8 +849,12 @@ class RetornoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org4b192b3}
+\captionof{figure}{\label{org81817ce}
 Retorno de valor}
+
+\begin{verbatim}
+2
+\end{verbatim}
 
 Ahora, para ver otra característica del paso de parámetros a los métodos, tenemos que hacerlo mediante objetos, de momento no nos preocupemos mucho de ello, básicamente lo que tenemos que tener en cuenta es que si pasamos un objeto como parámetro y cambiamos el valor de una de sus propiedades dentro de un método, esta permanecerá cambiada incluso fuera del método, esto puede parecer lo opuesto a lo que acabamos de ver, pero no es así, si en lugar de cambiar el valor de una de las propiedades del objeto lo que hiciéramos fuera instanciar un nuevo objeto en la variable (como asignar un nuevo valor en las variables que ya conocemos), el valor de la variable original permanecería intacto, veamoslo de nuevo con dos ejemplos:
 
@@ -864,8 +891,12 @@ class CambioDeObjeto {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org751dde9}
+\captionof{figure}{\label{orge6cd76f}
 Cambio de objeto}
+
+\begin{verbatim}
+1
+\end{verbatim}
 
 Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
 
@@ -900,14 +931,19 @@ class CambioDePropiedad {
   /*
     Se asigna un nuevo valor a la variable lista
    */
-  static void nuevoObjeto(ArrayList<Integer> lista) {
+  static void anadirValor(ArrayList<Integer> lista) {
     lista.add(2);
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org0b84bf1}
+\captionof{figure}{\label{orgdcce2e2}
 Cambio de propiedad}
 
+\begin{verbatim}
+2
+\end{verbatim}
+
+
 \section{Clases y objetos}
-\label{sec:org5a50bb4}
+\label{sec:orga220fa9}
 \end{document}

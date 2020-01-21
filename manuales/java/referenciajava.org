@@ -2,7 +2,8 @@
 #+LANGUAGE: es
 
 [[./referenciajava.org][Descargar archivo fuente .org]]\\
-[[./referenciajava.pdf][Descargar como PDF]]
+[[./referenciajava.pdf][Descargar como PDF]]\\
+[[./referenciajava.odt][Descargar como OpenDocument]]
 
 * Introducción
 Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de /Java Virtual Machine/) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
@@ -648,7 +649,7 @@ Podemos continuar con nuestro ejemplo de contar de 1 a 10, veamos como se haría
 
 #+CAPTION: Bucle do-while
 #+NAME: BucleDoWhile
-#+BEGIN_SRC java :export both :eval no-export
+#+BEGIN_SRC java :exports both :eval no-export
   class DoWhile {
 
     public static void main(String[] args) {
@@ -686,7 +687,7 @@ Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si
 
 #+Caption:Mi primer método
 #+Name: MiPrimerMetodo
-#+BEGIN_SRC java :export both :eval no-export
+#+BEGIN_SRC java :exports both :eval no-export
   class MiPrimerMetodo {
 
     //Aquí tenemos el método main, no devuelve nada (void)
@@ -720,7 +721,7 @@ En Java, se dice que los parámetros que se pasan a los métodos se hacen /por v
 
 #+Caption: Paso de valor
 #+Name: PasoDeValor
-#+BEGIN_SRC java :export both :classname PasoDeValor
+#+BEGIN_SRC java :exports both :classname PasoDeValor
   class PasoDeValor {
 
     //Declaramos un método al que llamaremos,
@@ -750,7 +751,7 @@ Se puede pensar que el que los valores no pasen de los métodos a quien los llam
 
 #+Caption: Retorno de valor
 #+Name: RetornoDeValor
-#+BEGIN_SRC java :export both :classname RetornoDeValor
+#+BEGIN_SRC java :exports both :classname RetornoDeValor
   class RetornoDeValor {
 
     //Declaramos un método al que llamaremos,
@@ -779,13 +780,11 @@ Se puede pensar que el que los valores no pasen de los métodos a quien los llam
   }
 #+END_SRC
 
-#+RESULTS: RetornoDeValor
-
 Ahora, para ver otra característica del paso de parámetros a los métodos, tenemos que hacerlo mediante objetos, de momento no nos preocupemos mucho de ello, básicamente lo que tenemos que tener en cuenta es que si pasamos un objeto como parámetro y cambiamos el valor de una de sus propiedades dentro de un método, esta permanecerá cambiada incluso fuera del método, esto puede parecer lo opuesto a lo que acabamos de ver, pero no es así, si en lugar de cambiar el valor de una de las propiedades del objeto lo que hiciéramos fuera instanciar un nuevo objeto en la variable (como asignar un nuevo valor en las variables que ya conocemos), el valor de la variable original permanecería intacto, veamoslo de nuevo con dos ejemplos:
 
 #+Caption: Cambio de objeto
 #+Name: CambioDeObjeto
-#+BEGIN_SRC java :export both :classname CambioDeObjeto
+#+BEGIN_SRC java :exports both :classname CambioDeObjeto
   import java.util.ArrayList;
 
   class CambioDeObjeto {
@@ -819,13 +818,11 @@ Ahora, para ver otra característica del paso de parámetros a los métodos, ten
   }
 #+END_SRC
 
-#+RESULTS: CambioDeObjeto
-
 Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
 
 #+Caption: Cambio de propiedad
 #+Name: CambioDePropiedad
-#+BEGIN_SRC java :export both :classname CambioDePropiedad
+#+BEGIN_SRC java :exports both :classname CambioDePropiedad
   import java.util.ArrayList;
 
   class CambioDePropiedad {
@@ -856,13 +853,12 @@ Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
     /*
       Se asigna un nuevo valor a la variable lista
      ,*/
-    static void nuevoObjeto(ArrayList<Integer> lista) {
+    static void anadirValor(ArrayList<Integer> lista) {
       lista.add(2);
     }
   }
 #+END_SRC
 
-#+RESULTS: CambioDePropiedad
 
 * Clases y objetos
 
