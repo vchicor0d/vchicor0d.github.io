@@ -305,17 +305,18 @@ class PrePost {
 
 ** Lógicos
 Son operadores que devuelven valores lógicos (verdadero o falso)
-| Operador   | Descripción              |
-|------------+--------------------------|
-| ==         | igual que                |
-| !=         | distinto que             |
-| >          | mayor que                |
-| >=         | mayor o igual que        |
-| <          | menor que                |
-| <=         | menor o igual que        |
-| &&         | Y lógico                 |
-| \vert\vert | Ó lógico                 |
-| instanceof | Objeto pertenece a clase |
+| Operador        | Descripción                            |
+|-----------------+----------------------------------------|
+| ==              | igual que                              |
+| !=              | distinto que                           |
+| >               | mayor que                              |
+| >=              | mayor o igual que                      |
+| <               | menor que                              |
+| <=              | menor o igual que                      |
+| &&              | Y lógico                               |
+| \vert\vert      | Ó lógico                               |
+| instanceof      | Objeto pertenece a clase               |
+| .equals(objeto) | Método que sirve para comparar objetos |
 
 Normalmente estos operadores se utilizarán en sentencias que requieran un valor lógico, como los condicionales o los bucles, de los que hablaremos más adelante, en este ejemplo vemos como, en base a los valores 1 y 2, que operaciones se ejecutan y cuales no:
 
@@ -728,6 +729,18 @@ Podemos continuar con nuestro ejemplo de contar de 1 a 10, veamos como se haría
 : 9
 : 10 
 
+* Alcance de los elementos
+En esta sección hablaremos del ancance de los elementos, puede que programando te hayas dado cuenta de que a veces una variable que has declarado anteriormente no existe cuando la vas a utilizar más tarde, esto es porque una variable sólo está disponible desde el punto en el que se declara, si, pero además desde el bloque en el que se declara, si declaramos, por ejemplo, una variable dentro de un bloque ~if~, no estará disponible fuera de este, si que podríamos declararla antes, inicializarla en el bloque ~if~ y entonces si estaría disponible y con el valor que le hayamos dado, el bloque más externo al que puede pertenecer una variable es el de la *clase*.
+
+Pero existe una serie de palabras reservadas: ~public~, ~protected~ y ~private~ que nos servirán para determinar como de aislada estará una determinada variable (o método, o incluso clase) en relación al resto de las clases de un programa.
+
+Ahora hablaremos un poco de lo que significa cada una de estas palabras, no te preocupes si ahora no entiendes que quiere decir cada uno de los términos que usemos, más adelante nos ocuparemos de ello:
+
+- ~public~: Indica que el elemento al que se aplique estará disponible para todas las clases del programa y se puede acceder a él sin restricciones.
+- ~protected~: Indica que el elemento sólo estará disponible para instancias de la clase en la que se encuentre y para clases que hereden de esta (no nos preocupemos por esta terminología ahora)
+- ~private~: La variable es privada y sólo estará disponible dentro de la propia clase donde se declare.
+
+Hay una palabra modificadora más ~static~ que se puede aplicar junto las demás (normalmente con ~public~), esta palabra reservada nos indica que el elemento al que haga referencia estará disponible incluso sin instanciar un objeto de la clase que lo contiene (Cada vez que usas *System.out.println()*, *System* es una clase, *out* un parámetro de la misma que está declarado como ~static~ y *println()* un método del objeto out)
 * Manejo de Excepciones
 Inevitablemente se producirán errores en nuestro código, es un hecho, muchas veces estos errores serán /en tiempo de compilación/, es decir, se producirán al tratar de compilar el código, aquí encontraremos errores de sintaxis, errores de tipos incompatibles (como el visto en el ejercicio [[sec:casteodevalores][Valor Muy Grande]]) y cosas así, sin embargo, hay otro tipo de errores llamados de /tiempo de ejecución/ que solo detectaremos una vez se esté ejecutando este código, estos errores producirán que nuestro programa termine su ejecución inesperadamente y no cumpla su función, estos errores inesperados se llaman *Excepciones*.
 
@@ -792,6 +805,7 @@ Veamos un ejemplo con el anterior bloque de código:
 
 Si modificamos un poco el código anterior podemos ilustrar el hecho de que se pueden poner varios bloques ~catch~ en una sola sentencia ~try~, a lo que añadiremos uno más, el bloque ~finally~, que se ejecutará siempre, independientemente de que se produzca una excepción (y se entre en el bloque catch) o no se produzca (y, por lo tanto, no se entre en el bloque catch)
 
+<<sec:trycatchmultiplefinally>>
 #+Caption: Try-Catch Múltiple y Finally
 #+Name: TryCatchMultipleFinally
 #+BEGIN_SRC java :exports code :eval none
@@ -1157,11 +1171,145 @@ Hasta ahora, cuando creábamos una variable esta podía estar inicializada o no,
 #+END_SRC
 
 ** Clases más conocidas
+*** La clase Object
+En Java todos los objetos que exiten, ya sean los que nos proporciona el propio lenguaje o los que creemos nosotros extienden de la clase ~Object~. Object es la clase primaria del lenguaje de programación Java, no se usa mucho como tal, pero es conveniente conocer que existe, podemos declarar un objeto de esta clase e instanciarlo con cualquier otra, es la madre de todas las demás.
 
 *** String
 Como acabamos de ver, la clase String probablemente sea la clase más conocida de Java, empezamos a trabajar con ella prácticamente en el primer programa HolaMundo que hacemos y la utilizamos tanto como a los tipos primitivos, sirve para guardar cadenas de texto y no nos detendremos mucho más en ella.
 
+**** Métodos
+- equals(objeto): Aunque este método es genérico para todos los objetos, es importante recalcarlo, ya que muchas veces querremos comparar si una cadena de texto es igual a otra.
+- equalsIgnoreCase(objeto): Este método es igual que el anterior salvo que ignora las mayúsculas y las minúsculas.
+- charAt(indice): Devuelve la letra (como tipo ~char~) que haya en el índice que le pasemos.
+- length(): Nos devuelve el tamaño del texto.
+- indexOf(cadena): nos devuelve la primera posición en la que aparece la cadena.
+- lastIndexOf(cadena): igual que el anterior, pero nos devuelve la última.
+- toUpperCase(): Convierte la cadena en mayúsculas.
+- toLowerCase(): Convierte la cadena en minúsculas.
+- valueOf(objeto): Método estático que devuelve el valor del objeto en forma de string.
+
 *** Clases asociadas a tipos primitivos
 Como ya vimos en la sección [[sec:tiposdedatos][Tipos de datos]], los tipos primitivos tienen una clase asociada a cada uno de ellos, el nombre del tipo de dato es normalmente una abreviatura del nombre completo de la clase y se escribe en minúscula, mientras que la clase, como hemos visto antes, se escribirá en mayúscula. Estas clases son especialmente útiles, ya que, además de contener una serie de métodos que nos ofrecen funciones para trabajar con estos tipos de datos, pueden ser usados para almacenar el valor *null* en ellos, indicando así que un dato que normalmente tendría un valor por defecto, no contiene nada.
 
+**** Métodos
+Uno de los métodos más importantes de estas clases es el método estático parse...(cadena), los puntos suspensivos son porque su nombre es diferente para cada clase, por ejemplo Long.parseLong() para la clase Long, Integer.parseInt() para la clase Integer, etc., este método convierte una cadena en el tipo que haga referencia, es especialmente útil cuando queremos que un usuario nos introduzca un valor por la consola, ya que siempre llegará en forma de String y si lo que necesitamos es un número deberemos convertirlo de esta manera.
+
 *** Matrices (o Arrays)
+Las matrices (o Arrays, como se llaman en inglés y, comunmente en los entornos de trabajo) pertenecen a un grupo de objetos que se conocen como *colecciones*, estas colecciones consisten en una agrupación de varios objetos, en el caso de los arrays, una lista. Los arrays lo pueden ser de cualquier tipo de objeto (pero sólo de uno a la vez) y se identifican porque se declaran con el nombre del tipo del que queremos la lista y unos corchetes ~[]~.
+
+Para insertar o recoger los valores de la lista lo haremos llamando a la variable como hacíamos habitualmente y añadiendo un número entre corchetes, como vimos en el ejercicio [[sec:trycatchmultiplefinally][TryCatchMultipleFinally]], en ese ejercicio intentábamos obtener el primer valor (índice 0) de la variable ~objeto~ y lo hacíamos de la siguiente manera:
+
+#+BEGIN_SRC java :exports code :eval none
+objeto[0];
+#+END_SRC
+
+Esa simple instrucción nos apunta a la primera posición del array, hay que tener en cuenta que los arrays, como la gran mayoría de estructuras múltiples que existen en los lenguajes de programación, se empiezan a contar desde 0 y no desde 1, es decir, en un array con un tamaño de 5, las posiciones a las que podemos acceder son las 0, 1, 2, 3 y 4; si intentásiemos acceder a la posición 5, Java nos lanzaría una ~IndexOutOfBoundsException~ como vimos en el ejercicio mencionado anteriormente. Esta excepción nos indica que hemos intentado acceder a un índice (posición) más allá de los límites del objeto (El objeto tiene 5 posiciones y hemos intentado acceder a la 6ª).
+
+Una vez tenemos una posición que existe, podemos asignarle un valor o recogerlo como hacíamos con cualquier otro tipo de variable. Para ilustrarlo:
+
+Igual que hacíamos:
+
+#+Caption: Acceso a variable
+#+Name: AccesoVariable
+#+BEGIN_SRC java :exports both :classname AccesoVariable
+  class AccesoVariable {
+    public static void main (String [] args) {
+      int numero; //Declaramos la variable
+      numero = 2; //inicilizamos la variable
+      System.out.println(numero); //Obtenemos el valor de la variable
+    }
+  }
+#+END_SRC
+
+Podemos hacer:
+
+#+Caption: Acceso a posición de array
+#+Name: AccesoArray
+#+BEGIN_SRC java :exports both :classname AccesoArray
+  class AccesoArray {
+    public static void main (String [] args) {
+      int[] array; //Declaramos la variable
+      array = new int[]{2}; //Inizializamos la variable (con un valor en la posición 1)
+      System.out.println(array[0]); //Obtenemos el valor de la posición 1
+    }
+  }
+
+#+END_SRC
+
+**** Declaración e inicialización 
+Como todos los objetos, los arrays pueden ser inicializados con la palabra reservada ~new~ y llamando al constructor, pero esta clase, al igual que la clase ~String~ es una clase especial y puede ser inicializada de varias maneras.
+
+***** Inicialización con constructor vacío 
+En este caso lo haremos de la siguiente manera, por ejemplo, para un array de números enteros (int o Integer):
+
+#+Caption: Inicialización de un array con constructor
+#+BEGIN_SRC java :exports code :eval none
+int[] miArray = new int[5];
+#+END_SRC
+
+Observamos que también se trata de un caso especial (no hay paréntesis en la llamada al método constructor), de izquierda a derecha, lo que tenemos es:
+
+- Antes del ~=~:
+  * int[]: Tipo de dato, array ([]) de números enteros (int).
+  * miArray: El nombre de la variable.
+- Después del ~=~:
+  * new: La palabra reservada que nos indica que lo que queremos es invocar al método constructor.
+  * int[5]: La llamada propiamente dicha, el número que vemos entre los corchetes será el tamaño de la lista, hemos de tener en cuenta que este tamaño es fijo, por lo que no nos conviene quedarnos cortos, pero sería un desperdicio de memoria si nos pasamos, es un valor que hay que pensar muy bien.
+
+Ahora ya podríamos añadir valores a nuestro array, por ejemplo, añadamos un 2 en la posición 4:
+
+#+Caption: Añadir valor a array
+#+BEGIN_SRC java :exports code :eval none
+miArray[3] = 2;
+#+END_SRC
+
+***** Inicialización con constructor con datos
+El caso anterior, aunque util de conocer, en ocasiones nos parecerá engorroso, pues tendremos que rellenar el array escribiendo una sentencia para cada posición que tenga, afortunadamente, en Java se puede inicializar el array directamente en el constructor de la siguiente manera:
+
+#+Caption: Array con datos
+#+BEGIN_SRC java :exports code :eval none
+int[] miArray = new int[]{5,4,3,2,1};
+#+END_SRC
+
+De esta manera no nos hace falta indicarle al constructor cuantos elementos tendrá el array, en cambio, le decimos los valores en orden que almacenará (en nuestro caso; 5 en la posción 1, 4 en la posición 2, 3 en la posición 3, etc.)
+
+***** Inicialización con datos sin constructor
+Este es el caso más especial, y es que podemos evitar escribir la parte del constructor y poner solo las llaves con los datos si lo hacemos justo cuando declaremos la variable:
+
+#+Caption: Array con datos sin constructor
+#+BEGIN_SRC java :exports code :eval none
+int[] miArray = {5,4,3,2,1};
+#+END_SRC
+
+Si lo quisiéramos separar de la declaración, este formato daría error, ya que Java no tiene manera de asegurarse de qué tipo es lo que queremos asignar a la variable, en este caso habría que usar el constructor anterior:
+
+#+Caption: Declaración separada
+#+BEGIN_SRC java :exports code :eval none
+int[] miArray;
+
+miArray = {5,4,3,2,1}; //Esto da error
+
+miArray = new int[]{5,4,3,2,1}; //Esto funciona
+#+END_SRC
+
+**** Arrays múltiples
+Otra cosa interesante que nos permiten hacer los arrays es añadir unos dentro de otros, obteniendo así estructuras /multidimensionales/.
+
+Si entendemos que un array ~[]~ es una lista (o una línea de valores, si queremos), si cada elemento del array es otro array ~[][]~ lo que tenemos es un cuadro y, si a su vez, cada elemento del cuadro es otra matriz ~[][][]~ lo que tenemos es un cubo de valores y, para acceder a cada uno de ellos es necesario indicar cada una de las coordenadas que indican su posición.
+
+Los arrays multidimensionales se comportan exáctamente igual que los planos, sólo hay que tener en cuenta las dimensiones extra para tener claro a qué valor estamos accediendo, que para inicializarlos es necesario indicar el tamaño de cada uno de las dimensiones (no tienen por qué ser regulares) y que si queremos inicializarlo directamente con valores, cada elemento que va entre las comas dentro de las llaves serán a su vez otras llaves hasta que se haya profundizado en cuantas dimensiones tenga, por ejemplo, un array multidimensional lo podríamos instanciar así:
+
+#+Caption: Array Multidimensional
+#+BEGIN_SRC java :exports code :eval none
+int[][] miArrayMultidimensional = new int[3][12];
+
+String[][] otroArrayMultidimendional = {{"p11","p12","p13"},{"p21","p22","p23"}};
+#+END_SRC
+**** Métodos y propiedades
+- lentgh: propiedad que nos indica la longitud del array
+*** Date
+*** List y ArrayList
+*** System
+* Herencia
+** Interfaces
+** Clases abstractas
