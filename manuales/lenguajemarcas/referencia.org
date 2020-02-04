@@ -1,0 +1,48 @@
+#+TITLE: Referencia Lenguaje de Marcas
+#+LANGUAGE: es
+
+[[./referencia.org][Descargar archivo fuente .org]]\\
+[[./referencia.pdf][Descargar como PDF]]\\
+[[./referencia.odt][Descargar como OpenDocument]]
+
+* Introducción
+Según wikipedia, un lenguajes de marcas es una forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas que contienen información adicional acerca de la estructura del texto o su presentación.
+
+El lenguaje de marcas más extendido es el HTML (/HyperText Markup Language/, lenguaje de marcado de hipertexto), usado principalmente para hacer páginas web.
+
+Un lenguaje de marcas no es un lenguaje de programación ya que, por ejemplo, un lenguaje de marcas no tiene funciones aritmétias o variables, como si tienen los lenguajes de programación, se puede decir que son /solo/ datos.
+* HTML
+HTLM es un lenguaje de marcas que sirve para dar formato y dotar de una estructura a un texto, esto se consigue mediante etiquetas y atributos, además HTML incluye ciertas etiquetas que nos permitirán enlazar código Javascript (principalmente, aunque algunos navegadores soportan otro tipo de scripts), hojas de estilo CSS (para complementar o, siguiendo los estándares actuales, suplantar las funciones de estilo de HTML, dejándolo sólo como estructura) y otras etiquetas sin contenido estructural que darán información al programa que las interprete.
+** Estructura de un archivo HTML
+Antes de pasar a ver como sería una página web perfectamente funcional, veamos cómo es la estructura de una etiqueta genérica:
+
+#+BEGIN_SRC html
+<etiqueta atributo="valor-del-atributo">Contenido de la etiqueta</etiqueta>
+#+END_SRC
+Dentro de los símbolos de menor que (<) y mayor que (>), se encuentra la etiqueta propiamente dicha, en su primera aparición se abre y en su segunda se cierra (poníendo el símbolo ~/~, a veces hablamos de etiquetas de apertura y de cierre en este sentido.
+
+Dentro de la etiqueta de apertura se encuentran los atributos de la misma, se componen de un nombre y frecuentemente de un signo igual ~=~ y entre comillas el valor que tenga ese atributo.
+
+Entre la etiqueta de apertura y la de cierre encontramos un texto, es el contenido de la etiqueta, que podría ser en lugar de un texto otra etiqueta o una serie de ellas.
+
+A continuación un ejemplo de una página HTML funcional:
+#+BEGIN_SRC html
+  <!doctype html>
+  <html>
+    <head>
+      <title>Esctructura html</title>
+      <link rel="stylesheet" href="mihojadeestilos.css" type="text/css" />
+      <script src="miscript.js" type="text/javascript" />
+      <meta charset="utf-8" />
+    </head>
+    <body>
+      <h1>Título de una sección</h1>
+      <p>Esto es un párrafo</p>
+    </body>
+  </html>
+#+END_SRC
+
+** Principales etiquetas
+
+* CSS
+* XML

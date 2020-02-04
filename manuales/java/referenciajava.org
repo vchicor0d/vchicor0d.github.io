@@ -1308,6 +1308,7 @@ String[][] otroArrayMultidimendional = {{"p11","p12","p13"},{"p21","p22","p23"}}
 **** Métodos y propiedades
 - lentgh: propiedad que nos indica la longitud del array
 *** Date
+La clase Date
 *** List y ArrayList
 *** System
 * Herencia

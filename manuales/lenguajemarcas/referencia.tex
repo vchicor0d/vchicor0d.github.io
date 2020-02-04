@@ -1,0 +1,83 @@
+% Created 2020-02-04 mar 12:01
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Víctor Chico Rodríguez}
+\date{\today}
+\title{Referencia Lenguaje de Marcas}
+\hypersetup{
+ pdfauthor={Víctor Chico Rodríguez},
+ pdftitle={Referencia Lenguaje de Marcas},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\href{./referencia.org}{Descargar archivo fuente .org}\\
+\href{./referencia.pdf}{Descargar como PDF}\\
+\href{./referencia.odt}{Descargar como OpenDocument}
+
+\section{Introducción}
+\label{sec:org656268d}
+Según wikipedia, un lenguajes de marcas es una forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas que contienen información adicional acerca de la estructura del texto o su presentación.
+
+El lenguaje de marcas más extendido es el HTML (\emph{HyperText Markup Language}, lenguaje de marcado de hipertexto), usado principalmente para hacer páginas web.
+
+Un lenguaje de marcas no es un lenguaje de programación ya que, por ejemplo, un lenguaje de marcas no tiene funciones aritmétias o variables, como si tienen los lenguajes de programación, se puede decir que son \emph{solo} datos.
+\section{HTML}
+\label{sec:org0891ed8}
+HTLM es un lenguaje de marcas que sirve para dar formato y dotar de una estructura a un texto, esto se consigue mediante etiquetas y atributos, además HTML incluye ciertas etiquetas que nos permitirán enlazar código Javascript (principalmente, aunque algunos navegadores soportan otro tipo de scripts), hojas de estilo CSS (para complementar o, siguiendo los estándares actuales, suplantar las funciones de estilo de HTML, dejándolo sólo como estructura) y otras etiquetas sin contenido estructural que darán información al programa que las interprete.
+\subsection{Estructura de un archivo HTML}
+\label{sec:orga714ba3}
+Antes de pasar a ver como sería una página web perfectamente funcional, veamos cómo es la estructura de una etiqueta genérica:
+
+\begin{verbatim}
+<etiqueta atributo="valor-del-atributo">Contenido de la etiqueta</etiqueta>
+\end{verbatim}
+Dentro de los símbolos de menor que (<) y mayor que (>), se encuentra la etiqueta propiamente dicha, en su primera aparición se abre y en su segunda se cierra (poníendo el símbolo \texttt{/}, a veces hablamos de etiquetas de apertura y de cierre en este sentido.
+
+Dentro de la etiqueta de apertura se encuentran los atributos de la misma, se componen de un nombre y frecuentemente de un signo igual \texttt{=} y entre comillas el valor que tenga ese atributo.
+
+Entre la etiqueta de apertura y la de cierre encontramos un texto, es el contenido de la etiqueta, que podría ser en lugar de un texto otra etiqueta o una serie de ellas.
+
+A continuación un ejemplo de una página HTML funcional:
+\begin{verbatim}
+<!doctype html>
+<html>
+  <head>
+    <title>Esctructura html</title>
+    <link rel="stylesheet" href="mihojadeestilos.css" type="text/css" />
+    <script src="miscript.js" type="text/javascript" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Título de una sección</h1>
+    <p>Esto es un párrafo</p>
+  </body>
+</html>
+\end{verbatim}
+
+\subsection{Principales etiquetas}
+\label{sec:org4df5000}
+
+\section{CSS}
+\label{sec:org51c1a1b}
+\section{XML}
+\label{sec:orgd092555}
+\end{document}
