@@ -27,7 +27,7 @@
 		<xsl:when test="@type = academic">
 		  Formación Académica
 		</xsl:when>
-		<xsl:when test="@type &eq; complementary">
+		<xsl:when test="@type = complementary">
 		  Formación Complementaria
 		</xsl:when>
 		<xsl:otherwise>
