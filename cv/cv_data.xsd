@@ -64,7 +64,7 @@
 	    </xs:sequence>
 	  </xs:complexType>
 	</xs:element>
-	<xs:element name="languages">
+	<xs:element name="languages" minOccurs="0">
 	  <xs:complexType>
 	    <xs:sequence>
 	      <xs:element name="language" type="xs:string" maxOccurs="unbounded">
@@ -73,7 +73,7 @@
 	    </xs:sequence>
 	  </xs:complexType>
 	</xs:element>
-	<xs:element name="skills">
+	<xs:element name="skills" minOccurs="0">
 	  <xs:complexType>
 	    <xs:sequence>
 	      <xs:element name="skill" type="xs:string" maxOccurs="unbounded"/>
