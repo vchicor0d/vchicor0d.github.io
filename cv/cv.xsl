@@ -5,7 +5,7 @@
     <html>
       <head>
 	<title><xsl:value-of select="cv/name"/></title>
-	<meta lang="{cv@lang}"/>
+	<meta lang="es"/>
 	<link rel="stylesheet" type="text/css" href="cv.css"/>
       </head>
       <body>
