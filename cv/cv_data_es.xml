@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv.xsl"?>
+<?xml-stylesheet type="text/xsl" href="cv_es.xsl"?>
 <cv lang="es" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cv_data.xsd">
   <photo>photo.jpg</photo>
   <name>Víctor Chico Rodríguez</name>
