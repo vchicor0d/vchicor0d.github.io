@@ -4,12 +4,12 @@
     <![CDATA[doctype html]]>
     <html>
       <head>
-	<title><xsl:value-of select="cv/name"/></title>
+	<title><xsl:value-of select="/cv/name"/></title>
 	<meta lang="es"/>
 	<link rel="stylesheet" type="text/css" href="cv.css"/>
       </head>
       <body>
-	<h1><xsl:value-of select="cv/name"/></h1>
+	<h1><xsl:value-of select="/cv/name"/></h1>
       </body>
     </html>
   </xsl:template>
