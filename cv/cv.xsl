@@ -24,7 +24,7 @@
 	    <h3>
 	      <!-- Si la formación es type="academic" ponemos Formación Académica, si es type="complementary" ponemos Formación Complemenaria, en otro caso ponemos Otra Formación -->
 	      <xsl:choose>
-		<xsl:when test="education">
+		<xsl:when test="@type = academic">
 		  Formación Académica
 		</xsl:when>
 		<xsl:when test="@type &eq; complementary">
