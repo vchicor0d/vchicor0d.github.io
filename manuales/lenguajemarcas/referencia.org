@@ -19,7 +19,7 @@ Antes de pasar a ver como sería una página web perfectamente funcional, veamos
 #+BEGIN_SRC html
 <etiqueta atributo="valor-del-atributo">Contenido de la etiqueta</etiqueta>
 #+END_SRC
-Dentro de los símbolos de menor que (<) y mayor que (>), se encuentra la etiqueta propiamente dicha, en su primera aparición se abre y en su segunda se cierra (poníendo el símbolo ~/~, a veces hablamos de etiquetas de apertura y de cierre en este sentido.
+Dentro de los símbolos de menor que ~<~ y mayor que ~>~, se encuentra la etiqueta propiamente dicha, en su primera aparición se abre y en su segunda se cierra (poníendo el símbolo ~/~), a veces hablamos de etiquetas de apertura y de cierre en este sentido.
 
 Dentro de la etiqueta de apertura se encuentran los atributos de la misma, se componen de un nombre y frecuentemente de un signo igual ~=~ y entre comillas el valor que tenga ese atributo.
 
@@ -42,7 +42,16 @@ A continuación un ejemplo de una página HTML funcional:
   </html>
 #+END_SRC
 
-** Principales etiquetas
+En el anterior ejemplo, tenemos una página HTML con el título /Estructura html/, que tiene un archivo de estilos llamado /mihojadeestilos.css/ y un archivo javascript que opera sobre ella que se llama /miscript.js/ y que los caracteres que usemos serán del tipo /utf-8/. El contenido de la página será un encabezado grande y un párrafo con un texto.
 
+Pasemos ahora a analizar las principales etiquetas html.
+** Principales etiquetas
+*** doctype
+Es una etiqueta que se pone al principio de cada documento, es una etiqueta especial que empieza con ~<!~ y no tiene cierre, solía indicar la versión de html que se está utilizando en la página, a partir de la versión html 5, sólo se indica /html/. Podemos encontrar ejemplos de su contenido en versiones anteriores en su página de wikipedia [[https://es.wikipedia.org/wiki/Declaraci%C3%B3n_de_tipo_de_documento][Declaración de tipo de documento]].
+*** html
+Es la etiqueta principal del documento, determina el inicio del documento y su final.
+*** head
+Determina la cabecera del documento HTML, suele contener información que no se muestra directamente al usuario, como el título, los estilos, los scripts, las etiquetas de metadatos,....
+*** 
 * CSS
 * XML
