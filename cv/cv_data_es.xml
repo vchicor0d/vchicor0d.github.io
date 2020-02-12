@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv_es.xsl"?>
-<cv lang="es" color="w3-light-grey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cv_data.xsd">
+<?xml-stylesheet type="text/xsl" href="cv_en.xsl"?>
+<cv lang="es" color="teal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cv_data.xsd">
   <photo>photo.jpg</photo>
   <name>Víctor Chico Rodríguez</name>
   <address>Calle Francisco Salzillo 7, 28850 Torrejón de Ardoz (Madrid)</address>
