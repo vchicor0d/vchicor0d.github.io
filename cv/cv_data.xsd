@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="cv">
-    <xs:complexType>
-      <xs:attribute name="lang" type="xs:string" use="required"/>
-      <xs:sequence>
-	<xs:element name="photo" type="xs:string"/>
+  <xs:element name="cv"> <!-- Siempre que definamos un elemento, le tenemos que dar un nombre con el atributo name -->
+    <xs:complexType mixed="true"> <!-- Si un elemento tiene atributos, otros elementos y/o texto combinados, es complexType y mixed="true" -->
+      <xs:sequence> <!-- Con sequence los elementos que vengan tienen que existir en el orden en el que son definidos -->
+	<xs:element name="photo" type="xs:string"/> <!-- Un elemento de un tipo base incluye el atributo type -->
 	<xs:element name="name" type="xs:string"/>
 	<xs:element name="address" type="xs:string"/>
 	<xs:element name="email" type="xs:string"/>
 	<xs:element name="tlf" type="xs:string"/>
-	<xs:element name="summary" type="xs:string" minOccurs="0"/>
-	<xs:element name="educations" minOccurs="0" maxOccurs="3">
-	  <xs:complexType>
-	    <xs:attribute name="type" use="required">
-	      <xs:simpleType>
-		<xs:restriction base="xs:string">
-		  <xs:enumeration value="academic"/>
+	<xs:element name="summary" type="xs:string" minOccurs="0"/> <!-- Si un elemento es opcional, se le da un valor de minOccurs="0", por defecto es 1, es decir, como mínimo tiene que aparecer 1 vez -->
+	<xs:element name="educations" minOccurs="0" maxOccurs="3"> <!-- Si un elemento puede ocurrir mas de una vez, se le da un valor de maxOccurs, en este caso 3 porque puede aparecer un máximo de 3 veces, el valor por defecto es 1, es decir, sólo puede aparecer una vez -->
+	  <xs:complexType mixed="true">
+	    <xs:sequence>
+	      <xs:element name="education" maxOccurs="unbounded"> <!-- Si un elemento puede ocurrir un número indeterminado de veces, se le da un valor de maxOccurs="unbounded" -->
+		<xs:complexType mixed="true">
+		  <xs:all> <!-- Con all los elementos que vengan tienen que existir, pero pueden estar en cualquier orden -->
+		    <xs:element name="course" type="xs:string"/>
+		    <xs:element name="institution" type="xs:string"/>
+		  </xs:all>
+		  <xs:attribute name="start" type="xs:string" use="required"/> <!-- Para definir un atributo de una etiqueta se hace con attribute, se le da un nombre y un tipo y si queremos que sea obligatorio le damos use="required", por defecto no lo es -->
+		  <xs:attribute name="end" type="xs:string" use="required"/>
+		</xs:complexType>
+	      </xs:element>
+	    </xs:sequence>
+	    <xs:attribute name="type" use="required"> <!-- Un atributo también puede ser de un tipo que no sea basico -->
+	      <xs:simpleType> <!-- Con simpleType podemos añadir restricciones a los valores de un elemento (o atributo, en este caso) -->
+		<xs:restriction base="xs:string"> <!-- Con restriction decimos que vamos a crear una restricción, el atributo base="xs:string" nos indica que los valores que tomará el elemento serán de este tipo -->
+		  <xs:enumeration value="academic"/> <!-- Con enumeration enumeramos los posibles valores que podrá tomar el elemento con el atributo value -->
 		  <xs:enumeration value="complementary"/>
 		  <xs:enumeration value="other"/>
 		</xs:restriction>
 	      </xs:simpleType>
 	    </xs:attribute>
-	    <xs:sequence>
-	      <xs:element name="education" maxOccurs="unbounded">
-		<xs:complexType>
-		  <xs:attribute name="start" type="xs:string" use="required"/>
-		  <xs:attribute name="end" type="xs:string" use="required"/>
-		  <xs:all>
-		    <xs:element name="course" type="xs:string"/>
-		    <xs:element name="institution" type="xs:string"/>
-		  </xs:all>
-		</xs:complexType>
-	      </xs:element>
-	    </xs:sequence>
 	  </xs:complexType>
 	</xs:element>
 	<xs:element name="experiences" minOccurs="0">
@@ -46,13 +45,14 @@
 		      <xs:complexType>
 			<xs:sequence>
 			  <xs:element name="project" maxOccurs="unbounded">
-			    <xs:complexType>
-      			      <xs:attribute name="workplace" type="xs:string" use="required"/>
-			      <xs:attribute name="start" type="xs:string" use="required"/>
-			      <xs:attribute name="end" type="xs:string" use="required"/>
-			      <xs:sequence>
+			    <xs:complexType mixed="true">
+      			      <xs:sequence>
 				<xs:element name="description" type="xs:string"/>
 			      </xs:sequence>
+			      <xs:attribute name="title" type="xs:string" use="required"/>
+			      <xs:attribute name="workplace" type="xs:string" use="required"/>
+			      <xs:attribute name="start" type="xs:string" use="required"/>
+			      <xs:attribute name="end" type="xs:string" use="required"/>
 			    </xs:complexType>
 			  </xs:element>
 			</xs:sequence>
@@ -67,8 +67,8 @@
 	<xs:element name="languages" minOccurs="0">
 	  <xs:complexType>
 	    <xs:sequence>
-	      <xs:element name="language" type="xs:string" maxOccurs="unbounded">
-		<xs:complexType>
+	      <xs:element name="language" maxOccurs="unbounded">
+		<xs:complexType mixed="true">
 		  <xs:attribute name="level" use="required"/>
 		</xs:complexType>
 	      </xs:element>
@@ -83,6 +83,7 @@
 	  </xs:complexType>
 	</xs:element>
       </xs:sequence>
+      <xs:attribute name="lang" type="xs:string" use="required"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
