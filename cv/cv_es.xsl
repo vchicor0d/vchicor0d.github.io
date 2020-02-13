@@ -1,120 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-  <xsl:output method="html" encoding="UTF-8" indent="yes" />
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+  <xsl:output method="html" encoding="UTF-8" indent="yes"/>
   <xsl:preserve-space elements="*"/>
   <xsl:template match="/">
     <xsl:variable name="color" select="/cv/@color"/>
-    
     <html>
       <head>
-	<title>CV <xsl:value-of select="/cv/name"/></title>
-	<meta lang="{/cv/@lang}"/>
-	<link rel="stylesheet" type="text/css" href="cv.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <title>CV <xsl:value-of select="/cv/name"/></title>
+        <meta charset="UTF-8"/>
+        <meta lang="{/cv/@lang}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <style>
+	  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+	  @media print {
+	  .print {
+	  page-break-inside:avoid;
+	  }
+	  }
+	</style>
       </head>
-      
-      <body class="w3-card-2 w3-white">
-	
-	<header class="w3-display-container {$color} w3-card-2">
-	  <h1 class="w3-display-left"><xsl:value-of select="/cv/name"/></h1>
-	  <figure class="w3-display-middle">
-	    <img src="{/cv/photo}"/>
-	  </figure>
-	  <div id="contacto" class="w3-display-right">
-	    <ul>
-	      <li><i class="fa fa-home"/>: <xsl:value-of select="/cv/address"/></li>
-	      <li><i class="fa fa-envelope-o"/>: <xsl:value-of select="/cv/email"/></li>
-	      <li><i class="fa fa-mobile-phone"/>: <xsl:value-of select="/cv/tlf"/></li>
-	    </ul>
-	  </div>
-	</header>
-	
-	<!-- Si hay nodo summary -->
-	<xsl:if test="/cv/summary">
-	  <section id="summary" class="w3-panel w3-justify">
-	    <xsl:for-each select="/cv/summary/p">
-	      <p><xsl:value-of select="."/></p>
-	    </xsl:for-each>
-	  </section>
-	</xsl:if>
-	
-	<!-- Si hay nodos educations -->
-	<xsl:if test="/cv/educations">
-	  <!-- Para cada nodo educations -->
-	  <xsl:for-each select="/cv/educations">
-	    <section id="{@type}-education" class="educations w3-panel w3-card {$color} w3-margin">
-	      <h3>
-		<!-- Si la formación es type="academic" ponemos Formación Académica, si es type="complementary" ponemos Formación Complemenaria, en otro caso ponemos Otra Formación -->
-		<xsl:choose>
-		  <xsl:when test="@type='academic'">
-		    Formación Académica
+      <body class="w3-light-grey">
+        <!-- Page Container -->
+        <div class="w3-content w3-margin-top" style="max-width:1400px;">
+          <!-- The Grid -->
+          <div class="w3-row-padding">
+            <!-- Left Column -->
+            <div class="w3-third">
+              <div class="w3-white w3-text-grey w3-card-4">
+                <div id="foto" class="print w3-display-container">
+                  <img src="{/cv/photo}" style="width:100%" alt="Avatar"/>
+                  <div class="w3-display-bottomleft w3-container w3-text-{$color}">
+                    <h2>
+                      <xsl:value-of select="/cv/name"/>
+                    </h2>
+                  </div>
+                </div>
+                <div class="w3-container">
+		  <div id="contacto" class="print">
+                  <p>
+                    <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                    <xsl:value-of select="/cv/description"/>
+                  </p>
+                  <p>
+                    <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                    <xsl:value-of select="/cv/address"/>
+                  </p>
+                  <p>
+                    <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                    <xsl:value-of select="/cv/email"/>
+                  </p>
+                  <p>
+                    <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                    <xsl:value-of select="/cv/phone"/>
+                  </p>
+                  <hr/>
+		  </div>
+                  <!-- Si hay nodo summary -->
+                  <xsl:if test="/cv/summary">
+                    <section id="summary" class="print w3-panel w3-justify">
+                      <xsl:for-each select="/cv/summary/p">
+                        <p>
+                          <xsl:value-of select="."/>
+                        </p>
+                      </xsl:for-each>
+                    </section>
+                    <hr/>
+                  </xsl:if>
+                  <!-- Habilidades -->
+                  <xsl:if test="/cv/skills">
+		    <div id="skills" class="print">
+                    <p class="w3-large">
+                      <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>Habilidades</b>
+                    </p>
+                    <ul>
+                      <xsl:for-each select="/cv/skills/skill">
+                        <li>
+                          <xsl:value-of select="."/>
+                        </li>
+                      </xsl:for-each>
+                    </ul>
+                    <br/>
+		    </div>
+                  </xsl:if>
+                  <!-- Idiomas -->
+                  <xsl:if test="/cv/languages">
+		    <div id="languages" class="print">
+                    <p class="w3-large w3-text-theme">
+                      <b><i class="fa fa-globe fa-fw w3-margin-right w3-text-{$color}"/>Idiomas</b>
+                    </p>
+                    <xsl:for-each select="/cv/languages/language">
+                      <p>
+                        <xsl:value-of select="."/>
+                      </p>
+                      <div class="w3-text-{$color} w3-right-align">
+                        <xsl:value-of select="@level"/>
+                      </div>
+                    </xsl:for-each>
+                    <br/>
+		    </div>
+                  </xsl:if>
+                </div>
+              </div>
+              <br/>
+              <!-- End Left Column -->
+            </div>
+            <!-- Right Column -->
+            <div class="w3-twothird">
+              <!-- Si existe el nodo experiences -->
+              <xsl:if test="/cv/experiences">
+                <div class="print w3-container w3-card w3-white w3-margin-bottom">
+                  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>Experiencia laboral</h2>
+                  <xsl:for-each select="/cv/experiences/experience">
+                    <div class="w3-container">
+                      <h5 class="w3-opacity">
+                        <b>
+                          <xsl:value-of select="company"/>
+                        </b>
+                      </h5>
+                      <xsl:for-each select="projects/project">
+                        <h6 class="w3-text-{$color}"><xsl:value-of select="@title"/> - <xsl:value-of select="@workplace"/></h6>
+                        <h6 class="w3-text-{$color}"><i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
+		      <xsl:choose><xsl:when test="@current"><span class="w3-tag w3-{$color} w3-round">Actualidad</span></xsl:when><xsl:otherwise><xsl:value-of select="@end"/></xsl:otherwise></xsl:choose>
+		    </h6>
+                        <xsl:for-each select="description/p">
+                          <p>
+                            <xsl:value-of select="."/>
+                          </p>
+                        </xsl:for-each>
+                        <hr/>
+                      </xsl:for-each>
+                    </div>
+                  </xsl:for-each>
+                </div>
+              </xsl:if>
+              <!-- Si existen nodos educations -->
+              <xsl:if test="/cv/educations">
+                <xsl:for-each select="/cv/educations">
+                  <section id="{@type}-education" class="print w3-container w3-card w3-white">
+                    <h2 class="w3-text-grey w3-padding-16">
+                      <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>
+                      <xsl:choose>
+                        <xsl:when test="@type='academic'">
+		      Formación académica
 		  </xsl:when>
-		  <xsl:when test="@type='complementary'">
-		    Formación Complementaria
+                        <xsl:when test="@type='complementary'">
+		    Formación complementaria
 		  </xsl:when>
-		  <xsl:otherwise>
+                        <xsl:otherwise>
 		    Otra formación
 		  </xsl:otherwise>
-		</xsl:choose>
-	      </h3>
-	      
-	      <!-- Para cada nodo education -->
-	      <xsl:for-each select="education">
-		<section class="education w3-panel w3-sand">
-		  <h5>De <xsl:value-of select="@start"/> a <xsl:value-of select="@end"/></h5>
-		  <p><xsl:value-of select="course"/> <i>(<xsl:value-of select="institution"/>)</i></p>
-		</section>
-	      </xsl:for-each>
-	    </section>
-	  </xsl:for-each>
-	</xsl:if>
-	
-	<!-- Si hay nodos experiences -->
-	<xsl:if test="/cv/experiences">
-	  <section id="experiences" class="w3-panel w3-card {$color} w3-margin">
-	    <h3>Experiencia profesional</h3>
-	    <!-- Para cada nodo experience -->
-	    <xsl:for-each select="/cv/experiences/experience">
-	      <section class="experience w3-panel w3-sand">
-		<h4><xsl:value-of select="company"/></h4>
-		<!-- Para cada nodo projects -->
-		<xsl:for-each select ="projects/project">
-		  <h5><xsl:value-of select="@title"/> - <xsl:value-of select="@workplace"/>, de <xsl:value-of select="@start"/> a <xsl:value-of select="@end"/></h5>
-		  <xsl:for-each select="description/p">
-		    <p><xsl:value-of select="."/></p>
-		  </xsl:for-each>
-		</xsl:for-each>
-	      </section>
-	    </xsl:for-each>
-	  </section>
-	</xsl:if>
-	
-	<!-- Si existe el nodo languages -->
-	<xsl:if test="/cv/languages">
-	  <section id="languages" class="w3-panel w3-margin {$color}">
-	    <h3>Idiomas</h3>
-	    <!-- Para cada nodo language -->
-	    <xsl:for-each select="/cv/languages/language">
-	      <p><strong><xsl:value-of select="."/></strong> - <xsl:value-of select="@level"/></p>
-	    </xsl:for-each>
-	  </section>
-	</xsl:if>
-	
-	<!-- Si existe el nodo skills -->
-	<xsl:if test="/cv/skills">
-	  <section id="skills" class="w3-panel w3-margin {$color}">
-	    <h3>Otras habilidades</h3>
-	    <ul>
-	      <!-- Para cada nodo skill -->
-	      <xsl:for-each select="/cv/skills/skill">
-		<li><xsl:value-of select="."/></li>
-	      </xsl:for-each>
-	    </ul>
-	  </section>
-	</xsl:if>
-
-	<footer class="w3-panel w3-card {$color}"/>
+                      </xsl:choose>
+                    </h2>
+                    <!-- Para cada nodo education -->
+                    <xsl:for-each select="education">
+                      <div class="w3-container">
+                        <h5 class="w3-opacity">
+                          <b>
+                            <xsl:value-of select="institution"/>
+                          </b>
+                        </h5>
+                        <h6 class="w3-text-{$color}"><i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
+		      <xsl:choose><xsl:when test="@current"><span class="w3-tag w3-{$color} w3-round">Actualidad</span></xsl:when><xsl:otherwise><xsl:value-of select="@end"/></xsl:otherwise></xsl:choose>
+		    </h6>
+                        <p>
+                          <xsl:value-of select="course"/>
+                        </p>
+                        <hr/>
+                      </div>
+                    </xsl:for-each>
+                  </section>
+                </xsl:for-each>
+              </xsl:if>
+              <!-- End Right Column -->
+            </div>
+            <!-- End Grid -->
+          </div>
+          <!-- End Page Container -->
+        </div>
+        <footer class="w3-content w3-{$color} w3-center w3-margin-top" style="max-width:1400px; height: 50px"/>
       </body>
     </html>
   </xsl:template>
