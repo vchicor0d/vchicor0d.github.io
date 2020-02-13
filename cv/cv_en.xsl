@@ -24,7 +24,7 @@
       </head>
       <body class="w3-light-grey">
         <!-- Page Container -->
-        <div class="w3-content w3-margin-top" style="max-width:1400px;">
+        <div class="w3-container w3-margin-top">
           <!-- The Grid -->
           <div class="w3-row-padding">
             <!-- Left Column -->
@@ -39,25 +39,25 @@
                   </div>
                 </div>
                 <div class="w3-container">
-		  <div id="contacto" class="print">
-                  <p>
-                    <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                    <xsl:value-of select="/cv/description"/>
-                  </p>
-                  <p>
-                    <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                    <xsl:value-of select="/cv/address"/>
-                  </p>
-                  <p>
-                    <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                    <xsl:value-of select="/cv/email"/>
-                  </p>
-                  <p>
-                    <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                    <xsl:value-of select="/cv/phone"/>
-                  </p>
-                  <hr/>
-		  </div>
+                  <div id="contacto" class="print">
+                    <p>
+                      <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                      <xsl:value-of select="/cv/description"/>
+                    </p>
+                    <p>
+                      <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                      <xsl:value-of select="/cv/address"/>
+                    </p>
+                    <p>
+                      <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                      <xsl:value-of select="/cv/email"/>
+                    </p>
+                    <p>
+                      <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-{$color}"/>
+                      <xsl:value-of select="/cv/phone"/>
+                    </p>
+                    <hr/>
+                  </div>
                   <!-- Si hay nodo summary -->
                   <xsl:if test="/cv/summary">
                     <section id="summary" class="print w3-panel w3-justify">
@@ -71,36 +71,36 @@
                   </xsl:if>
                   <!-- Habilidades -->
                   <xsl:if test="/cv/skills">
-		    <div id="skills" class="print">
-                    <p class="w3-large">
-                      <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>Habilidades</b>
-                    </p>
-                    <ul>
-                      <xsl:for-each select="/cv/skills/skill">
-                        <li>
-                          <xsl:value-of select="."/>
-                        </li>
-                      </xsl:for-each>
-                    </ul>
-                    <br/>
-		    </div>
+                    <div id="skills" class="print">
+                      <p class="w3-large">
+                        <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>Habilidades</b>
+                      </p>
+                      <ul>
+                        <xsl:for-each select="/cv/skills/skill">
+                          <li>
+                            <xsl:value-of select="."/>
+                          </li>
+                        </xsl:for-each>
+                      </ul>
+                      <br/>
+                    </div>
                   </xsl:if>
                   <!-- Idiomas -->
                   <xsl:if test="/cv/languages">
-		    <div id="languages" class="print">
-                    <p class="w3-large w3-text-theme">
-                      <b><i class="fa fa-globe fa-fw w3-margin-right w3-text-{$color}"/>Idiomas</b>
-                    </p>
-                    <xsl:for-each select="/cv/languages/language">
-                      <p>
-                        <xsl:value-of select="."/>
+                    <div id="languages" class="print">
+                      <p class="w3-large w3-text-theme">
+                        <b><i class="fa fa-globe fa-fw w3-margin-right w3-text-{$color}"/>Idiomas</b>
                       </p>
-                      <div class="w3-text-{$color} w3-right-align">
-                        <xsl:value-of select="@level"/>
-                      </div>
-                    </xsl:for-each>
-                    <br/>
-		    </div>
+                      <xsl:for-each select="/cv/languages/language">
+                        <p>
+                          <xsl:value-of select="."/>
+                        </p>
+                        <div class="w3-text-{$color} w3-right-align">
+                          <xsl:value-of select="@level"/>
+                        </div>
+                      </xsl:for-each>
+                      <br/>
+                    </div>
                   </xsl:if>
                 </div>
               </div>
@@ -180,7 +180,11 @@
           </div>
           <!-- End Page Container -->
         </div>
-        <footer class="w3-content w3-{$color} w3-center w3-margin-top" style="max-width:1400px; height: 50px"/>
+        <footer class="w3-container w3-{$color} w3-center w3-margin-top">
+          <a href="http://vchicor0d.github.io/cv/cv_es.xml">🇪🇸 - CV Castellano</a>
+          <br/>
+          <a href="http://vchicor0d.github.io/cv/cv_en.xml">🇬🇧 - CV English</a>
+        </footer>
       </body>
     </html>
   </xsl:template>
