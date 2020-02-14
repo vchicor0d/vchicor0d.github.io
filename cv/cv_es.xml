@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="cv_es.xsl"?>
-<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="teal" xsi:schemaLocation="cv_data.xsd">
+<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="deep-purple" xsi:schemaLocation="cv_data.xsd">
   <photo>photo.jpg</photo>
   <name>Víctor Chico Rodríguez</name>
   <address>Torrejón de Ardoz, Madrid</address>

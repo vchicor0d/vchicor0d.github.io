@@ -33,7 +33,7 @@
                 <div id="foto" class="print w3-display-container">
                   <img src="{/cv/photo}" style="width:100%" alt="Avatar"/>
                   <div class="w3-display-bottomleft w3-container w3-text-{$color}">
-                    <h2>
+                    <h2 class="w3-tag w3-{$color} w3-round" style="font-size:2vw;">
                       <xsl:value-of select="/cv/name"/>
                     </h2>
                   </div>
@@ -114,13 +114,14 @@
                 <div class="print w3-container w3-card w3-white w3-margin-bottom">
                   <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>Experiencia laboral</h2>
                   <xsl:for-each select="/cv/experiences/experience">
-                    <div class="w3-container">
+                    <div class="print w3-container">
                       <h5 class="w3-opacity">
                         <b>
                           <xsl:value-of select="company"/>
                         </b>
                       </h5>
                       <xsl:for-each select="projects/project">
+			<div class="project print">
                         <h6 class="w3-text-{$color}"><xsl:value-of select="@title"/> - <xsl:value-of select="@workplace"/></h6>
                         <h6 class="w3-text-{$color}"><i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
 		      <xsl:choose><xsl:when test="@current"><span class="w3-tag w3-{$color} w3-round">Actualidad</span></xsl:when><xsl:otherwise><xsl:value-of select="@end"/></xsl:otherwise></xsl:choose>
@@ -131,6 +132,7 @@
                           </p>
                         </xsl:for-each>
                         <hr/>
+		      </div>
                       </xsl:for-each>
                     </div>
                   </xsl:for-each>
@@ -156,7 +158,7 @@
                     </h2>
                     <!-- Para cada nodo education -->
                     <xsl:for-each select="education">
-                      <div class="w3-container">
+                      <div class="print w3-container">
                         <h5 class="w3-opacity">
                           <b>
                             <xsl:value-of select="institution"/>
@@ -180,7 +182,7 @@
           </div>
           <!-- End Page Container -->
         </div>
-        <footer class="w3-container w3-{$color} w3-center w3-margin-top">
+        <footer class="w3-container w3-{$color} w3-center w3-margin-top" style="width: 100%; bottom: 0px">
           <a href="http://vchicor0d.github.io/cv/cv_es.xml">🇪🇸 - CV Castellano</a>
           <br/>
           <a href="http://vchicor0d.github.io/cv/cv_en.xml">🇬🇧 - CV English</a>
