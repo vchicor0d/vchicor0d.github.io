@@ -11,16 +11,16 @@
         <meta lang="{/cv/@lang}"/>
         <link rel="stylesheet" href="w3.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-        <link rel="stylesheet" href="font-awesome.min.css"/>
-	<link rel="stylesheet" hfref="cv.css"/>
+        <link rel="stylesheet" href="fontawesome5.12.1/css/all.min.css"/>
+	<link rel="stylesheet" href="cv.css"/>
       </head>
       <body class="w3-light-grey">
         <!-- Page Container -->
         <div class="w3-container w3-margin-top">
           <!-- The Grid -->
-          <div class="w3-row-padding">
+          <div id="grid">
             <!-- Left Column -->
-            <div class="w3-third">
+            <div id="left" class="w3-margin-right">
               <div class="w3-white w3-text-grey w3-card-4">
                 <div id="foto" class="print w3-display-container">
                   <img src="{/cv/photo}" alt="Avatar"/>
@@ -100,7 +100,7 @@
               <!-- End Left Column -->
             </div>
             <!-- Right Column -->
-            <div class="w3-twothird">
+            <div id="right">
               <!-- Si existe el nodo experiences -->
               <xsl:if test="/cv/experiences">
                 <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -193,9 +193,9 @@
           <!-- End Page Container -->
         </div>
         <footer class="w3-container w3-{$color} w3-center w3-margin-top">
-          <a href="http://vchicor0d.github.io/cv/cv_es.xml">🇪🇸 - CV Castellano</a>
+          <a href="cv_es.xml">🇪🇸 - CV Castellano</a>
           <br/>
-          <a href="http://vchicor0d.github.io/cv/cv_en.xml">🇬🇧 - CV English</a>
+          <a href="cv_en.xml">🇬🇧 - CV English</a>
         </footer>
       </body>
     </html>
