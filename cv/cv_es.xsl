@@ -53,7 +53,10 @@
 	  @media print {
 	    .print {
 	      page-break-inside:avoid;
-	    }
+	      }
+	      body {
+	      background-color: white;
+	      }
 	    footer{
 	      display: none;
 	    }
@@ -153,7 +156,7 @@
                   <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>Experiencia laboral</h2>
                   <xsl:for-each select="/cv/experiences/experience">
                     <div class="print w3-container">
-                      <h5 class="w3-opacity">
+                      <h5 class="w3-text-grey">
                         <b>
                           <xsl:value-of select="company"/>
                         </b>
@@ -197,7 +200,7 @@
                     <!-- Para cada nodo education -->
                     <xsl:for-each select="education">
                       <div class="print w3-container">
-                        <h5 class="w3-opacity">
+                        <h5 class="w3-text-grey">
                           <b>
                             <xsl:value-of select="institution"/>
                           </b>
