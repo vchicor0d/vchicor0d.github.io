@@ -1,0 +1,68 @@
+body {
+    width:960px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Cabecera */
+header {
+    height: 170px;
+    position: sticky !important;
+    top: 0;
+}
+
+header h1{
+    width:40%;
+}
+
+header figure {
+    width: 20%;
+    margin-top: 0 !important;
+}
+
+header img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contacto {
+    width:40%;
+}
+
+#contacto ul li {
+    list-style: none;
+}
+
+#contacto ul li i.fa {
+    display: inline-block;
+    width:10px;
+}
+
+header hr {
+    clear: both;
+}
+
+/* Resumen */
+/*#summary {
+    text-align: justify;
+}*/
+
+/* Formación */
+/*.educations {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+}*/
+
+/* Experiencia */
+
+/* Idiomas */
+
+/* Habilidades */
+
+/* Footer */
+footer {
+    height: 50px;
+}

@@ -1,68 +1,61 @@
-body {
-    width:960px;
-    margin-left: auto !important;
-    margin-right: auto !important;
+@media print {
+    .print {
+	page-break-inside:avoid;
+    }
+    body {
+	background-color: white;
+    }
+    footer{
+	display: none;
+    }
 }
 
-/* Cabecera */
-header {
-    height: 170px;
-    position: sticky !important;
-    top: 0;
+html,body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Roboto", sans-serif
 }
 
-header h1{
-    width:40%;
+#foto img {
+    width: 100%;
 }
 
-header figure {
-    width: 20%;
-    margin-top: 0 !important;
+#foto h2 {
+    font-size: 2vw;
 }
 
-header img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contacto {
-    width:40%;
-}
-
-#contacto ul li {
-    list-style: none;
-}
-
-#contacto ul li i.fa {
-    display: inline-block;
-    width:10px;
-}
-
-header hr {
-    clear: both;
-}
-
-/* Resumen */
-/*#summary {
-    text-align: justify;
-}*/
-
-/* Formación */
-/*.educations {
-    margin-left: 16px !important;
-    margin-right: 16px !important;
-}*/
-
-/* Experiencia */
-
-/* Idiomas */
-
-/* Habilidades */
-
-/* Footer */
 footer {
-    height: 50px;
+    width: 100%;
+    bottom: 0px;
 }
+
+
+/* w3-colors custom with 70% opacity */
+.w3-amber-trans,.w3-hover-amber-trans:hover{color:#000!important;background-color:#ffc10770!important}
+.w3-aqua-trans,.w3-hover-aqua-trans:hover{color:#000!important;background-color:#00ffff70!important}
+.w3-blue-trans,.w3-hover-blue-trans:hover{color:#fff!important;background-color:#2196F370!important}
+.w3-light-blue-trans,.w3-hover-light-blue-trans:hover{color:#000!important;background-color:#87CEEB70!important}
+.w3-brown-trans,.w3-hover-brown-trans:hover{color:#fff!important;background-color:#79554870!important}
+.w3-cyan-trans,.w3-hover-cyan-trans:hover{color:#000!important;background-color:#00bcd470!important}
+.w3-blue-grey-trans,.w3-hover-blue-grey-trans:hover,.w3-blue-gray-trans,.w3-hover-blue-gray-trans:hover{color:#fff!important;background-color:#607d8b70!important}
+.w3-green-trans,.w3-hover-green-trans:hover{color:#fff!important;background-color:#4CAF5070!important}
+.w3-light-green-trans,.w3-hover-light-green-trans:hover{color:#000!important;background-color:#8bc34a70!important}
+.w3-indigo-trans,.w3-hover-indigo-trans:hover{color:#fff!important;background-color:#3f51b570!important}
+.w3-khaki-trans,.w3-hover-khaki-trans:hover{color:#000!important;background-color:#f0e68c70!important}
+.w3-lime-trans,.w3-hover-lime-trans:hover{color:#000!important;background-color:#cddc3970!important}
+.w3-orange-trans,.w3-hover-orange-trans:hover{color:#000!important;background-color:#ff980070!important}
+.w3-deep-orange-trans,.w3-hover-deep-orange-trans:hover{color:#fff!important;background-color:#ff572270!important}
+.w3-pink-trans,.w3-hover-pink-trans:hover{color:#fff!important;background-color:#e91e6370!important}
+.w3-purple-trans,.w3-hover-purple-trans:hover{color:#fff!important;background-color:#9c27b070!important}
+.w3-deep-purple-trans,.w3-hover-deep-purple-trans:hover{color:#fff!important;background-color:#673ab770!important}
+.w3-red-trans,.w3-hover-red-trans:hover{color:#fff!important;background-color:#f4433670!important}
+.w3-sand-trans,.w3-hover-sand-trans:hover{color:#000!important;background-color:#fdf5e670!important}
+.w3-teal-trans,.w3-hover-teal-trans:hover{color:#fff!important;background-color:#00968870!important}
+.w3-yellow-trans,.w3-hover-yellow-trans:hover{color:#000!important;background-color:#ffeb3b70!important}
+.w3-white-trans,.w3-hover-white-trans:hover{color:#000!important;background-color:#ffffff70!important}
+.w3-black-trans,.w3-hover-black-trans:hover{color:#fff!important;background-color:#00000070!important}
+.w3-grey-trans,.w3-hover-grey-trans:hover,.w3-gray-trans,.w3-hover-gray-trans:hover{color:#000!important;background-color:#9e9e9e70!important}
+.w3-light-grey-trans,.w3-hover-light-grey-trans:hover,.w3-light-gray-trans,.w3-hover-light-gray-trans:hover{color:#000!important;background-color:#f1f1f170!important}
+.w3-dark-grey-trans,.w3-hover-dark-grey-trans:hover,.w3-dark-gray-trans,.w3-hover-dark-gray-trans:hover{color:#fff!important;background-color:#61616170!important}
+.w3-pale-red-trans,.w3-hover-pale-red-trans:hover{color:#000!important;background-color:#ffdddd70!important}
+.w3-pale-green-trans,.w3-hover-pale-green-trans:hover{color:#000!important;background-color:#ddffdd70!important}
+.w3-pale-yellow-trans,.w3-hover-pale-yellow-trans:hover{color:#000!important;background-color:#ffffcc70!important}
+.w3-pale-blue-trans,.w3-hover-pale-blue-trans:hover{color:#000!important;background-color:#ddffff70!important}
