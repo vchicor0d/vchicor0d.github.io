@@ -3,7 +3,7 @@
 	page-break-inside:avoid;
     }
     body {
-	background-color: white;
+	background-color: white !important;
     }
     footer{
 	display: none;
