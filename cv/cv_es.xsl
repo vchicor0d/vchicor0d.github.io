@@ -63,19 +63,42 @@
                   </xsl:if>
                   <!-- Habilidades -->
                   <xsl:if test="/cv/skills">
-                    <div id="skills" class="print">
-                      <p class="w3-large">
-                        <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>Habilidades</b>
-                      </p>
-                      <ul>
-                        <xsl:for-each select="/cv/skills/skill">
-                          <li>
-                            <xsl:value-of select="."/>
-                          </li>
-                        </xsl:for-each>
-                      </ul>
-                      <br/>
-                    </div>
+		    <xsl:for-each select="/cv/skills">
+		      <div id="skills" class="print">
+			<p class="w3-large">
+                          <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>
+			  <xsl:choose>
+			  <xsl:when test="@title">
+			    <xsl:value-of select="@title"/>
+			  </xsl:when>
+			  <xsl:otherwise>
+			    Habilidades
+			  </xsl:otherwise>
+			  </xsl:choose>
+			  </b>
+			</p>
+			<xsl:choose>
+			  <xsl:when test="@type='bars'">
+			    <xsl:for-each select="skill">
+			      <p><xsl:value-of select="."/></p>
+			      <div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-{$color}" style="width:{@percent}%"><xsl:value-of select="@percent"/>%</div>
+			      </div>
+			    </xsl:for-each>
+			  </xsl:when>
+			  <xsl:otherwise>
+			    <ul>
+                              <xsl:for-each select="skill">
+				<li>
+				  <xsl:value-of select="."/>
+				</li>
+                              </xsl:for-each>
+			    </ul>
+			  </xsl:otherwise>
+			</xsl:choose>
+			<br/>
+                      </div>
+		    </xsl:for-each>
                   </xsl:if>
                   <!-- Idiomas -->
                   <xsl:if test="/cv/languages">

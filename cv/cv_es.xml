@@ -123,6 +123,21 @@
       </projects>
     </experience>
     <experience>
+      <company>Indizen</company>
+      <projects>
+	<project title="Soluciones Banco Santander" workplace="Madrid" start="12-2015" end="06-2016">
+	  <description>
+	    <p>
+	      Desarrollo de aplicaciones de gestión de recursos para el Banco Santander mediante tecnologías J2EE, bases de datos Oracle y parte del entorno Hibernate, así como HTML y CSS como parte del desarrollo front.
+	    </p>
+	    <p>
+	      Desarrollo de procesos Batch utilizando como entrada y salida ficheros CSV o en formato Excel, utilizando también técnicas de programación multihilo para la generación de estos informes desde la propia aplicación web.
+	    </p>
+	  </description>
+	</project>
+      </projects>
+    </experience>
+    <experience>
       <company>TCP Sistemas e Ingeniería (UST Global)</company>
       <projects>
 	<project title="Telefónica Telco 3.0" workplace="Madrid" start="06-2014" end="12-2015">
@@ -169,16 +184,40 @@
     <language level="Nativo">Castellano</language>
     <language level="C1 (Cambridge First Certificate in English, FCE Grade A)">Inglés</language>
   </languages>
+  <skills type='bars' title="Lenguajes de programación">
+    <skill percent="100">Java</skill>
+    <skill percent="90">SQL</skill>
+    <skill percent="80">HTML</skill>
+    <skill percent="70">CSS</skill>
+    <skill percent="60">Javascript</skill>
+    <skill percent="50">Visual Basic</skill>
+    <skill percent="50">C#</skill>
+    <skill percent="40">C</skill>
+    <skill percent="40">COBOL</skill>
+    <skill percent="40">PL/SQL</skill>
+    <skill percent="30">Clojure</skill>
+    <skill percent="25">Lisp</skill>
+    <skill percent="20">Ruby</skill>
+    <skill percent="10">Haskell</skill>
+  </skills>
+  <skills type="bars" title="Bases de datos">
+    <skill percent="100">Oracle</skill>
+    <skill percent="90">MySQL/MariaDB</skill>
+    <skill percent="80">postgres</skill>
+    <skill percent="60">MongoDB</skill>
+    <skill percent="50">Access</skill>
+    <skill percent="30">DynamoDB</skill>
+  </skills>
   <skills>
     <skill>Manejo avanzado de Office y otras herramientas ofimáticas.</skill>
     <skill>Conocimientos en diseño e instalación de redes.</skill>
     <skill>Manejo de diferentes sistemas operativos Windows</skill>
     <skill>Manejo de sistemas operativos tipo Unix en consola y X Windows</skill>
-    <skill>Conocimientos de programación en lenguajes estructurados con orientación a objetos.</skill>
+    <!--<skill>Conocimientos de programación en lenguajes estructurados con orientación a objetos.</skill>
     <skill>Conocimiento de la sintaxis de varios lenguajes de programación (COBOL, JAVA, Visual Basic, C, C#, Ruby, HTML, CSS, JavaScript y PLSQL)</skill>
-    <skill>Manejo de bases de datos (Oracle, MySQL, postgres, Access)</skill>
+    <skill>Manejo de bases de datos (Oracle, MySQL, postgres, Access)</skill>-->
     <skill>Conocimientos de tecnología y estructura de computadores</skill>
     <skill>Conocimientos sobre análisis de aplicaciones</skill>
-    <skill>Conocimientos de lenguajes de programación funcionales (Haskell, Lisp, Clojure).</skill>
+    <!--<skill>Conocimientos de lenguajes de programación funcionales (Haskell, Lisp, Clojure).</skill>-->
   </skills>
 </cv>

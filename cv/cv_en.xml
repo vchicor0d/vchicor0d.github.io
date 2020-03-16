@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv_es.xsl"?>
-<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="teal" xsi:schemaLocation="cv_data.xsd">
+<?xml-stylesheet type="text/xsl" href="cv_en.xsl"?>
+<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="deep-purple" xsi:schemaLocation="cv_data.xsd">
   <photo>photo.jpg</photo>
   <name>Víctor Chico Rodríguez</name>
   <address>Torrejón de Ardoz, Madrid</address>
@@ -17,19 +17,19 @@
   </summary>-->
   <educations type="academic">
     <education start="2017" current="true">
-      <course>Grado en Ingeniería Informática</course>
+      <course>Bachelor degree in computer engineering</course>
       <institution>Universitat Oberta de Catalunya</institution>
     </education>
     <education start="2013" end="2014">
-      <course>Administración de sistemas informáticos y redes (Primer curso)</course>
+      <course>First year in Formación Profesional de Grado Superior (Systems administration and networking)</course>
       <institution>IES Azarquiel, Toledo</institution>
     </education>
     <education start="2010" end="2012">
-      <course>CGFS Desarrollo de aplicaciones informáticas</course>
+      <course>Formación Profesional de Grado Superior (Software Development)</course>
       <institution>IES Azarquiel, Toledo</institution>
     </education>
     <education start="2004" end="2006">
-      <course>Bachillerato en ciencias de la naturaleza (Rama ciencias e ingeniería)</course>
+      <course>Bachillerato en ciencias de la naturaleza (Science and engineering)</course>
       <institution>IES Alfonso X "El Sabio", Toledo</institution>
     </education>
   </educations>
@@ -39,7 +39,7 @@
       <institution>IES Azarquiel, Toledo</institution>
     </education>
     <education start="05-2013" end="06-2013">
-      <course>Diseño de páginas web (Dreamweaver, Photoshop, Flash)</course>
+      <course>Web design (Dreamweaver, Photoshop, Flash)</course>
       <institution>Forem Castilla - La Mancha, Toledo</institution>
     </education>
     <education start="10-2012" end="12-2012">
@@ -47,7 +47,7 @@
       <institution>Coritel-Accenture, Madrid</institution>
     </education>
     <education start="05-2012" end="06-2012">
-      <course>Nivel básico en prevención de riesgos laborales</course>
+      <course>Basic level in occupational risks prevention</course>
       <institution>IES Azarquiel, Toledo</institution>
     </education>
     <education start="10-2003" end="04-2004">
@@ -55,7 +55,7 @@
       <institution>Instituto superior de estudios informáticos, Toledo</institution>
     </education>
     <education start="09-2002" end="11-2002">
-      <course>Mecanografía e introducción a la informática</course>
+      <course>Typing and computer basics</course>
       <institution>Instituto superior de estudios informáticos, Toledo</institution>
     </education>
   </educations>
@@ -66,21 +66,21 @@
         <project title="Dematic iQ" workplace="Coslada" start="06-2019" current="true">
           <description>
             <p>
-	      Desarrollo e implantación de control de almacenes logísticos mediante Java EE utilizando diferentes especificaciones (Jersey, JMS,...).
+	      Development and implantation of warehouse management systems using Java EE and some of it's specifications (Jerse, JMS,...).
 	    </p>
           </description>
         </project>
         <project title="Alimerka" workplace="Lugo de llanera, Asturias" start="08-2019" end="08-2019">
           <description>
             <p>
-	      Puesta en marcha de la instalación realizando diferentes pruebas sobre el hardware real.
+	      Setting up of the warehouse testing different systems over the physical hardware.
 	    </p>
           </description>
         </project>
 	<project title="Ahorramás" workplace="Velilla de San Antonio, Madrid" start="09-2019" end="09-2019">
 	  <description>
 	    <p>
-	      Soporte al cliente durante la fase inicial de producción con resolución de incidencias y corrección de errores.
+	      Customer support during the initial production phase resolving issues and correcting product errors.
 	    </p>
 	  </description>
 	</project>
@@ -92,19 +92,19 @@
         <project title="atresmedia soluciones digitales" workplace="San Sebastián de los Reyes" start="05-2017" end="06-2019">
           <description>
             <p>
-	      Desarrollo de aplicaciones de gestión de contenidos en código Java EE con Spring y maven utilizando BBDD oracle, MongoDB y Solr e integración con entorno Amazon AWS.
+	      Development of the company’s cms with Java EE using frameworks like Spring or Hibernate over Oracle and MongoDB through Solr also integrating them with the Amazon AWS environment.
 	    </p>
             <p>
-	      Diseño de frontends con GWT con utilización de clasess CSS propias y hojas de estilo externas.
+	      GWT frontend design for each of the features of the content management system, using both, google and custom components.
 	    </p>
             <p>
-	      Desarrollo de servicios REST utilizando Spring en un entorno orientado al microservicio.
+	      Microservice oriented REST services using Spring boot and deploying them to Kubernetes.
 	    </p>
             <p>
-	      Desarrollo de skills para Alexa utilizando el stack de AWS (Lambda, API Gateway, ElasticCache, DynamoDB, etc.).
+	      Amazon Alexa skill development using their AWS Stack (Lambda, API Gateway, ElasticCache, DynamoDB,...)
 	    </p>
 	    <p>
-	      Configuración de proyectos en Jenkins para su integración automatizada con los diferentes proyectos.
+	      Configuration and creation of Jenkins projects for automated integration.
 	    </p>
           </description>
         </project>
@@ -113,10 +113,26 @@
     <experience>
       <company>Arelance</company>
       <projects>
-	<project title="Indra - Ministerio de Justicia" workplace="Madrid" start="09-2016" end="04-2017">
+	<project title="Indra - Ministry of Justice" workplace="Madrid" start="09-2016" end="04-2017">
 	  <description>
 	    <p>
-	      Desarrollo de aplicaciones web para el sector público mediante Java J2EE utilizando el framework Struts con base de datos Oracle y desarrollo de front mediante HTML, JSP y Javascript.
+	      Web application and database development using Java J2EE through the Struts framework connecting with Oracle Databases with PL/SQL development.
+Frontend development using HTML, JSP and Javascript.
+	    </p>
+	  </description>
+	</project>
+      </projects>
+    </experience>
+    <experience>
+      <company>Indizen</company>
+      <projects>
+	<project title="Soluciones Banco Santander" workplace="Madrid" start="12-2015" end="06-2016">
+	  <description>
+	    <p>
+	      Resource management software development for Santander Bank using J2EE technologies, Oracle databases and a part of the Hibernate environment for the backend and HTML and Bootstrap CSS for the frontend development.
+	    </p>
+	    <p>
+	      Batch process development using MS Excel or CSV files as Input/Output, using multithreaded programming for this reports generation from inside the web application.
 	    </p>
 	  </description>
 	</project>
@@ -128,13 +144,13 @@
 	<project title="Telefónica Telco 3.0" workplace="Madrid" start="06-2014" end="12-2015">
 	  <description>
 	    <p>
-	      Desarrollo de servicios REST mediante Java J2EE para su integración con front AngularJS y desarrollo de pruebas Jasmine sobre los mismos.
+	      REST service development using Java J2EE for it’s integration with an AngularJS frontend and Jasmine testing over them.
 	    </p>
 	    <p>
-	      Desarrollo de Webservices mediante J2EE con acceso a bases de datos mediante SQL o CriteriaQuery y desarrollo de pruebas unitarias mediante JUnit y Mockito.
+	     Webservice development using java with database access using SQL or CriteriaQuery and JUnit with Mockito unit test development.
 	    </p>
 	    <p>
-	      Desarrollo de pruebas funcionales mediante SOAP con funciones de coordinación de equipo y capacitación.
+	      Functional test development using SOAPUI coordinating the testing team, designing database test data.
 	    </p>
 	  </description>
 	</project>
@@ -146,7 +162,7 @@
 	<project title="Servicio técnico Worten Soluciona" workplace="Toledo/Talavera de la Reina, Toledo" start="07-2013" end="09-2013">
 	  <description>
 	    <p>
-	      Servicio técnico diagnosticando y/o reparando electrodomésticos, ordenadores y otros dispositivos electrónicos de cara al cliente.
+	      Technical service diagnosing and/or repairing appliances, computers and other electronic devices with customer services.
 	    </p>
 	  </description>
 	</project>
@@ -155,10 +171,10 @@
     <experience>
       <company>Universidad de Alcalá</company>
       <projects>
-	<project title="Módulo profesional de formación en centros de trabajo (Departamento de ciencias de la computación" workplace="Alcalá de Henares, Madrid" start="04-2012" end="06-2012">
+	<project title="Módulo profesional de formación en centros de trabajo (Workplace training - Computer science department)" workplace="Alcalá de Henares, Madrid" start="04-2012" end="06-2012">
 	  <description>
 	    <p>
-	      Módulo profesional de formación en centros de trabajo.
+	      Workplace training developing department web applictions using C# and ASP.NET 2.
 	    </p>
 	  </description>
 	</project>
@@ -166,19 +182,42 @@
     </experience>
   </experiences>
   <languages>
-    <language level="Nativo">Castellano</language>
-    <language level="C1 (Cambridge First Certificate in English, FCE Grade A)">Inglés</language>
+    <language level="Native">Spanish (Castillian)</language>
+    <language level="C1 (Cambridge First Certificate in English, FCE Grade A)">English</language>
   </languages>
+  <skills type='bars' title="Programming languages">
+    <skill percent="100">Java</skill>
+    <skill percent="90">SQL</skill>
+    <skill percent="80">HTML</skill>
+    <skill percent="70">CSS</skill>
+    <skill percent="60">Javascript</skill>
+    <skill percent="50">Visual Basic</skill>
+    <skill percent="50">C#</skill>
+    <skill percent="40">C</skill>
+    <skill percent="40">COBOL</skill>
+    <skill percent="40">PL/SQL</skill>
+    <skill percent="30">Clojure</skill>
+    <skill percent="25">Lisp</skill>
+    <skill percent="20">Ruby</skill>
+    <skill percent="10">Haskell</skill>
+  </skills>
+  <skills type="bars" title="Databases">
+    <skill percent="100">Oracle</skill>
+    <skill percent="90">MySQL/MariaDB</skill>
+    <skill percent="80">postgres</skill>
+    <skill percent="60">MongoDB</skill>
+    <skill percent="50">Access</skill>
+    <skill percent="30">DynamoDB</skill>
+  </skills>
   <skills>
-    <skill>Manejo avanzado de Office y otras herramientas ofimáticas.</skill>
-    <skill>Conocimientos en diseño e instalación de redes.</skill>
-    <skill>Manejo de diferentes sistemas operativos Windows</skill>
-    <skill>Manejo de sistemas operativos tipo Unix en consola y X Windows</skill>
-    <skill>Conocimientos de programación en lenguajes estructurados con orientación a objetos.</skill>
+    <skill>Advanced knowledge of MS Office and other Office suites.</skill>
+    <skill>Knowledge of network design and installation.</skill>
+    <skill>Knowledge of multiple Operating Systems including Windows and Unix-like OS in console or X Windows mode</skill>
+    <!--<skill>Conocimientos de programación en lenguajes estructurados con orientación a objetos.</skill>
     <skill>Conocimiento de la sintaxis de varios lenguajes de programación (COBOL, JAVA, Visual Basic, C, C#, Ruby, HTML, CSS, JavaScript y PLSQL)</skill>
-    <skill>Manejo de bases de datos (Oracle, MySQL, postgres, Access)</skill>
-    <skill>Conocimientos de tecnología y estructura de computadores</skill>
-    <skill>Conocimientos sobre análisis de aplicaciones</skill>
-    <skill>Conocimientos de lenguajes de programación funcionales (Haskell, Lisp, Clojure).</skill>
+    <skill>Manejo de bases de datos (Oracle, MySQL, postgres, Access)</skill>-->
+    <skill>Knowledge of computer technology and structure</skill>
+    <skill>Knowledge of application analysis</skill>
+    <!--<skill>Conocimientos de lenguajes de programación funcionales (Haskell, Lisp, Clojure).</skill>-->
   </skills>
 </cv>
