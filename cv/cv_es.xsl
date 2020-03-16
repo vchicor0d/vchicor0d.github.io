@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="fontawesome5.12.1/css/all.min.css"/>
 	<link rel="stylesheet" href="cv.css"/>
       </head>
-      <body class="w3-light-grey">
+      <body>
         <!-- Page Container -->
         <div class="w3-container w3-margin-top">
           <!-- The Grid -->
