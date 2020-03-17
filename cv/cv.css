@@ -8,6 +8,22 @@
     footer{
 	display: none;
     }
+        
+    html,body,#contacto p {   
+	font-size: 1.05vw;
+    }
+
+    .title {
+	font-size: 2.1vw;
+    }
+
+    .subtitle {
+	font-size: 1.3vw;
+    }
+
+    h6 {
+	font-size: 1.15vw;
+    }
 }
 
 body {
