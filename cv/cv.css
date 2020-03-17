@@ -15,7 +15,23 @@ body {
 }
 
 html,body,h1,h2,h3,h4,h5,h6 {
-  font-family: "Roboto", sans-serif
+    font-family: "Roboto", sans-serif;		       
+}
+
+html,body,#contacto p {   
+    font-size: 0.95vw;
+}
+
+.title {
+    font-size: 2vw;
+}
+
+.subtitle {
+    font-size: 1.2vw;
+}
+
+h6 {
+    font-size: 1.05vw;
 }
 
 #foto img {
@@ -24,6 +40,10 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 #foto h2 {
     font-size: 2vw;
+}
+
+.w3-large b {
+    //font-size: 1.75vw;
 }
 
 footer {
