@@ -32,22 +32,30 @@
                 </div>
                 <div class="w3-container">
                   <div id="contacto" class="print">
-                    <p>
-                      <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                      <xsl:value-of select="/cv/description"/>
-                    </p>
-                    <p>
-                      <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                      <xsl:value-of select="/cv/address"/>
-                    </p>
-                    <p>
-                      <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                      <xsl:value-of select="/cv/email"/>
-                    </p>
-                    <p>
-                      <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-{$color}"/>
-                      <xsl:value-of select="/cv/phone"/>
-                    </p>
+		    <xsl:if test="/cv/description">
+                      <p>
+			<i class="fa fa-briefcase fa-fw w3-margin-right w3-text-{$color}"/>
+			<xsl:value-of select="/cv/description"/>
+                      </p>
+		    </xsl:if>
+		    <xsl:if test="/cv/address">
+                      <p>
+			<i class="fa fa-home fa-fw w3-margin-right w3-text-{$color}"/>
+			<xsl:value-of select="/cv/address"/>
+                      </p>
+		    </xsl:if>
+		    <xsl:if test="/cv/email">
+                      <p>
+			<i class="fa fa-envelope fa-fw w3-margin-right w3-text-{$color}"/>
+			<xsl:value-of select="/cv/email"/>
+                      </p>
+		    </xsl:if>
+		    <xsl:if test="/cv/phone">
+                      <p>
+			<i class="fa fa-phone fa-fw w3-margin-right w3-text-{$color}"/>
+			<xsl:value-of select="/cv/phone"/>
+                      </p>
+		    </xsl:if>
                     <hr/>
                   </div>
                   <!-- Si hay nodo summary -->
