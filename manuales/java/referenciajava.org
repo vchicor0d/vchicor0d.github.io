@@ -1440,7 +1440,50 @@ En ambos casos el resultado será el mismo:
 : Hola, Raquel
 
 *** Date
-La clase Date
+La clase Date del paquete java.util es una clase que nos permite almacenar fechas.
+
+**** Declaración e inicialización
+Como cualquier objeto, la clase Date se inicializa a través de la palabra reservada ~new~:
+
+~Date~ tiene dos métodos constructores (tiene más, pero están en desuso), el primero no admite parámetros y nos muestra la fecha actual:
+
+#+Name: FechaActual
+#+Caption: Constructor Date con fecha actual
+#+BEGIN_SRC java :exports both :classname FechaActual
+  import java.util.Date;
+
+  class FechaActual {
+
+    public static void main (String [] args) {
+      Date fechaActual = new Date();
+      System.out.println(fechaActual);
+    }
+  }
+#+END_SRC
+
+
+El otro método constructor del que disponemos nos permitirá crear un objeto Date con la fecha que le digamos, pero su formato es un poco extraño, ya que requiere que le pasemos el número de milisegundos que han pasado desde una fecha que se toma como referencia (conocida como Epoch) y que es el 1-1-1970, como no nos vamos a poner a calcularlos, podemos utilizar una de la múltiples webs que nos ofrecen esta información en internet, aqui utilizaremos [[https://www.epochconverter.com][Epoch converter - Unix Timestamp converter]], pongamos por ejemplo el 2-2-1990, según la web, el número de milisegundos que pasaron desde Epoch hasta esa fecha es 633969132000, veamos si coincide:
+
+#+Name: OtraFecha
+#+Caption: Constructor Date con otra fecha
+#+BEGIN_SRC java :exports both :classname OtraFecha
+  import java.util.Date;
+
+  class OtraFecha {
+
+    public static void main (String [] args) {
+      //Como el parámetro es de tipo long tiene que llevar una L al final para distinguirlo de int
+      Date otraFecha = new Date(633969132000L);
+      System.out.println(otraFecha);
+    }
+  }
+#+END_SRC
+
+¡Coincide! El único problema parece ser que poner una fecha en milisegundos no es lo más cómodo, para ello tenemos otro par de clases, que aunque no son tan usadas y no nos detendremos en visitarlas en profundiad conviene conocer, estas son las clases [[https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html][Calendar]] y [[https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html][GregorianCalendar]].
+
+**** Métodos y propiedades 
+Los métodos más interesantes de la clase date son getTime() y setTime(long time), que nos permiten obtener o poner los milisegundos que han pasado desde Epoch.
+
 *** List y ArrayList
 *** System
 * Herencia
