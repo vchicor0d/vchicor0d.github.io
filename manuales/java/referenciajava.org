@@ -604,6 +604,7 @@ class BucleWhile {
 : 9
 : 10 
 ** El bucle for
+<<sec:buclefor>>
 El bucle ~for~ es un caso especial del bucle ~while~, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle ~for~ lo haríamos así:
 
 #+NAME: BucleFor
@@ -683,6 +684,17 @@ class BucleForSinInicializacionNiModificacion {
 
 }
 #+END_SRC
+
+Existe un último caso de bucle ~for~, se trata del también llamado bucle ~for-each~, ya que sólo puede ser usado por colecciónes de elementos (no entremos en detalle ahora), y se ejecutará una vez por cada elemento de la colección, lo explicaremos en detalle más adelante pero, suponiendo una colección de elementos de tipo ~String~ llamada nombres su pinta sería la siguiente:
+
+#+Caption: Bucle /for-each/
+#+BEGIN_SRC java :exports code :eval none
+  for (String nombre : nombres) {
+    System.out.println(nombre);
+  }
+#+END_SRC
+
+Donde ~nombre~ es el nombre de la variable que vamos a usar y que va a tomar todos los valores de nuestra colección de ~nombres~ de uno en uno.
 
 ** El bucle do-while
 Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle ~do-while~.
@@ -1107,6 +1119,84 @@ Ahora vamos a ver como podemos añadir un valor al objeto que ya existe
   }
 #+END_SRC
 
+** Sobrecarga de métodos
+Expliquemos ahora un nuevo concepto, se trata de la /sobrecarga de métodos/, una función extremádamente útil que tiene Java, a pesar del nombre tan rimbombante que tiene se trata simplemente de la posibilidad de tener un método con el mismo nombre pero con diferentes parámetros, sean o bien diferente número o diferente tipo (o ambas, obviamente).
+
+La forma que tiene Java de permitir esto es asignando a cada método una /firma/. La firma de un método viene dada por su nombre y los tipos de sus atributos, es importante porque en una misma clase *no puede haber dos o más métodos con la misma firma*. Veamos un ejemplo:
+
+#+Caption:Sobrecarga de métodos
+#+Name:SobrecargaDeMetodos
+#+BEGIN_SRC java :exports both :eval no-export
+  class SobrecargaDeMetodos {
+
+    public static void main (String[] args) {
+
+      saludar("Víctor");
+      saludar("Víctor","Toledo");
+      saludar(30);
+      saludar("Víctor",30);
+      saludar("Víctor","Toledo",30);
+      saludar();
+
+    }
+
+    static void saludar(String nombre) {
+      System.out.println("Hola, "+nombre+". No se tu edad ni donde naciste :(");
+    }
+
+    static void saludar(String nombre, String ciudad) {
+      System.out.println("Hola, "+nombre+", no se tu edad, pero se que naciste en "+ciudad);
+    }
+
+    static void saludar(int edad) {
+      System.out.println("Hola, no se como te llamas ni donde naciste, pero se que tienes "+edad+" años");
+    }
+  
+    static void saludar(String nombre, int edad){
+      System.out.println("Hola, "+nombre+", naciste hace "+edad+" pero no se dónde");
+    }
+
+    static void saludar(String nombre, String ciudad, int edad) {
+      System.out.println("Hola "+nombre+"! Te conozco bien, tienes "+edad+" años y naciste en "+ciudad);
+    }
+
+    static void saludar() {
+      System.out.println("Hola, no te conozco en absoluto, no se ni tu edad, ni dónde naciste :'(");
+    }
+
+  }
+#+END_SRC
+
+#+Results: SobrecargaDeMetodos
+: Hola, Víctor. No se tu edad ni donde naciste :(
+: Hola, Víctor, no se tu edad, pero se que naciste en Toledo
+: Hola, no se como te llamas ni donde naciste, pero se que tienes 30 años
+: Hola, Víctor, naciste hace 30 años pero no se dónde
+: Hola Víctor! Te conozco bien, tienes 30 años y naciste en Toledo
+: Hola, no te conozco en absoluto, no se ni tu edad ni dónde naciste :'(
+
+Fijémonos ahora en las firmas de las diferentes sobrecargas del método /saludar/
+1. saludar(String) 
+2. saludar(String, String)
+3. saludar(int)
+4. saludar(String, int)
+5. saludar(String, String, int)
+6. saludar()
+
+Podemos ver que en las firmas a Java /le da igual/ el nombre de los parámetros, solo le importa su tipo, esto nos limita a que, por ejemplo no podríamos tener un método con que nos saludase con la ciudad de nacimiento y la edad de la siguiente forma:
+
+#+BEGIN_SRC java :exports code :eval none
+static void saludar(String ciudad, int edad){
+#+END_SRC
+
+Ya que tendría la misma firma que el método *4* /saludar(String, int)/, no obstante si que podríamos haberlo añadido de la siguiente manera:
+
+#+BEGIN_SRC java :exports code :eval none
+static void saludar(int edad, String ciudad){
+#+END_SRC
+
+Ya que aquí el método tendría una firma que sería /saludar(int, String)/, que no coincide con ninguna de las otras 6.
+
 * Clases y objetos
 Como ya hemos comentado anteriormente, Java es un lenguaje de programación /orientado a objetos/, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,...) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.
 
@@ -1307,6 +1397,48 @@ String[][] otroArrayMultidimendional = {{"p11","p12","p13"},{"p21","p22","p23"}}
 #+END_SRC
 **** Métodos y propiedades
 - lentgh: propiedad que nos indica la longitud del array
+**** Recorriendo un Array
+Dada su naturaleza, muchas veces nos interesará recorrer todos los valores de un array, ya sea para buscar un valor concreto si no sabemos su posición, para imprimir todos los valores o para cualquier otra cosa que se nos pueda ocurrir. Esto se puede conseguir de múltiples maneras, pero las más común sería utilizando un [[sec:buclefor][bucle *for*]].
+
+Por ejemplo, si tenemos el siguiente Array de Strings
+
+#+BEGIN_SRC java :exports code :eval none
+String[] nombres = {"Pepe","Juan","María","Beatriz","Víctor","Raquel"};
+#+END_SRC
+
+Podríamos hacer un bucle for clásico para recorrer e imprimir cada uno de los valores del array:
+
+#+BEGIN_SRC java :exports code :eval none
+  //Nuestro bucle for recorrerá desde la posición 0, hasta la última del array
+  //identificada por su propiedad length y sumará 1 a la variable i en cada
+  //iteración del bucle
+  for (int i=0; i<nombres.length; i++) {
+    System.out.println("Hola, "+nombres[i]);
+  }
+#+END_SRC
+
+Pero como vimos en la sección dedicada al bucle for, teníamos un tipo de bucle que se ejecuta una vez por cada elemento de una colección y, efectivamente, un array es una colección de elementos como habrás podido deducir. Por lo tanto, usando esta manera simplificaremos el bucle:
+
+#+Name: recorridoarray
+#+BEGIN_SRC java :exports both :eval no-export
+  for (String nombre : nombres) {
+    // Ya no tenemos una variable i con la que acceder a cada posición del array nombres (nombres[i])
+    // sino que tenemos una variable nombre, del mismo tipo que cada elemento del array, en este caso
+    // de tipo String, que en cada iteración contendrá el un valor del array de nombres
+    System.out.println("Hola, "+nombre);
+  }
+#+END_SRC
+
+En ambos casos el resultado será el mismo:
+
+#+Results: recorridoarray
+: Hola, Pepe
+: Hola, Juan
+: Hola, María
+: Hola, Beatriz
+: Hola, Víctor
+: Hola, Raquel
+
 *** Date
 La clase Date
 *** List y ArrayList
