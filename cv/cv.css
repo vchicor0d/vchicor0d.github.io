@@ -50,12 +50,32 @@ h6 {
     font-size: 1.05vw;
 }
 
+#fotocontainer {
+    padding-top: 1vw;
+}
+
+#foto {
+    width:75%;
+    margin: 0 auto;
+    height: 25vw;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #foto img {
     width: 100%;
 }
 
-#foto h2 {
+#fotocontainer h2 {
     font-size: 2vw;
+}
+
+.project, .education {
+    margin-left: 2vw;
 }
 
 .w3-large b {

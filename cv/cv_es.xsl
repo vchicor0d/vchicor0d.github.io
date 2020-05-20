@@ -22,8 +22,8 @@
             <!-- Left Column -->
             <div id="left" class="w3-margin-right">
               <div class="w3-white w3-text-grey w3-card-4">
-                <div id="foto" class="print w3-display-container">
-                  <img src="{/cv/photo}" alt="Avatar"/>
+                <div id="fotocontainer" class="print w3-display-container">
+		  <div id="foto" style="background-image: url({/cv/photo});" />
                   <div class="w3-display-bottomleft w3-container">
                     <h2 class="w3-tag w3-{$color}-trans w3-round">
                       <xsl:value-of select="/cv/name"/>
@@ -197,20 +197,22 @@
                             <xsl:value-of select="institution"/>
                           </b>
                         </h5>
-                        <h6 class="w3-text-{$color}">
-			  <i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
-			  <xsl:choose>
-			    <xsl:when test="@current">
-			      <span class="w3-tag w3-{$color} w3-round">Actualidad</span>
-			    </xsl:when>
-			    <xsl:otherwise>
-			      <xsl:value-of select="@end"/>
-			    </xsl:otherwise>
-			  </xsl:choose>
-			</h6>
-                        <p>
-                          <xsl:value-of select="course"/>
-                        </p>
+			<div class="education">
+                          <h6 class="w3-text-{$color}">
+			    <i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
+			    <xsl:choose>
+			      <xsl:when test="@current">
+				<span class="w3-tag w3-{$color} w3-round">Actualidad</span>
+			      </xsl:when>
+			      <xsl:otherwise>
+				<xsl:value-of select="@end"/>
+			      </xsl:otherwise>
+			    </xsl:choose>
+			  </h6>
+                          <p>
+                            <xsl:value-of select="course"/>
+                          </p>
+			</div>
                         <hr/>
                       </div>
                     </xsl:for-each>
