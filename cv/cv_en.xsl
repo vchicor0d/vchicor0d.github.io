@@ -47,13 +47,13 @@
 		    <xsl:if test="/cv/email">
                       <p>
 			<i class="fa fa-envelope fa-fw w3-margin-right w3-text-{$color}"/>
-			<xsl:value-of select="/cv/email"/>
+			<a href="mailto:{/cv/email}"><xsl:value-of select="/cv/email"/></a>
                       </p>
 		    </xsl:if>
 		    <xsl:if test="/cv/phone">
                       <p>
 			<i class="fa fa-phone fa-fw w3-margin-right w3-text-{$color}"/>
-			<xsl:value-of select="/cv/phone"/>
+			<a href="tel:{/cv/phone}"><xsl:value-of select="/cv/phone"/></a>
                       </p>
 		    </xsl:if>
                     <hr/>
@@ -197,7 +197,7 @@
                             <xsl:value-of select="institution"/>
                           </b>
                         </h5>
-			<div class="educations">
+			<div class="education">
                           <h6 class="w3-text-{$color}">
 			    <i class="fa fa-calendar fa-fw w3-margin-right"/><xsl:value-of select="@start"/> -
 			    <xsl:choose>
