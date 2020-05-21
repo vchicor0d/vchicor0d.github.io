@@ -4,11 +4,12 @@ La plantilla está dividida en 3 partes, cv.xml, que contiene los datos; cv.xsl,
   
 Normalmente sólo sería necesario modificar el .xml
 
-Para visualizar el CV en un navegador necesitaremos activar algunas características
-* Chrome/Chromium/Vivaldi/Opera: Es necesario usar un servidor web
-* Firefox: Entrar en about:config y poner la propiedad security.fileuri.strict_origin_policy a false
+Para visualizar el CV en un navegador offline necesitaremos activar algunas características
+
 * Falkon: Funciona sin problemas.
-  
+* Firefox: Entrar en about:config y poner la propiedad security.fileuri.strict_origin_policy a false
+* Chrome/Chromium/Vivaldi/Opera/etc.: Es necesario usar un servidor web
+
 Una vez visualizado, podemos imprimirlo como pdf para tener una copia que enviar.
 
 ## cv.xml
