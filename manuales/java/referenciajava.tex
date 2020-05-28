@@ -1,4 +1,4 @@
-% Created 2020-05-04 lun 17:48
+% Created 2020-05-28 jue 14:38
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -34,10 +34,10 @@
 \href{./referenciajava.odt}{Descargar como OpenDocument}
 
 \section{Introducción}
-\label{sec:org8093c82}
+\label{sec:org02ab280}
 Java es un lenguage de programación orientado a objetos, fue desarrollado en 1995 por Sun MicroSystems y está basado en C++, es un lenguaje que se ejecuta en una máquina virtual que interpreta (la JVM, siglas de \emph{Java Virtual Machine}) las instrucciones compiladas a bytecode (el lenguaje de la máquina virtual). Java fue adquirido por Oracle en el año 2010.
 \subsection{Estructura de un programa}
-\label{sec:org510313a}
+\label{sec:orge3dbd09}
 
 A lo largo de este texto veremos varios ejemplos de código fuente Java así como su salida por pantalla, a continuación un ejemplo de código Java:
 
@@ -52,11 +52,11 @@ import java.io.Scanner;
 public class HolaMundo {
 
     /*Este es el método main (principal), 
-es un método especial que servirá comom punto de entrada a la aplicación. 
+es un método especial que servirá como punto de entrada a la aplicación. 
 Este método es:
 - público (puede ser accedido desde cualquier clase)
-- estático (puede ser accedido sin necesidad de crear un objeto de la clase
--  no devuelve nada (tipo void)
+- estático (puede ser accedido sin necesidad de crear un objeto de la clase)
+- no devuelve nada (tipo void)
 - recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)
 */
     public static void main (String [] args) {
@@ -67,17 +67,18 @@ Este método es:
 
 	/*
 	  Esto es una llamada a un método, concretamente al método print(String)
-	  del atributo out de la clase System, este método imprime en la pantalla
+	  del atributo out (que es un objeto de la clase PrintStream) 
+	  de la clase System, este método imprime en la pantalla
 	  (consola de texto) el texto que se le pase como parámetro y continúa
 	  en la misma línea.
 	  Como parámetro se le pasa la cadena de texto (String) "¿Cómo te llamas?"
 	  Los valores de tipo String van siempre entre comillas dobles "
 	 */
-	System.out.print("¿Cómo te llamas?");
+	System.out.print("¿Cómo te llamas? ");
 
 	//Este es un objeto de la clase String (cadena de texto) que se llama nombre.
 	//Este objeto se inicializa automáticamente con el valor que devuleve
-	//el método readLine() (Método sin argumentos) del objeto scan.
+	//el método nextString() (Método sin argumentos) del objeto scan.
 	String nombre = scan.nextString();
 
 	/*
@@ -94,7 +95,7 @@ Este método es:
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org8bb7809}
+\captionof{figure}{\label{org875eb54}
 Hola Mundo}
 
 Y a continuación un ejemplo de como sería su salida por pantalla si le decimos que nos llamamos Víctor:
@@ -105,20 +106,20 @@ Hola, Víctor
 \end{verbatim}
 
 \section{Tipos de datos}
-\label{sec:org33ffcf4}
-\label{orga663cae}
+\label{sec:org4ca25db}
+\label{org58d886b}
 Los tipos de datos primitivos en java son los siguientes:
 \begin{center}
 \begin{tabular}{lll}
 tipo & descripción & clase asociada\\
 \hline
 byte & número entero de 8 bits (-128 a 127) & Byte\\
-short & número entero de 16 bits (-32768 a 32767 & Short\\
+short & número entero de 16 bits (-32768 a 32767) & Short\\
 int & número entero de 32 bits (\(-2^{32}\) a \(2^{32}\)) & Integer\\
 long & número entero de 64 bits (\(-2^{64}\) a \(2^{64}\)) & Long\\
 float & número decimal de 32 bits & Float\\
 double & número decimal de 64 bits & Double\\
-boolean & valor booleano o lógico (verdadero o falso) & Boolean\\
+boolean & valor booleano o lógico true/false (verdadero o falso) & Boolean\\
 char & caracter de texto (único) & Character\\
 \end{tabular}
 \end{center}
@@ -126,15 +127,15 @@ char & caracter de texto (único) & Character\\
 
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
 \section{Operadores}
-\label{sec:org5e982e5}
+\label{sec:orgb03910b}
 \subsection{Asignación}
-\label{sec:org2ebcf71}
+\label{sec:org593d2bf}
 El operador \textbf{=} se usa para asignar valores a variables:
 \begin{verbatim}
 int a = 0;
 \end{verbatim}
 \subsection{Aritméticos}
-\label{sec:org8a3abe3}
+\label{sec:org1ffe0ba}
 En java se pueden realizar multitud de operaciones matemáticas con la misma precedencia que en la vida real, si se necesita modificar se pueden utilizar paréntesis, los operadores aritméticos son los siguientes:
 \begin{center}
 \begin{tabular}{ll}
@@ -196,7 +197,7 @@ public class Aritmeticos {
      }
  }
 \end{verbatim}
-\captionof{figure}{\label{org877d9e3}
+\captionof{figure}{\label{orgd8e62ee}
 Aritmeticos}
 
 \begin{verbatim}
@@ -220,7 +221,7 @@ class Concatenacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org8c8a810}
+\captionof{figure}{\label{org5046d47}
 Concatenación}
 
 \begin{verbatim}
@@ -228,8 +229,8 @@ Esto es una cadena de texto concatenada.
 \end{verbatim}
 
 \subsubsection{Casteo de valores}
-\label{sec:org469f430}
-\label{org129ab57}
+\label{sec:orgba8be2a}
+\label{org590f252}
 Muchas veces, cuando estamos haciendo una operación aritmética, el valor que necesitamos \emph{es más pequeño} que los posibles valores que nos puede dar como resultado la operación, con esto no queremos decir que se produzca si, por ejemplo, sumamos dos números muy grandes (ya que en ese caso, lo que podría ocurrir sería que el valor máximo del tipo de dato se excediera y \emph{diéramos la vuelta}, es decir, nos fuéramos a los números negativos, pero Java no se quejaría de esto), sino que si, por ejemplo, sumamos dos números de tipo \emph{long} y queremos guardar su resultado en una variable de tipo \emph{int}, aunque el valor de los números a sumar cupiera perfectamente en una variable de tipo \emph{int}, Java no tiene forma de saber esto, y se quejará por ello, veamos un ejemplo:
 
 \begin{verbatim}
@@ -242,7 +243,7 @@ class ValorMuyGrande {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org9ba60cb}
+\captionof{figure}{\label{org58e1e61}
 Valor Muy Grande}
 
 El resultado que nos daría el compilador sería el siguiente:
@@ -268,7 +269,7 @@ class ValorCasteado {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org08076c5}
+\captionof{figure}{\label{org0d2f487}
 Valor Casteado}
 
 \begin{verbatim}
@@ -276,7 +277,7 @@ Valor Casteado}
 \end{verbatim}
 
 \subsubsection{Operadores unarios}
-\label{sec:org911880f}
+\label{sec:org3317548}
 En java hay un tipo de operadores aritméticos que sólo se utilizan en un operando, son los operadores unarios:
 \begin{center}
 \begin{tabular}{ll}
@@ -317,7 +318,7 @@ class Unarios {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org53ea498}
+\captionof{figure}{\label{org2cd5f81}
 Unarios}
 
 \begin{verbatim}
@@ -350,7 +351,7 @@ class PrePost {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org41cdc8f}
+\captionof{figure}{\label{org18143d4}
 Prefijos y Postfijos}
 
 \begin{verbatim}
@@ -362,7 +363,7 @@ Prefijos y Postfijos}
 \end{verbatim}
 
 \subsection{Lógicos}
-\label{sec:org01f416c}
+\label{sec:orgbee773b}
 Son operadores que devuelven valores lógicos (verdadero o falso)
 \begin{center}
 \begin{tabular}{ll}
@@ -408,7 +409,7 @@ class Comparacion {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org3bf5131}
+\captionof{figure}{\label{orge1ce6c5}
 Comparación}
 
 \begin{verbatim}
@@ -433,7 +434,7 @@ class Condicionales {
     }
 }
 \end{verbatim}
-\captionof{figure}{\label{org851cb7b}
+\captionof{figure}{\label{org94dc8f6}
 Operadores Condicionales}
 
 \begin{verbatim}
@@ -442,11 +443,11 @@ valor1 es 1 OR (O) valor2 es 1
 \end{verbatim}
 
 \section{Condicionales}
-\label{sec:orge855cb7}
+\label{sec:org2ef2d9c}
 En java tenemos principalmente dos estructuras condicionales, la primera es la que se compone con las sentencias \texttt{if} y \texttt{else}, y la segunda es la sentencia \texttt{switch}.
 
 \subsection{if y else}
-\label{sec:org474af5b}
+\label{sec:org49234fc}
 La sentencia \texttt{if} se escribe de la siguiente manera:
 \begin{verbatim}
 if (condicion) {
@@ -506,7 +507,7 @@ class Elseif {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgf8a456f}
+\captionof{figure}{\label{org14b6eed}
 Else-If}
 
 \begin{verbatim}
@@ -516,7 +517,7 @@ val > 5
 En este caso como el valor de la variable \texttt{val} es 10, pasaría por cada una de las condicione y, al no cumplirse, entraría por la sentencia \texttt{else} si hiciéramos esto anidando sentencias \texttt{if} y \texttt{else} el código se \emph{iría} muy a la derecha y sería más dificil de leer, pero aún tenemos otra sentencia que nos permite resolver estos problemas de una manera más elegante, la sentencia \texttt{switch}.
 
 \subsection{switch}
-\label{sec:org1af7747}
+\label{sec:org206da1a}
 
 El ejemplo anterior, escrito con una sentencia switch sería el siguiente:
 \begin{verbatim}
@@ -548,7 +549,7 @@ class Switch {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{org9e74d0b}
+\captionof{figure}{\label{org3ce4b49}
 Switch}
 
 \begin{verbatim}
@@ -596,7 +597,7 @@ class Switch2 {
     }
   }
 \end{verbatim}
-\captionof{figure}{\label{orgcde9207}
+\captionof{figure}{\label{orgfb401ed}
 Switch2}
 
 \begin{verbatim}
@@ -606,7 +607,7 @@ He pasado por 9 cases. El número es menor o igual que 10
 ¿Qué ha pasado? El programa ha ejecutado todos los cases uno detrás de otro, ya que ninguno tenía una sentencia \texttt{break} para parar la ejecución y ha llegado hasta el último, donde ha imprimido el mensaje. Este ejemplo nos sirve también para ver que la etiqueta \texttt{default} no es imprescindible, como en la instrucción \texttt{if} no es imprescindible el \texttt{else}, simplemente, si no se cumple ninguna de las condiciones contempladas, no se hará nada.
 
 \subsection{Condicional ternario}
-\label{sec:orgd7a3939}
+\label{sec:org30aedbe}
 Por último nos queda un último tipo de condicional, llamado ternario o de asignación, esta estructura nos permite asignar un valor a una variable en base al valor de otra y se escribe de la siguiente forma:
 
 \begin{verbatim}
@@ -629,10 +630,10 @@ if (condicion) {
 La decisión de usar una u otra dependerá de si se prefiere legibilidad del código (ternaria) o comprensión más visual (if-else).
 
 \section{Bucles}
-\label{sec:org2ffe93b}
+\label{sec:orga6928b9}
 La ejecució normal de un programa en java (y en casi cualquier lenguaje de programación) se hace \emph{de arriba a abajo} desde que empieza hasta que termina, los bucles son estructuras de control que permiten que una parte del código se ejecute más de una vez en base a una condición.
 \subsection{El bucle while}
-\label{sec:orge8e66c0}
+\label{sec:org4eb5090}
 El tipo de bucle más simple que nos encontramos es el bucle \texttt{while}, este bucle se va a ejecutar \emph{mientras} (while) la condición se cumpla y, una vez esta deje de cumplirse, seguirá desde el final del mismo.
 
 Es importante que la condición deje de cumplirse en algún momento, y esto es válido para cualquier tipo de bucle, si la condición siempre se cumple decimos que tenemos un bucle infinito, el cual hará que nuestro programa se bloquee.
@@ -668,11 +669,11 @@ class BucleWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgef39020}
+\captionof{figure}{\label{orge3db381}
 Bucle While}
 \subsection{El bucle for}
-\label{sec:org16cb8be}
-\label{org9df7326}
+\label{sec:orgbd82b80}
+\label{orgbf49c05}
 El bucle \texttt{for} es un caso especial del bucle \texttt{while}, este bucle se va a ejecutar igualmente mientras se cumpla la condición dada, por lo que su diagrama es el mismo, pero nos permite simplificar la programación metiendo en la cabecera tanto la inicialización de la variable como su modificación, por ejemplo, si como en el caso anterior queremos escribir los números del 1 al 10 con un bucle \texttt{for} lo haríamos así:
 
 \begin{verbatim}
@@ -686,7 +687,7 @@ class BucleFor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org6e3f51b}
+\captionof{figure}{\label{org8a58759}
 Bucle For}
 
 Como podemos ver, el resultado de este programa será exáctamente el mismo que el anterior:
@@ -718,7 +719,7 @@ class BucleForSinInicializacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org9366eeb}
+\captionof{figure}{\label{org6fd0554}
 Bucle For sin inicialización en la cabecera}
 
 \begin{verbatim}
@@ -733,7 +734,7 @@ class BucleForSinModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org483dbb0}
+\captionof{figure}{\label{org636f261}
 Bucle For Sin Modificacion en la cabecera}
 
 Y, por supuesto, si sacamos de la cabecera tanto la inicialización como la modificación de la variable, lo que tenemos es un bucle \texttt{while} con otro nombre:
@@ -751,7 +752,7 @@ class BucleForSinInicializacionNiModificacion {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org154150e}
+\captionof{figure}{\label{org4ac62f3}
 Bucle For Sin inicialización ni Modificacion en la cabecera}
 
 Existe un último caso de bucle \texttt{for}, se trata del también llamado bucle \texttt{for-each}, ya que sólo puede ser usado por colecciónes de elementos (no entremos en detalle ahora), y se ejecutará una vez por cada elemento de la colección, lo explicaremos en detalle más adelante pero, suponiendo una colección de elementos de tipo \texttt{String} llamada nombres su pinta sería la siguiente:
@@ -766,7 +767,7 @@ for (String nombre : nombres) {
 Donde \texttt{nombre} es el nombre de la variable que vamos a usar y que va a tomar todos los valores de nuestra colección de \texttt{nombres} de uno en uno.
 
 \subsection{El bucle do-while}
-\label{sec:org836dc80}
+\label{sec:org107fbab}
 Hasta ahora hemos visto bucles que se ejecutan sólo si se cumple una determinada condición, pero ¿y si queremos que un fragmento de código se ejecute como mínimo una vez pero si se cumple la condición se ejecute unas cuantas mas? Podríamos duplicar el mismo código, una vez fuera del bucle y otra vez dentro, pero para ahorrarnos la reduncancia tenemos el bucle \texttt{do-while}.
 
 Este bucle se trata de un bucle \texttt{while} en el que la condición para volverlo a ejecutar se encuentra al final y no al principio, fijémonos en el siguiente diagrama:
@@ -799,7 +800,7 @@ class DoWhile {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org4701995}
+\captionof{figure}{\label{org7089306}
 Bucle do-while}
 
 \begin{verbatim}
@@ -816,7 +817,7 @@ Bucle do-while}
 \end{verbatim}
 
 \section{Alcance de los elementos}
-\label{sec:orgf50af5e}
+\label{sec:org9689705}
 En esta sección hablaremos del ancance de los elementos, puede que programando te hayas dado cuenta de que a veces una variable que has declarado anteriormente no existe cuando la vas a utilizar más tarde, esto es porque una variable sólo está disponible desde el punto en el que se declara, si, pero además desde el bloque en el que se declara, si declaramos, por ejemplo, una variable dentro de un bloque \texttt{if}, no estará disponible fuera de este, si que podríamos declararla antes, inicializarla en el bloque \texttt{if} y entonces si estaría disponible y con el valor que le hayamos dado, el bloque más externo al que puede pertenecer una variable es el de la \textbf{clase}.
 
 Pero existe una serie de palabras reservadas: \texttt{public}, \texttt{protected} y \texttt{private} que nos servirán para determinar como de aislada estará una determinada variable (o método, o incluso clase) en relación al resto de las clases de un programa.
@@ -831,8 +832,8 @@ Ahora hablaremos un poco de lo que significa cada una de estas palabras, no te p
 
 Hay una palabra modificadora más \texttt{static} que se puede aplicar junto las demás (normalmente con \texttt{public}), esta palabra reservada nos indica que el elemento al que haga referencia estará disponible incluso sin instanciar un objeto de la clase que lo contiene (Cada vez que usas \textbf{System.out.println()}, \textbf{System} es una clase, \textbf{out} un parámetro de la misma que está declarado como \texttt{static} y \textbf{println()} un método del objeto out)
 \section{Manejo de Excepciones}
-\label{sec:org6f97b21}
-Inevitablemente se producirán errores en nuestro código, es un hecho, muchas veces estos errores serán \emph{en tiempo de compilación}, es decir, se producirán al tratar de compilar el código, aquí encontraremos errores de sintaxis, errores de tipos incompatibles (como el visto en el ejercicio \hyperref[org129ab57]{Valor Muy Grande}) y cosas así, sin embargo, hay otro tipo de errores llamados de \emph{tiempo de ejecución} que solo detectaremos una vez se esté ejecutando este código, estos errores producirán que nuestro programa termine su ejecución inesperadamente y no cumpla su función, estos errores inesperados se llaman \textbf{Excepciones}.
+\label{sec:orgdd9c3e0}
+Inevitablemente se producirán errores en nuestro código, es un hecho, muchas veces estos errores serán \emph{en tiempo de compilación}, es decir, se producirán al tratar de compilar el código, aquí encontraremos errores de sintaxis, errores de tipos incompatibles (como el visto en el ejercicio \hyperref[org590f252]{Valor Muy Grande}) y cosas así, sin embargo, hay otro tipo de errores llamados de \emph{tiempo de ejecución} que solo detectaremos una vez se esté ejecutando este código, estos errores producirán que nuestro programa termine su ejecución inesperadamente y no cumpla su función, estos errores inesperados se llaman \textbf{Excepciones}.
 
 Java lanza una \textbf{Excepción} cada vez que se produce un error de este tipo, hay excepciones de muchísimos tipos, sin entrar en detalle todavía, diremos que cada excepción es una \textbf{extensión} (una especialización) la clase \texttt{Exception}.
 
@@ -851,7 +852,7 @@ class Excepciones {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orga714dc1}
+\captionof{figure}{\label{org57f9f0c}
 Excepciones}
 
 \begin{verbatim}
@@ -860,7 +861,7 @@ Exception in thread "main" java.lang.NullPointerException
 \end{verbatim}
 
 \subsection{Los bloques try-catch}
-\label{sec:org16f1a8a}
+\label{sec:org6da6eee}
 Afortunadamente Java nos proporciona una funcionalidad para capturar y controlar estos errores, se trata de los bloques \emph{try-catch}.
 
 Los bloques \emph{try-catch} se tratan de bloques que empiezan con una sentencia \texttt{try} y dentro de ella, un bloque donde preveemos que se puede producir una excepción, seguida por uno o más bloques \texttt{catch}, cada uno de ellos encargado de \emph{capturar} una posible excepción.
@@ -889,7 +890,7 @@ class TryCatch {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org2f76e5f}
+\captionof{figure}{\label{orgbd73336}
 Try-Catch}
 
 \begin{verbatim}
@@ -898,7 +899,7 @@ Se ha producido una NullPointerException
 
 Si modificamos un poco el código anterior podemos ilustrar el hecho de que se pueden poner varios bloques \texttt{catch} en una sola sentencia \texttt{try}, a lo que añadiremos uno más, el bloque \texttt{finally}, que se ejecutará siempre, independientemente de que se produzca una excepción (y se entre en el bloque catch) o no se produzca (y, por lo tanto, no se entre en el bloque catch)
 
-\label{orga2fd6a2}
+\label{orgde26cb6}
 \begin{verbatim}
 class TryCatchMultipleFinally {
   public static void main(String[] args) {
@@ -959,7 +960,7 @@ class TryCatchMultipleFinally {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org425e261}
+\captionof{figure}{\label{org7946440}
 Try-Catch Múltiple y Finally}
 
 \begin{verbatim}
@@ -972,7 +973,7 @@ Bloque finally
 \end{verbatim}
 
 \section{Métodos y funciones}
-\label{sec:org823930f}
+\label{sec:org9c839e6}
 Con lo que ya sabemos podemos crear programas muy potentes, podemos controlar si un bloque de código se ejecutará o no y cuantas veces lo hará, pero la ejecución sigue siendo \emph{de arriba a abajo}, estamos en lo que se conoce como \textbf{programación estructurada}, pero vayamos más allá, hasta ahora, si queríamos ejecutar un bloque de código más de una vez podíamos hacer bucles, pero estos siempre se ejecutarán con los mismos datos, la estructura de un método es la siguiente:
 
 \begin{verbatim}
@@ -1023,7 +1024,7 @@ class MiPrimerMetodo {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org812a4ed}
+\captionof{figure}{\label{org63257a9}
 Mi primer método}
 
 \begin{verbatim}
@@ -1032,7 +1033,7 @@ Hola, Kirby
 \end{verbatim}
 
 \subsection{Paso de parámetros}
-\label{sec:org05d6706}
+\label{sec:org3a6c8e1}
 En el ejemplo anterior hemos visto que al método \emph{saludar} le pasábamos un parámetro, un nombre en este caso, de tipo String, cuando declaramos un método, dentro de los paréntesis le podemos poner, separados por comas, todos los parámetros que vaya a necesitar para cumplir su función, estos parámetros se escriben de la misma manera que se creaban las variables (pero sin inicializar), y cuando se les invoca se le pasan las variables necesarias que se correspondan con los parámetros que requiere, veamos un ejemplo:
 
 \begin{verbatim}
@@ -1089,7 +1090,7 @@ class PasoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{org975d821}
+\captionof{figure}{\label{orgafabbde}
 Paso de valor}
 
 \begin{verbatim}
@@ -1126,7 +1127,7 @@ class RetornoDeValor {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgcfd3c8a}
+\captionof{figure}{\label{org68b35fa}
 Retorno de valor}
 
 \begin{verbatim}
@@ -1168,7 +1169,7 @@ class CambioDeObjeto {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org6c6aa49}
+\captionof{figure}{\label{org6d581ef}
 Cambio de objeto}
 
 \begin{verbatim}
@@ -1213,7 +1214,7 @@ class CambioDePropiedad {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{org61e9e3e}
+\captionof{figure}{\label{org779885f}
 Cambio de propiedad}
 
 \begin{verbatim}
@@ -1221,7 +1222,7 @@ Cambio de propiedad}
 \end{verbatim}
 
 \subsection{Sobrecarga de métodos}
-\label{sec:org30b4838}
+\label{sec:org8d68360}
 Expliquemos ahora un nuevo concepto, se trata de la \emph{sobrecarga de métodos}, una función extremádamente útil que tiene Java, a pesar del nombre tan rimbombante que tiene se trata simplemente de la posibilidad de tener un método con el mismo nombre pero con diferentes parámetros, sean o bien diferente número o diferente tipo (o ambas, obviamente).
 
 La forma que tiene Java de permitir esto es asignando a cada método una \emph{firma}. La firma de un método viene dada por su nombre y los tipos de sus atributos, es importante porque en una misma clase \textbf{no puede haber dos o más métodos con la misma firma}. Veamos un ejemplo:
@@ -1266,7 +1267,7 @@ class SobrecargaDeMetodos {
 
 }
 \end{verbatim}
-\captionof{figure}{\label{orgca7781f}
+\captionof{figure}{\label{org52e0e8a}
 Sobrecarga de métodos}
 
 \begin{verbatim}
@@ -1302,14 +1303,58 @@ static void saludar(int edad, String ciudad){
 
 Ya que aquí el método tendría una firma que sería \emph{saludar(int, String)}, que no coincide con ninguna de las otras 6.
 
+\subsection{Recursividad}
+\label{sec:org1b67518}
+Otra de las cosas a las que no da acceso un método es el concepto de la \emph{recursividad}, esto no es más que un método que se llama a si mismo, por lo tanto tendremos que parar esas llamadas cuando se cumpla una determinada condición como ocurría con los bucles o tendremos un bucle de recursividad infinito y nuestro programa no avanzará.
+
+Un ejémplo clásico de recursividad es el cálculo de un factorial, pero ántes veamos como sería diseñar el cálculo de un factorial con un bucle.
+
+\begin{center}
+El factorial de un número se define como la multiplicación de si mismo con todos sus números anteriores. Por ejemplo el factorial de 6 ó \textbf{6!} = 6*5*4*3*2*1, una de las principales razones de que el factorial se use como ejemplo para la recursividad en programación es que el factorial ES recursivo, si vemos, por ejemplo el factorial de 5 (\textbf{5!}) = 5*4*3*2*1, si se compara con 6! como hemos visto antes vemos un patrón, y es que 6! = 6*5!, y así sucesivamente.
+\end{center}
+
+\begin{verbatim}
+private static long factorialLoop (int n) {
+    long resultado = 1;
+    while (n>1) {
+	resultado *= n--;
+    }
+    return resultado;
+}
+\end{verbatim}
+\captionof{figure}{Factorial con bucle}
+
+El método anterior recibe un número entero y si es mayor que 1 va multiplicando el resultado por el número \texttt{n} y reduce su valor en 1 hasta que es 1 y sale del bucle.
+
+A continuación el mismo método utilizando recursividad, se puede observar que es bastante similar, pero conceptualmente es más coherente con la definición del factorial:
+
+\begin{verbatim}
+private static long factorialRecur (int n) {
+    long resultado=1;
+    if (n > 1) {
+       resultado = n*factorialRecur (n-1);
+    }
+    return resultado;
+}
+\end{verbatim}
+\captionof{figure}{Factorial con recursividad}
+
+En este caso se entra al método y si n es mayor que 1 se multiplica su valor por el resultado de llamarse a si mismo decrementando en 1 el valor de n. Conviene saber aquí que java, ante una operación da preferencia a la llamada de un método, por ejemplo, la traza de llamar al método \texttt{factorialRecur(4)} sería algo similar a lo siguiente:
+
+\begin{center}
+entramos en  factorialRecur(4) -> entramos en factorialRecur(3) -> entramos en factorialRecur(2) -> entramos en factorialRecur(1) -> factorialRecur(1) devuelve 1 -> factorialRecur(2) multiplica 2*1 y devuelve 2 -> factorialRecur(3) multiplica 3*2 y devuelve 6 -> factorialRecur(4) multiplica 4*6 y devuelve 24
+\end{center}
+
+Es decir, el método recursivo va \emph{bajando} por las llamadas hasta llegar a lo que se llama \textbf{caso base}, en este caso el factorial de 1, que es 1 (aunque lo correcto hubiera sido llegar hasta 0!, que también es 1, pero el resultado es el mismo) y después, según los métodos van llegando a su sentencia \texttt{return} vuelve a \emph{subir} hasta el caso de la primera llamada (factorialRecur(4) en nuestro caso).
+
 \section{Clases y objetos}
-\label{sec:org6b358af}
+\label{sec:orgb3f0227}
 Como ya hemos comentado anteriormente, Java es un lenguaje de programación \emph{orientado a objetos}, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,\ldots{}) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.
 
 Muchas veces se usan indistintamente los términos clase y objeto, lo correcto es llamar clase al archivo fuente .java y objeto a las \emph{instancias} de este.
 
 \subsection{El método constructor}
-\label{sec:org5771470}
+\label{sec:org81f7b10}
 En Java (y en cualquier otro lenguaje de programación orientado a objetos), llamamos instanciar al hecho de crear un objeto de una determinada clase en nuestro código, para ello hacemos uso de un tipo de método especial llamado \textbf{constructor}.
 
 Este método es especial por varios motivos:
@@ -1335,7 +1380,7 @@ Analizando la sentencia anterior tenemos lo siguiente:
 En Java, por convención, las clases empiezan con mayúscula, meintras que los nombres de las variables y los métodos se escriben empezando con minúscula, en ambos casos siguiendo la convención \emph{CamelCase} (\emph{UpperCamelCase}, comenzando con mayúscula para las clases y \emph{lowerCamelCase}, comenzando con minúscula para lo demás), que consiste en, si necesitamos varias palabras en el nombre, separarlas con mayúsculas y sólo usarlas en ese caso o en caso de abreviaturas conocidas, por ejemplo, podríamos tener un método que se llamase \emph{getSQL}, ya que \emph{SQL} es una abreviatura bien conocida.
 
 \subsection{El caso de la clase String}
-\label{sec:orgc0e88a0}
+\label{sec:orgbab84bc}
 
 Anteriormente hemos instanciado una clase que es un caso especial, no lo hemos hecho mediante un método constructor, sino asignándole un valor con = como hacíamos con los tipos primitivos, se trata de la clase String.
 
@@ -1350,7 +1395,7 @@ Pero en realidad lo que estábamos haciendo era crear una nueva instancia (un nu
 La clase String, como cualquier otra clase en Java necesariamente debe tener al menos un método constructor, y así es, es sólo que Java nos ofrece esta conveniencia.
 
 \subsection{El valor null}
-\label{sec:org5a8ad7a}
+\label{sec:orgcdb05cd}
 Hasta ahora, cuando creábamos una variable esta podía estar inicializada o no, y, si lo estaba, tenía un valor válido dentro de su tipo, el valor \textbf{null} es un valor especial, nos permite indicar que el contenido de una variable de tipo objeto es nulo, es decir, no contiene nada pero existe como variable, el valor \textbf{null} es el mismo para cualquier tipo de objeto, se puede asignar a cualquier objeto con el operador de asignación (=) y puede ser usado en operaciones de comparación, vamos a ver un ejemplo:
 
 \begin{verbatim}
@@ -1370,7 +1415,7 @@ class ValorNull {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgfb9319a}
+\captionof{figure}{\label{orga97aab6}
 Valor null}
 
 \begin{verbatim}
@@ -1378,18 +1423,18 @@ Kirby
 \end{verbatim}
 
 \subsection{Clases más conocidas}
-\label{sec:org6afeab1}
+\label{sec:org552059d}
 \subsubsection{La clase Object}
-\label{sec:orga09858f}
+\label{sec:orgabb74ad}
 En Java todos los objetos que exiten, ya sean los que nos proporciona el propio lenguaje o los que creemos nosotros extienden de la clase \texttt{Object}. Object es la clase primaria del lenguaje de programación Java, no se usa mucho como tal, pero es conveniente conocer que existe, podemos declarar un objeto de esta clase e instanciarlo con cualquier otra, es la madre de todas las demás.
 
 \subsubsection{String}
-\label{sec:orgace8756}
+\label{sec:org61906bd}
 Como acabamos de ver, la clase String probablemente sea la clase más conocida de Java, empezamos a trabajar con ella prácticamente en el primer programa HolaMundo que hacemos y la utilizamos tanto como a los tipos primitivos, sirve para guardar cadenas de texto y no nos detendremos mucho más en ella.
 
 \begin{enumerate}
 \item Métodos
-\label{sec:orgcdc3817}
+\label{sec:orgf1250d6}
 \begin{itemize}
 \item equals(objeto): Aunque este método es genérico para todos los objetos, es importante recalcarlo, ya que muchas veces querremos comparar si una cadena de texto es igual a otra.
 \item equalsIgnoreCase(objeto): Este método es igual que el anterior salvo que ignora las mayúsculas y las minúsculas.
@@ -1404,20 +1449,20 @@ Como acabamos de ver, la clase String probablemente sea la clase más conocida d
 \end{enumerate}
 
 \subsubsection{Clases asociadas a tipos primitivos}
-\label{sec:org56e83c7}
-Como ya vimos en la sección \hyperref[orga663cae]{Tipos de datos}, los tipos primitivos tienen una clase asociada a cada uno de ellos, el nombre del tipo de dato es normalmente una abreviatura del nombre completo de la clase y se escribe en minúscula, mientras que la clase, como hemos visto antes, se escribirá en mayúscula. Estas clases son especialmente útiles, ya que, además de contener una serie de métodos que nos ofrecen funciones para trabajar con estos tipos de datos, pueden ser usados para almacenar el valor \textbf{null} en ellos, indicando así que un dato que normalmente tendría un valor por defecto, no contiene nada.
+\label{sec:orgcd51ecb}
+Como ya vimos en la sección \hyperref[org58d886b]{Tipos de datos}, los tipos primitivos tienen una clase asociada a cada uno de ellos, el nombre del tipo de dato es normalmente una abreviatura del nombre completo de la clase y se escribe en minúscula, mientras que la clase, como hemos visto antes, se escribirá en mayúscula. Estas clases son especialmente útiles, ya que, además de contener una serie de métodos que nos ofrecen funciones para trabajar con estos tipos de datos, pueden ser usados para almacenar el valor \textbf{null} en ellos, indicando así que un dato que normalmente tendría un valor por defecto, no contiene nada.
 
 \begin{enumerate}
 \item Métodos
-\label{sec:org44b46ef}
+\label{sec:org0299e9a}
 Uno de los métodos más importantes de estas clases es el método estático parse\ldots{}(cadena), los puntos suspensivos son porque su nombre es diferente para cada clase, por ejemplo Long.parseLong() para la clase Long, Integer.parseInt() para la clase Integer, etc., este método convierte una cadena en el tipo que haga referencia, es especialmente útil cuando queremos que un usuario nos introduzca un valor por la consola, ya que siempre llegará en forma de String y si lo que necesitamos es un número deberemos convertirlo de esta manera.
 \end{enumerate}
 
 \subsubsection{Matrices (o Arrays)}
-\label{sec:org60b2b55}
+\label{sec:org278e7f9}
 Las matrices (o Arrays, como se llaman en inglés y, comunmente en los entornos de trabajo) pertenecen a un grupo de objetos que se conocen como \textbf{colecciones}, estas colecciones consisten en una agrupación de varios objetos, en el caso de los arrays, una lista. Los arrays lo pueden ser de cualquier tipo de objeto (pero sólo de uno a la vez) y se identifican porque se declaran con el nombre del tipo del que queremos la lista y unos corchetes \texttt{[]}.
 
-Para insertar o recoger los valores de la lista lo haremos llamando a la variable como hacíamos habitualmente y añadiendo un número entre corchetes, como vimos en el ejercicio \hyperref[orga2fd6a2]{TryCatchMultipleFinally}, en ese ejercicio intentábamos obtener el primer valor (índice 0) de la variable \texttt{objeto} y lo hacíamos de la siguiente manera:
+Para insertar o recoger los valores de la lista lo haremos llamando a la variable como hacíamos habitualmente y añadiendo un número entre corchetes, como vimos en el ejercicio \hyperref[orgde26cb6]{TryCatchMultipleFinally}, en ese ejercicio intentábamos obtener el primer valor (índice 0) de la variable \texttt{objeto} y lo hacíamos de la siguiente manera:
 
 \begin{verbatim}
 objeto[0];
@@ -1438,7 +1483,7 @@ class AccesoVariable {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgf9ceb78}
+\captionof{figure}{\label{org7f14fc5}
 Acceso a variable}
 
 \begin{verbatim}
@@ -1457,7 +1502,7 @@ class AccesoArray {
 }
 
 \end{verbatim}
-\captionof{figure}{\label{orgce7acc1}
+\captionof{figure}{\label{orga5a9c51}
 Acceso a posición de array}
 
 \begin{verbatim}
@@ -1466,12 +1511,12 @@ Acceso a posición de array}
 
 \begin{enumerate}
 \item Declaración e inicialización
-\label{sec:org879f8e7}
+\label{sec:org8182975}
 Como todos los objetos, los arrays pueden ser inicializados con la palabra reservada \texttt{new} y llamando al constructor, pero esta clase, al igual que la clase \texttt{String} es una clase especial y puede ser inicializada de varias maneras.
 
 \begin{enumerate}
 \item Inicialización con constructor vacío
-\label{sec:org18cc3eb}
+\label{sec:org79d90f3}
 En este caso lo haremos de la siguiente manera, por ejemplo, para un array de números enteros (int o Integer):
 
 \begin{verbatim}
@@ -1502,7 +1547,7 @@ miArray[3] = 2;
 \captionof{figure}{Añadir valor a array}
 
 \item Inicialización con constructor con datos
-\label{sec:orgc5975c2}
+\label{sec:org748be2b}
 El caso anterior, aunque util de conocer, en ocasiones nos parecerá engorroso, pues tendremos que rellenar el array escribiendo una sentencia para cada posición que tenga, afortunadamente, en Java se puede inicializar el array directamente en el constructor de la siguiente manera:
 
 \begin{verbatim}
@@ -1513,7 +1558,7 @@ int[] miArray = new int[]{5,4,3,2,1};
 De esta manera no nos hace falta indicarle al constructor cuantos elementos tendrá el array, en cambio, le decimos los valores en orden que almacenará (en nuestro caso; 5 en la posción 1, 4 en la posición 2, 3 en la posición 3, etc.)
 
 \item Inicialización con datos sin constructor
-\label{sec:orgd6601dd}
+\label{sec:org69993b3}
 Este es el caso más especial, y es que podemos evitar escribir la parte del constructor y poner solo las llaves con los datos si lo hacemos justo cuando declaremos la variable:
 
 \begin{verbatim}
@@ -1534,7 +1579,7 @@ miArray = new int[]{5,4,3,2,1}; //Esto funciona
 \end{enumerate}
 
 \item Arrays múltiples
-\label{sec:org12fa000}
+\label{sec:org1766141}
 Otra cosa interesante que nos permiten hacer los arrays es añadir unos dentro de otros, obteniendo así estructuras \emph{multidimensionales}.
 
 Si entendemos que un array \texttt{[]} es una lista (o una línea de valores, si queremos), si cada elemento del array es otro array \texttt{[][]} lo que tenemos es un cuadro y, si a su vez, cada elemento del cuadro es otra matriz \texttt{[][][]} lo que tenemos es un cubo de valores y, para acceder a cada uno de ellos es necesario indicar cada una de las coordenadas que indican su posición.
@@ -1548,13 +1593,13 @@ String[][] otroArrayMultidimendional = {{"p11","p12","p13"},{"p21","p22","p23"}}
 \end{verbatim}
 \captionof{figure}{Array Multidimensional}
 \item Métodos y propiedades
-\label{sec:orgd56a880}
+\label{sec:orgd8d2c49}
 \begin{itemize}
 \item lentgh: propiedad que nos indica la longitud del array
 \end{itemize}
 \item Recorriendo un Array
-\label{sec:org0c2e2a7}
-Dada su naturaleza, muchas veces nos interesará recorrer todos los valores de un array, ya sea para buscar un valor concreto si no sabemos su posición, para imprimir todos los valores o para cualquier otra cosa que se nos pueda ocurrir. Esto se puede conseguir de múltiples maneras, pero las más común sería utilizando un \hyperref[org9df7326]{bucle \textbf{for}}.
+\label{sec:org1d90c79}
+Dada su naturaleza, muchas veces nos interesará recorrer todos los valores de un array, ya sea para buscar un valor concreto si no sabemos su posición, para imprimir todos los valores o para cualquier otra cosa que se nos pueda ocurrir. Esto se puede conseguir de múltiples maneras, pero las más común sería utilizando un \hyperref[orgbf49c05]{bucle \textbf{for}}.
 
 Por ejemplo, si tenemos el siguiente Array de Strings
 
@@ -1597,12 +1642,12 @@ Hola, Raquel
 \end{enumerate}
 
 \subsubsection{Date}
-\label{sec:orgb38de73}
+\label{sec:org4a94d90}
 La clase Date del paquete java.util es una clase que nos permite almacenar fechas.
 
 \begin{enumerate}
 \item Declaración e inicialización
-\label{sec:orgfb5f594}
+\label{sec:org7a65d15}
 Como cualquier objeto, la clase Date se inicializa a través de la palabra reservada \texttt{new}:
 
 \texttt{Date} tiene dos métodos constructores (tiene más, pero están en desuso), el primero no admite parámetros y nos muestra la fecha actual:
@@ -1618,11 +1663,11 @@ class FechaActual {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orga5f82e9}
+\captionof{figure}{\label{org0d92be2}
 Constructor Date con fecha actual}
 
 \begin{verbatim}
-Mon May 04 17:48:24 CEST 2020
+Thu May 28 14:38:30 CEST 2020
 \end{verbatim}
 
 
@@ -1640,7 +1685,7 @@ class OtraFecha {
   }
 }
 \end{verbatim}
-\captionof{figure}{\label{orgf1852c9}
+\captionof{figure}{\label{orga9cda2a}
 Constructor Date con otra fecha}
 
 \begin{verbatim}
@@ -1650,18 +1695,18 @@ Fri Feb 02 15:32:12 CET 1990
 ¡Coincide! El único problema parece ser que poner una fecha en milisegundos no es lo más cómodo, para ello tenemos otro par de clases, que aunque no son tan usadas y no nos detendremos en visitarlas en profundiad conviene conocer, estas son las clases \href{https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html}{Calendar} y \href{https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html}{GregorianCalendar}.
 
 \item Métodos y propiedades
-\label{sec:org0b43bd6}
+\label{sec:org204566f}
 Los métodos más interesantes de la clase date son getTime() y setTime(long time), que nos permiten obtener o poner los milisegundos que han pasado desde Epoch.
 \end{enumerate}
 
 \subsubsection{List y ArrayList}
-\label{sec:orgd0db2d7}
+\label{sec:orgcd5a3a2}
 \subsubsection{System}
-\label{sec:org6ce38df}
+\label{sec:orgd9cbfdb}
 \section{Herencia}
-\label{sec:org937d412}
+\label{sec:org14c81b9}
 \subsection{Interfaces}
-\label{sec:org0f67e4b}
+\label{sec:org8a5ad99}
 \subsection{Clases abstractas}
-\label{sec:org3384a38}
+\label{sec:org1cf1be8}
 \end{document}

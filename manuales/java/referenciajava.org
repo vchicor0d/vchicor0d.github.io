@@ -24,11 +24,11 @@ import java.io.Scanner;
 public class HolaMundo {
 
     /*Este es el método main (principal), 
-es un método especial que servirá comom punto de entrada a la aplicación. 
+es un método especial que servirá como punto de entrada a la aplicación. 
 Este método es:
 - público (puede ser accedido desde cualquier clase)
-- estático (puede ser accedido sin necesidad de crear un objeto de la clase
--  no devuelve nada (tipo void)
+- estático (puede ser accedido sin necesidad de crear un objeto de la clase)
+- no devuelve nada (tipo void)
 - recibe como argumentos un array (matriz) de objetos de tipo String (cadena de texto)
 ,*/
     public static void main (String [] args) {
@@ -39,17 +39,18 @@ Este método es:
 
 	/*
 	  Esto es una llamada a un método, concretamente al método print(String)
-	  del atributo out de la clase System, este método imprime en la pantalla
+	  del atributo out (que es un objeto de la clase PrintStream) 
+	  de la clase System, este método imprime en la pantalla
 	  (consola de texto) el texto que se le pase como parámetro y continúa
 	  en la misma línea.
 	  Como parámetro se le pasa la cadena de texto (String) "¿Cómo te llamas?"
 	  Los valores de tipo String van siempre entre comillas dobles "
 	 ,*/
-	System.out.print("¿Cómo te llamas?");
+	System.out.print("¿Cómo te llamas? ");
 
 	//Este es un objeto de la clase String (cadena de texto) que se llama nombre.
 	//Este objeto se inicializa automáticamente con el valor que devuleve
-	//el método readLine() (Método sin argumentos) del objeto scan.
+	//el método nextString() (Método sin argumentos) del objeto scan.
 	String nombre = scan.nextString();
 
 	/*
@@ -76,16 +77,16 @@ Y a continuación un ejemplo de como sería su salida por pantalla si le decimos
 * Tipos de datos
 <<sec:tiposdedatos>>
 Los tipos de datos primitivos en java son los siguientes:
-| tipo    | descripción                                     | clase asociada |
-|---------+-------------------------------------------------+----------------|
-| byte    | número entero de 8 bits (-128 a 127)            | Byte           |
-| short   | número entero de 16 bits (-32768 a 32767        | Short          |
-| int     | número entero de 32 bits ($-2^{32}$ a $2^{32}$) | Integer        |
-| long    | número entero de 64 bits ($-2^{64}$ a $2^{64}$) | Long           |
-| float   | número decimal de 32 bits                       | Float          |
-| double  | número decimal de 64 bits                       | Double         |
-| boolean | valor booleano o lógico (verdadero o falso)     | Boolean        |
-| char    | caracter de texto (único)                       | Character      |
+| tipo    | descripción                                            | clase asociada |
+|---------+--------------------------------------------------------+----------------|
+| byte    | número entero de 8 bits (-128 a 127)                   | Byte           |
+| short   | número entero de 16 bits (-32768 a 32767)              | Short          |
+| int     | número entero de 32 bits ($-2^{32}$ a $2^{32}$)        | Integer        |
+| long    | número entero de 64 bits ($-2^{64}$ a $2^{64}$)        | Long           |
+| float   | número decimal de 32 bits                              | Float          |
+| double  | número decimal de 64 bits                              | Double         |
+| boolean | valor booleano o lógico true/false (verdadero o falso) | Boolean        |
+| char    | caracter de texto (único)                              | Character      |
  
 
 Los tipos de datos normalmente se usan en su forma primitiva (columna tipo) y se pueden asignar directamente, pero a veces es util usar métodos de su clase asociada.
@@ -1196,6 +1197,49 @@ static void saludar(int edad, String ciudad){
 #+END_SRC
 
 Ya que aquí el método tendría una firma que sería /saludar(int, String)/, que no coincide con ninguna de las otras 6.
+
+** Recursividad
+Otra de las cosas a las que no da acceso un método es el concepto de la /recursividad/, esto no es más que un método que se llama a si mismo, por lo tanto tendremos que parar esas llamadas cuando se cumpla una determinada condición como ocurría con los bucles o tendremos un bucle de recursividad infinito y nuestro programa no avanzará.
+
+Un ejémplo clásico de recursividad es el cálculo de un factorial, pero ántes veamos como sería diseñar el cálculo de un factorial con un bucle.
+
+#+BEGIN_CENTER
+El factorial de un número se define como la multiplicación de si mismo con todos sus números anteriores. Por ejemplo el factorial de 6 ó *6!* = 6*5*4*3*2*1, una de las principales razones de que el factorial se use como ejemplo para la recursividad en programación es que el factorial ES recursivo, si vemos, por ejemplo el factorial de 5 (*5!*) = 5*4*3*2*1, si se compara con 6! como hemos visto antes vemos un patrón, y es que 6! = 6*5!, y así sucesivamente.
+#+END_CENTER
+
+#+CAPTION: Factorial con bucle
+#+BEGIN_SRC java :exports code :eval none
+    private static long factorialLoop (int n) {
+	long resultado = 1;
+	while (n>1) {
+	    resultado *= n--;
+	}
+	return resultado;
+    }
+#+END_SRC
+
+El método anterior recibe un número entero y si es mayor que 1 va multiplicando el resultado por el número ~n~ y reduce su valor en 1 hasta que es 1 y sale del bucle.
+
+A continuación el mismo método utilizando recursividad, se puede observar que es bastante similar, pero conceptualmente es más coherente con la definición del factorial:
+
+#+CAPTION: Factorial con recursividad
+#+BEGIN_SRC java :exports code :eval none
+    private static long factorialRecur (int n) {
+	long resultado=1;
+	if (n > 1) {
+	   resultado = n*factorialRecur (n-1);
+	}
+	return resultado;
+    }
+#+END_SRC
+
+En este caso se entra al método y si n es mayor que 1 se multiplica su valor por el resultado de llamarse a si mismo decrementando en 1 el valor de n. Conviene saber aquí que java, ante una operación da preferencia a la llamada de un método, por ejemplo, la traza de llamar al método ~factorialRecur(4)~ sería algo similar a lo siguiente:
+
+#+BEGIN_CENTER
+entramos en  factorialRecur(4) -> entramos en factorialRecur(3) -> entramos en factorialRecur(2) -> entramos en factorialRecur(1) -> factorialRecur(1) devuelve 1 -> factorialRecur(2) multiplica 2*1 y devuelve 2 -> factorialRecur(3) multiplica 3*2 y devuelve 6 -> factorialRecur(4) multiplica 4*6 y devuelve 24
+#+END_CENTER
+
+Es decir, el método recursivo va /bajando/ por las llamadas hasta llegar a lo que se llama *caso base*, en este caso el factorial de 1, que es 1 (aunque lo correcto hubiera sido llegar hasta 0!, que también es 1, pero el resultado es el mismo) y después, según los métodos van llegando a su sentencia ~return~ vuelve a /subir/ hasta el caso de la primera llamada (factorialRecur(4) en nuestro caso).
 
 * Clases y objetos
 Como ya hemos comentado anteriormente, Java es un lenguaje de programación /orientado a objetos/, en Java, prácticamente todo es un objeto, salvo los tipos de datos primitivos (int, char, boolean,...) que incluso también tienen una clase asociada (Integer, Character y Boolean, respectivamente para los ejemplos anteriores, nótese que empiezan por mayúscula), aunque probablemente, la clase con la que estarás más familiarizada será la clase String, usada para cadenas de texto.
