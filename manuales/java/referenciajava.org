@@ -1529,7 +1529,89 @@ El otro método constructor del que disponemos nos permitirá crear un objeto Da
 Los métodos más interesantes de la clase date son getTime() y setTime(long time), que nos permiten obtener o poner los milisegundos que han pasado desde Epoch.
 
 *** List y ArrayList
+Las clases ~List~ y ~ArrayList~ las trataremos juntas porque normalmente se usan unidas, se tratan de, como su propio nombre indica, dos clases que tratan listas de elementos, ambas clases pertenecen al paquete ~java.util~.
+
+La razón por la que normalmente se usan unidas, (List para la declaración y ArrayList para la asignación) es porque ArrayList es una ~implementación~ de List (que es una *interfaz*) y, si bien podríamos declarar directamente un objeto de la clase ArrayList, hay muchísimos métodos que devuelven List.
+
+**** Declaración e inicialización 
+Los objetos de la clase ArrayList se instancian de manera habitual con ~new~ seguido de su constructor, si bien, al ser listas, podemos indicar de que tipo son, esto se hace con lo que se conoce como /operador diamante/ por la forma que tiene,
+
+Por ejemplo, para inicializar un objeto de la clase ArrayList declarándolo como List que contenga una lista de Strings haremos lo siguiente:
+
+#+Caption: Declaración List-ArrayList
+#+BEGIN_SRC java :exports code :eval none
+  List<String> miLista = new ArrayList<String>();
+#+END_SRC
+
+Como hemos dicho antes, no es necesario usar la interfaz List, podemos declarar la variable como ArrayList directamente:
+
+#+BEGIN_SRC java :exports code :eval none
+  ArrayList<String> miLista = new ArrayList<String>();
+#+END_SRC
+
+Y, por último, a partir de Java 7, tampoco es necesario especificar dos veces el tipo de la lista como vemos en los dos ejemplos anteriores, sino que se puede omitir en la instanciación dando lugar al famoso /operador diamante/:
+
+#+BEGIN_SRC java :exports code :eval none
+  List<String> miLista = new ArrayList<>();
+#+END_SRC
+
+Esta es la manera más común de instanciar un ArrayList.
+
+La clase ArrayList tiene otros métodos constructores en los que no entraremos en detalle aquí, por ejemplo, [[https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#ArrayList-java.util.Collection-][se puede crear una lista a partir de otra]].
+
+**** Métodos más comunes
+- size(): nos devuelve el tamaño de la lista.
+- isEmpty(): nos devuelve ~true~ si la lista está vacía.
+- contains(Objeto): nos devuelve ~true~ si el objeto está en la lista.
+- toArray(): nos devuelve un array con los valores de la lista
+- get(int indice): nos devuelve el elemento de la posición designada.
+- add(Objeto): inserta un objeto al final de la lista.
+- add(int indice, Objeto): inserta un objeto en la posición designada de la lista.
+- remove(int indice): elimina el objeto en la posición designada de la lista.
+- remove(Objeto): elimina el primer objeto que coincida con el que se pasa como parámetro.
+- clear(): elimina todos los objetos de la lista.
+- sublist(int inicio, int final): devuelve una lista con los objetos comprendidos entre los indices especificados.
+
 *** System
+La clase ~System~ es una de las primeras clases que usamos cuando empezamos a programar en java (¿Te suena el System.out.println()?) y nos provee de una serie de funcionalidades que normalmente tienen que ver con funciones del sistema (Entrada/Salida, variables de entorno, fechas,...).
+
+Todos los métodos que provee esta clase son *estáticos* y no hace falta crear un objeto de la misma para utilizarlos.
+
+**** Métodos y propiedades más comunes
+Las propiedades más comunes de la clase system son los archiconocidos ~in~, ~out~ y ~err~, de tipo InputStream (entrada) el primero y de tipo PrintStream (salida) los otros dos. Cada una de estas propiedades (al ser objetos de otras clases) tiene su propio conjunto de propiedades y métodos, pero sin entrar en detalle, los dos más conocidos y utilizados son los de los objetos de PrintStream (out y err) print() y println(), utilizados para imprimir por pantalla (salida estándar) sin y con un salto de línea al final respectivamente.
+
+En cuanto a los métodos, los más utilizados son:
+- currentTimeMillis(): devuelve un ~long~ con el número de milisegundos que han pasado desde Epoch hasta el instante actual.
+- nanoTime(): lo mismo pero con nanosegundos.
+
+*** Scanner
+Otra de las clases de java con las que primero nos encontramos es la clase Scanner del paquete ~java.util~, se trata de un escáner de texto que normalmente se usa para introducir texto en nuestros programas.
+
+**** Constructor
+Su constructor más conocido es el que acepta un objeto de la clase ~InputStream~ como parámetro y que normalmente se usa de la siguiente manera para introducir texto desde la consola:
+
+#+BEGIN_SRC java :exports code :eval none
+  // Utilizamos System.in del que hemos hablado anteriormente como parámetro para el constructor de Scanner
+  // System.in también es conocido como la entrada estándar, es decir, entrada de texto por consola
+  Scanner scan = new Scanner(System.in);
+#+END_SRC
+
+Tiene muchos más constructores, pero el más utilizado es el anteriormente señalado.
+
+**** Métodos y propiedades
+Los métodos mas conocidos son los métodos /next/ que devuelven un valor en base al método que se use (y al texto introducido) algunos son nextInt(), nextBoolean(), nextLong(), nextLine(), etc.
+
 * Herencia
 ** Interfaces
 ** Clases abstractas
+** Anotaciones
+* Tests
+** jUnit
+* Expresiones Lambda y Streams
+** Expresiones Lambda
+** Streams y programación funcional
+https://www.javaworld.com/article/3314640/functional-programming-for-java-developers-part-1.html
+* Frameworks
+** Spring
+*** Spring Boot
+** Hibernate y JPA
