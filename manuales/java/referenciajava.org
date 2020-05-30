@@ -1855,7 +1855,7 @@ Esto nos da una posibilidad muy interesante, como vimos en la explicación de lo
     }
 #+END_SRC
 
-#+RESULTS: FAUNA
+#+RESULTS:
 : Comer croquetillas de mi cuenco
 : Inhalar, exalar
 : Irse por los tejados
