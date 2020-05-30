@@ -1529,6 +1529,7 @@ El otro método constructor del que disponemos nos permitirá crear un objeto Da
 Los métodos más interesantes de la clase date son getTime() y setTime(long time), que nos permiten obtener o poner los milisegundos que han pasado desde Epoch.
 
 *** List y ArrayList
+<<sec:arraylist>>
 Las clases ~List~ y ~ArrayList~ las trataremos juntas porque normalmente se usan unidas, se tratan de, como su propio nombre indica, dos clases que tratan listas de elementos, ambas clases pertenecen al paquete ~java.util~.
 
 La razón por la que normalmente se usan unidas, (List para la declaración y ArrayList para la asignación) es porque ArrayList es una ~implementación~ de List (que es una *interfaz*) y, si bien podríamos declarar directamente un objeto de la clase ArrayList, hay muchísimos métodos que devuelven List.
@@ -1602,7 +1603,266 @@ Tiene muchos más constructores, pero el más utilizado es el anteriormente señ
 Los métodos mas conocidos son los métodos /next/ que devuelven un valor en base al método que se use (y al texto introducido) algunos son nextInt(), nextBoolean(), nextLong(), nextLine(), etc.
 
 * Herencia
+La herencia es una característica de los lenguajes de programación orientados a objetos que nos permite reutilizar y extender muchas funcionalidades, a grandes rasgos, la herencia nos permite coger una clase que ya esté creada y añadirle más funcionalidad o cambiar (sobreescribir) la que ya existe. 
+
+Por ejemplo, supongamos que tenemos la clase Persona:
+
+#+Caption: Persona
+#+BEGIN_SRC java :exports code :eval none
+  public class Persona {
+
+    String nombre;
+    String sexo;
+    int edad;
+    String dni;
+
+    public Persona (String nombre, String sexo, int edad) {
+      this.nombre = nombre;
+      this.sexo = sexo;
+      this.edad = edad;
+    }
+
+    public void saludar() {
+      System.out.println("Hey!");
+    }
+
+    public void cumple() {
+      System.out.println("Feliz cumpleaños " + getNombre() + "!");
+      edad++;
+    }
+
+    // Getters y Setters
+  
+    public String getNombre(){
+      return nombre;
+    }
+
+    public void setNombre(String nombre) {
+      this.nombre = nombre;
+    }
+
+    public String getSexo() {
+      return sexo;
+    }
+
+    public void setSexo(String sexo){
+      this.sexo = sexo;
+    }
+
+    public int getEdad(){
+      return edad;
+    }
+
+    public void setEdad(int edad){
+      this.edad = edad;
+    }
+
+    public String getDni() {
+      return dni;
+    }
+
+    public void setDni(String dni){
+      this.dni = dni;
+    }
+ 
+
+  }
+#+END_SRC
+
+Y ahora supongamos que esa persona, además tiene un trabajo, por lo tanto se convierte en un empleado:
+
+#+Caption: Empleado
+#+BEGIN_SRC java :exports code :eval none
+  //Como todo empleado es una persona compartirá todas sus funciones con esta, por lo tanto, las extiende
+  public class Empleado extends Persona {
+
+    //Añadimos más propiedades específicas de la clase
+    long codigoEmpleado;
+    String departamento;
+
+    // En el método constructor necesitaremos también los atributos del constructor de la clase "padre"
+    public Empleado (String nombre, String sexo, int edad, long codigoEmpleado, String departamento) {
+      //Con la palabra reservada 'super' llamamos a la clase padre, en este caso al constructor de Persona
+      super(nombre, sexo, edad);
+
+      //Y asignamos los valores de la clase Empleado a sus propiedades como siempre
+      this.codigoEmpleado = codigoEmpleado;
+      this.departamento = departamento;
+    }
+
+    //Como ahora somos empleados, tendremos que saludar de una manera más formal, para ello podemos sobreescribir
+    // el método saludar() de la clase Persona.
+    @Override
+    public void saludar() {
+      System.out.println("Buenos días");
+    }
+
+    // Getters y Setters
+    // No es necesario implementar los de la clase padre (nombre, sexo, edad y dni) porque ya son accesibles desde
+    // cualquier objeto de esta clase por ser métodos públicos y esta extender de Persona.
+
+    public long getCodigoEmpleado() {
+      return codigoEmpleado;
+    }
+
+    public void setCodigoEmpleado(long codigoEmpleado) {
+      this.codigoEmpleado = codigoEmpleado;
+    }
+
+    public String getDepartamento() {
+      return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+      this.departamento = departamento;
+    }
+
+  }
+#+END_SRC
+
+Entonces, si ahora creamos instancias de estas clases que acabamos de crear, podemos ver algo como lo siguiente:
+
+#+Caption: Herencia
+#+NAME: HERENCIA
+#+BEGIN_SRC java :exports code :eval none
+  public class Herencia {
+
+    public static void main (String [] args) {
+
+      Persona persona = new Persona("Manolito", "Hombre", 17);
+
+      persona.saludar();
+      System.out.println("La edad de " + persona.getNombre() + " es " + persona.getEdad());
+      persona.cumple();
+      System.out.println("La edad de " + persona.getNombre() + " es " + persona.getEdad());
+
+      Empleado empleado = new Empleado("Manolita", "Mujer", 20, 1234567L, "Consultoría");
+
+      // Podemos ver como el método saludar ha sido sobreescrito en Empleado
+      empleado.saludar();
+
+      // Comprobamos que los métodos que vienen de Persona y no han sido sobreescritos pueden seguir siendo utilizados
+      System.out.println("La edad de " + empleado.getNombre() + " es " + empleado.getEdad());
+      empleado.cumple();
+      System.out.println("La edad de " + empleado.getNombre() + " es " + empleado.getEdad());
+    
+    }
+
+  }
+#+END_SRC
+
+#+RESULTS:
+: Hey!
+: La edad de Manolito es 17
+: Feliz cumpleaños Manolito!
+: La edad de Manolito es 18
+: Buenos días
+: La edad de Manolita es 20
+: Feliz cumpleaños Manolita!
+: La edad de Manolita es 21
+
 ** Interfaces
+Antes de seguir hablando de herencia propiamente dicha hablaremos de las *interfaces*. Las interfaces son un tipo de documento en Java que no define ninguna funcionalidad, no hace nada, sino que se trata de un "contrato" que las clases implementadas pueden contraer o, en lenguaje Java *implementar*, esto se hace a través de la palabra reservada ~implements~ cuando declaramos la clase, por ejemplo, podemos declarar una interfaz que nos indique las funciones vitales de un animal:
+
+#+Caption: Interfaz Animal
+#+BEGIN_SRC java :exports code :eval none
+  public interface Animal {
+
+    void comer();
+    void respirar();
+    void reproducirse();
+
+  }
+#+END_SRC
+
+Ahora podemos crear varias clases que implementen esa interfaz, veremos que, como tiene 3 métodos cada una de las clases *necesita implementar* esos 3 métodos, de ahí que antes considerásemos las interfaces como un contrato, ya que cualquier clase que las implemente necesita implementar también los métodos que ésta defina:
+
+#+Caption: Clase Gato
+#+BEGIN_SRC java :exports code :eval none
+  public class Gato implements Animal {
+
+    @Overrides
+    public void comer() {
+      System.out.println("Comer croquetillas de mi cuenco");
+    }
+
+    @Overrides
+    public void respirar() {
+      System.out.println("Inhalar, exalar");
+    }
+
+    @Overrides
+    public void reproducirse() {
+      System.out.println("Irse por los tejados...");
+    }
+  
+  }
+#+END_SRC
+
+Otro ejemplo sería el siguiente:
+
+#+Caption: Clase Tiburon
+#+BEGIN_SRC java :exports code :eval none
+  public class Tiburon implements Animal {
+
+    public void comer() {
+      System.out.println("Enseña esos dientes!");
+    }
+
+    public void respirar() {
+      System.out.println("A ver esas branquias...");
+    }
+
+    public void reproducirse() {
+      System.out.println("Esos huevos no se van a fecundar sólos...");
+    }
+
+  }
+#+END_SRC
+
+Como podemos ver ambas clases implementan los mísmos métodos de la misma interfaz pero ambas lo hacen de maneras diferentes (vale, en estos ejemplos son muy similares, pero te haces una idea).
+
+Esto nos da una posibilidad muy interesante, como vimos en la explicación de los [[sec:arraylist][ArrayList]] estos se declaraban con la interfaz y luego se inicializaban con la clase que la implementa, pues ahora podemos hacer lo mismo:
+
+#+Caption: Implementaciones de la interfaz Animal
+#+NAME: FAUNA
+#+BEGIN_SRC java :exports code :eval none
+  public class Fauna {
+
+    public static void main (String... args) {
+
+      //Declaramos un objeto de tipo Animal
+      Animal animal;
+
+      // Recordemos que Animal es una interfaz y por lo tanto no se puede inicializar
+      // (no tiene método constructor), así que necesitamos recurrir al de una clase que
+      // implemente la interfaz
+      animal = new Gato();
+
+      // Ahora el objeto animal es una instancia de la clase Gato y tiene sus funciones
+      animal.comer();
+      animal.respirar();
+      animal.reproducirse();
+
+      // Pero el objeto sigue siendo de la "clase" Animal, así que le podemos dar otro valor
+      animal = new Tiburon();
+
+      // Y ahora el objeto animal es una instancia de la clase Tiburon y por lo tanto, sus funcioes habŕan cambiado a las que implemente esta clase.
+      animal.comer();
+      animal.respirar();
+      animal.reproducirse();
+    
+    }
+#+END_SRC
+
+#+RESULTS: FAUNA
+: Comer croquetillas de mi cuenco
+: Inhalar, exalar
+: Irse por los tejados
+: Enseña esos dientes!
+: A ver esas branquias...
+: Esos huevos no se van a fecundar sólos
+
 ** Clases abstractas
 ** Anotaciones
 * Tests
