@@ -56,6 +56,12 @@
 			<a href="tel:{/cv/phone}"><xsl:value-of select="/cv/phone"/></a>
                       </p>
 		    </xsl:if>
+		    <xsl:if test="/cv/linkedIn">
+		      <p>
+			<i class="fab fa-linkedin fa-fw w3-margin-right w3-text-{$color}"/>
+			<a href="{/cv/linkedIn}">LinkedIn profile</a>
+		      </p>
+		    </xsl:if>
                     <hr/>
                   </div>
                   <!-- Si hay nodo summary -->
@@ -72,8 +78,8 @@
                   <!-- Habilidades -->
                   <xsl:if test="/cv/skills">
 		    <xsl:for-each select="/cv/skills">
-		      <div id="skills-{@title}" class="print">
-			<p class="w3-large">
+		      <div id="skills" class="print">
+			<p class="subtitle">
                           <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-{$color}"/>
 			  <xsl:choose>
 			  <xsl:when test="@title">
@@ -111,7 +117,7 @@
                   <!-- Idiomas -->
                   <xsl:if test="/cv/languages">
                     <div id="languages" class="print">
-                      <p class="w3-large w3-text-theme">
+                      <p class="subtitle w3-text-theme">
                         <b><i class="fa fa-globe fa-fw w3-margin-right w3-text-{$color}"/>Languages</b>
                       </p>
                       <xsl:for-each select="/cv/languages/language">
@@ -138,7 +144,7 @@
                   <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>Work experience</h2>
                   <xsl:for-each select="/cv/experiences/experience">
                     <div class="print w3-container">
-                      <h5 class="w3-text-grey">
+                      <h5 class="subtitle w3-text-grey">
                         <b>
                           <xsl:value-of select="company"/>
                         </b>
@@ -175,8 +181,8 @@
               <xsl:if test="/cv/educations">
                 <xsl:for-each select="/cv/educations">
                   <section id="{@type}-education" class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16">
-                      <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>
+                    <h2 class="title w3-text-grey w3-padding-16">
+                      <i class="fa fa-certificate fa-fw w3-margin-right w3-text-{$color}"/>
                       <xsl:choose>
                         <xsl:when test="@type='academic'">
 			  Academic education
@@ -192,7 +198,7 @@
                     <!-- Para cada nodo education -->
                     <xsl:for-each select="education">
                       <div class="print w3-container">
-                        <h5 class="w3-text-grey">
+                        <h5 class="subtitle w3-text-grey">
                           <b>
                             <xsl:value-of select="institution"/>
                           </b>
@@ -226,9 +232,9 @@
           <!-- End Page Container -->
         </div>
         <footer class="w3-container w3-{$color} w3-center w3-margin-top">
-          <a href="cv_es.xml">🇪🇸 - CV Castellano</a>
+          <a href="cv_es.html">🇪🇸 - CV Castellano</a>
           <br/>
-          <a href="cv_en.xml">🇬🇧 - English CV</a>
+          <a href="cv_en.html">🇬🇧 - English CV</a>
         </footer>
       </body>
     </html>

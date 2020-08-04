@@ -56,6 +56,12 @@
 			<a href="tel:{/cv/phone}"><xsl:value-of select="/cv/phone"/></a>
                       </p>
 		    </xsl:if>
+		    <xsl:if test="/cv/linkedIn">
+		      <p>
+			<i class="fab fa-linkedin fa-fw w3-margin-right w3-text-{$color}"/>
+			<a href="{/cv/linkedIn}">Perfil linkedIn</a>
+		      </p>
+		    </xsl:if>
                     <hr/>
                   </div>
                   <!-- Si hay nodo summary -->
@@ -226,9 +232,9 @@
           <!-- End Page Container -->
         </div>
         <footer class="w3-container w3-{$color} w3-center w3-margin-top">
-          <a href="cv_es.xml">🇪🇸 - CV Castellano</a>
+          <a href="cv_es.html">🇪🇸 - CV Castellano</a>
           <br/>
-          <a href="cv_en.xml">🇬🇧 - English CV</a>
+          <a href="cv_en.html">🇬🇧 - English CV</a>
         </footer>
       </body>
     </html>
