@@ -62,6 +62,10 @@
 			<a href="{/cv/linkedIn}">Perfil linkedIn</a>
 		      </p>
 		    </xsl:if>
+		    <p id="download">
+		      <i class="fas fa-file-pdf fa-fw w3-margin-right w3-text-{$color}"/>
+		      <a href="cv_es.pdf">Descargar como PDF</a>
+		    </p>
                     <hr/>
                   </div>
                   <!-- Si hay nodo summary -->
