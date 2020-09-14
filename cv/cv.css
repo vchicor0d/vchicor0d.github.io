@@ -31,7 +31,8 @@ body {
 }
 
 html,body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Roboto", sans-serif;		       
+    font-family: "Roboto", sans-serif;
+    margin: 0 0;
 }
 
 html,body,#contacto p {   
@@ -54,6 +55,18 @@ h6 {
     padding-top: 1vw;
 }
 
+p {
+    margin: 5 0;
+}
+
+hr {
+    margin: 10 0;
+}
+
+.skillbar {
+    max-height: 2vw;
+}
+
 #foto {
     width:75%;
     margin: 0 auto;
@@ -72,6 +85,7 @@ h6 {
 
 #fotocontainer h2 {
     font-size: 2vw;
+    margin: 10px 0;
 }
 
 .project, .education {

@@ -59,7 +59,7 @@
 		    <xsl:if test="/cv/linkedIn">
 		      <p>
 			<i class="fab fa-linkedin fa-fw w3-margin-right w3-text-{$color}"/>
-			<a href="{/cv/linkedIn}">Perfil linkedIn</a>
+			<a href="{/cv/linkedIn}">/in/victor-chico-rodriguez/</a>
 		      </p>
 		    </xsl:if>
 		    <p id="download">
@@ -100,7 +100,7 @@
 			    <xsl:for-each select="skill">
 			      <p><xsl:value-of select="."/></p>
 			      <div class="w3-light-grey w3-round-xlarge w3-small">
-				<div class="w3-container w3-center w3-round-xlarge w3-{$color}" style="width:{@percent}%"><xsl:value-of select="@percent"/>%</div>
+				<div class="skillbar w3-container w3-center w3-round-xlarge w3-{$color}" style="width:{@percent}%"><xsl:value-of select="@percent"/>%</div>
 			      </div>
 			    </xsl:for-each>
 			  </xsl:when>

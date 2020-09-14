@@ -59,7 +59,7 @@
 		    <xsl:if test="/cv/linkedIn">
 		      <p>
 			<i class="fab fa-linkedin fa-fw w3-margin-right w3-text-{$color}"/>
-			<a href="{/cv/linkedIn}">LinkedIn profile</a>
+			<a href="{/cv/linkedIn}">/in/victor-chico-rodriguez/</a>
 		      </p>
 		    </xsl:if>
 		    <p id="download">
@@ -100,7 +100,7 @@
 			    <xsl:for-each select="skill">
 			      <p><xsl:value-of select="."/></p>
 			      <div class="w3-light-grey w3-round-xlarge w3-small">
-				<div class="w3-container w3-center w3-round-xlarge w3-{$color}" style="width:{@percent}%"><xsl:value-of select="@percent"/>%</div>
+				<div class="skillbar w3-container w3-center w3-round-xlarge w3-{$color}" style="width:{@percent}%"><xsl:value-of select="@percent"/>%</div>
 			      </div>
 			    </xsl:for-each>
 			  </xsl:when>
@@ -145,7 +145,7 @@
               <!-- Si existe el nodo experiences -->
               <xsl:if test="/cv/experiences">
                 <div class="w3-container w3-card w3-white w3-margin-bottom">
-                  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-{$color}"/>Work experience</h2>
+                  <h2 class="title w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-text-{$color}"/>Work experience</h2>
                   <xsl:for-each select="/cv/experiences/experience">
                     <div class="print w3-container">
                       <h5 class="subtitle w3-text-grey">

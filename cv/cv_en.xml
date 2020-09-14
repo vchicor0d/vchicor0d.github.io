@@ -7,7 +7,7 @@
   <email>vchicorod@gmail.com</email>
   <!--<phone>610664565</phone>-->
   <description>Java Developer</description>
-  <linkedIn>https://www.linkedin.com/in/victor-chico-rodríguez-04384641/</linkedIn>
+  <linkedIn>https://www.linkedin.com/in/victor-chico-rodriguez/</linkedIn>
   <!--<summary>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a faucibus est. Suspendisse pulvinar erat id orci viverra, id ullamcorper mauris semper. Nulla ullamcorper aliquet iaculis. Phasellus ut facilisis lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt, neque vel euismod auctor, tortor purus ullamcorper justo, vitae finibus leo ipsum tristique nibh. Duis faucibus vitae felis ac consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nec viverra sem. Ut a magna vel elit consequat bibendum id eget magna. Aenean suscipit suscipit libero, vel dignissim neque. Ut eu purus ipsum. Cras condimentum vel risus quis tincidunt. Nulla facilisi. Nullam nec aliquet massa. Integer quis condimentum risus, sed venenatis lacus.
@@ -67,7 +67,7 @@
         <project title="Dematic iQ" workplace="Coslada" start="06-2019" current="true">
           <description>
             <p>
-	      Development and implantation of warehouse management systems using Java EE and some of it's specifications (Jerse, JMS,...).
+	      Development and implantation of warehouse management systems built over Spring and Hibernate and GWT frontend using Java EE and some of it's specifications (Jersey, JMS,...).
 	    </p>
           </description>
         </project>
