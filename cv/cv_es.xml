@@ -62,9 +62,19 @@
   </educations>
   <experiences>
     <experience>
+      <company>OSP - Otto Group Solutions Provider</company>
+      <projects>
+	<project title="OSP" workplace="Madrid" start="12-2020" current="true">
+	  <description>
+	    <p>Otto Group Solutions Provider</p>
+	  </description>
+	</project>
+      </projects>
+    </experience>
+    <experience>
       <company>Dematic</company>
       <projects>
-        <project title="Dematic iQ" workplace="Coslada" start="06-2019" current="true">
+        <project title="Dematic iQ" workplace="Coslada" start="06-2019" end="11-2020">
           <description>
             <p>
 	      Desarrollo e implantación de control de almacenes logísticos mediante Java EE construido sobre Spring e Hibernate y frontend GWT utilizando diferentes especificaciones (Jersey, JMS,...).
