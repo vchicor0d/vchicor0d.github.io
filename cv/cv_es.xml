@@ -1,234 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="cv_es.xsl"?>
-<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="deep-purple" xsi:schemaLocation="cv_data.xsd">
-  <photo>photo.jpg</photo>
-  <name>Víctor Chico Rodríguez</name>
-  <address>Torrejón de Ardoz, Madrid</address>
-  <email>vchicorod@gmail.com</email>
+<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="es" color="navajo-white" xsi:schemaLocation="cv_data.xsd">
+  <photo>photo_2022-12-08_21-47-34.jpg</photo>
+  <name>Beatriz Pareja Navarro</name>
+  <address>Loeches, Madrid</address>
+  <email>beatriz.pn90@gmail.com</email>
   <!--<phone>610664565</phone>-->
-  <description>Desarrollador Java</description>
-  <linkedIn>https://www.linkedin.com/in/victor-chico-rodriguez/</linkedIn>
-  <!--<summary>
+  <description>Doble titulada en laboratorio de análisis clínicos y anatomía patológica</description>
+  <linkedIn>https://www.linkedin.com/in/beatrizpareja/</linkedIn>
+  <summary>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a faucibus est. Suspendisse pulvinar erat id orci viverra, id ullamcorper mauris semper. Nulla ullamcorper aliquet iaculis. Phasellus ut facilisis lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt, neque vel euismod auctor, tortor purus ullamcorper justo, vitae finibus leo ipsum tristique nibh. Duis faucibus vitae felis ac consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nec viverra sem. Ut a magna vel elit consequat bibendum id eget magna. Aenean suscipit suscipit libero, vel dignissim neque. Ut eu purus ipsum. Cras condimentum vel risus quis tincidunt. Nulla facilisi. Nullam nec aliquet massa. Integer quis condimentum risus, sed venenatis lacus.
+      Soy una persona activa, curiosa y con ganas de aprender cosas nuevas. Laboralmente mi objetivo es conseguir estar en un entorno agradable, competente y profesional dentro del mundo de la asistencia sanitaria o la investigación.
     </p>
-    <p>
-      Aliquam tristique turpis nisl, ut accumsan elit tempor at. In hac habitasse platea dictumst. Duis et ligula arcu. Praesent mattis eleifend sollicitudin. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas efficitur lectus diam. Sed arcu tellus, porta a tincidunt quis, finibus efficitur ligula. Morbi dignissim sit amet sem non dapibus. Integer ac imperdiet libero.
-    </p>
-  </summary>-->
+  </summary>
   <educations type="academic">
-    <education start="2017" current="true">
-      <course>Grado en Ingeniería Informática</course>
-      <institution>Universitat Oberta de Catalunya</institution>
+    <education start="2013" end="2015">
+      <course>Técnico Superior en Laboratorio de Diagnóstico Clínico</course>
+      <institution>IES Moratalaz, Madrid</institution>
     </education>
-    <education start="2013" end="2014">
-      <course>Administración de sistemas informáticos y redes (Primer curso)</course>
-      <institution>IES Azarquiel, Toledo</institution>
-    </education>
-    <education start="2010" end="2012">
-      <course>CGFS Desarrollo de aplicaciones informáticas</course>
-      <institution>IES Azarquiel, Toledo</institution>
-    </education>
-    <education start="2004" end="2006">
-      <course>Bachillerato en ciencias de la naturaleza (Rama ciencias e ingeniería)</course>
-      <institution>IES Alfonso X "El Sabio", Toledo</institution>
-    </education>
-  </educations>
-  <educations type="complementary">
-    <education start="2013" end="2014">
-      <course>Cisco CCNA Exploration 1: Network Fundamentals</course>
-      <institution>IES Azarquiel, Toledo</institution>
-    </education>
-    <education start="05-2013" end="06-2013">
-      <course>Diseño de páginas web (Dreamweaver, Photoshop, Flash)</course>
-      <institution>Forem Castilla - La Mancha, Toledo</institution>
-    </education>
-    <education start="10-2012" end="12-2012">
-      <course>Software Engineering Fundamentals: Mainframe</course>
-      <institution>Coritel-Accenture, Madrid</institution>
-    </education>
-    <education start="05-2012" end="06-2012">
-      <course>Nivel básico en prevención de riesgos laborales</course>
-      <institution>IES Azarquiel, Toledo</institution>
-    </education>
-    <education start="10-2003" end="04-2004">
-      <course>Multimedia (Adobe Photoshop, Adobe Premiere, Music Maker, Macromedia Director)</course>
-      <institution>Instituto superior de estudios informáticos, Toledo</institution>
-    </education>
-    <education start="09-2002" end="11-2002">
-      <course>Mecanografía e introducción a la informática</course>
-      <institution>Instituto superior de estudios informáticos, Toledo</institution>
+    <education start="2011" end="2013">
+      <course>Técnico Superior en Anatomía Patológica y Citología</course>
+      <institution>IES Juan de Mairena, SS de los Reyes</institution>
     </education>
   </educations>
   <experiences>
     <experience>
-      <company>OSP - Otto Group Solutions Provider</company>
+      <company>Clínica Universidad de Navarra</company>
       <projects>
-	<project title="OSP" workplace="Madrid" start="12-2020" current="true">
-	  <description>
-	    <p>Otto Group Solutions Provider</p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>Dematic</company>
-      <projects>
-        <project title="Dematic iQ" workplace="Coslada" start="06-2019" end="11-2020">
+        <project title="TEL" workplace="Madrid" start="05-2018" current="true">
           <description>
-            <p>
-	      Desarrollo e implantación de control de almacenes logísticos mediante Java EE construido sobre Spring e Hibernate y frontend GWT utilizando diferentes especificaciones (Jersey, JMS,...).
-	    </p>
-          </description>
-        </project>
-        <project title="Alimerka" workplace="Lugo de llanera, Asturias" start="08-2019" end="08-2019">
-          <description>
-            <p>
-	      Puesta en marcha de la instalación realizando diferentes pruebas sobre el hardware real.
-	    </p>
-          </description>
-        </project>
-	<project title="Ahorramás" workplace="Velilla de San Antonio, Madrid" start="09-2019" end="09-2019">
-	  <description>
-	    <p>
-	      Soporte al cliente durante la fase inicial de producción con resolución de incidencias y corrección de errores.
-	    </p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>atSistemas</company>
-      <projects>
-        <project title="atresmedia soluciones digitales" workplace="San Sebastián de los Reyes" start="05-2017" end="06-2019">
-          <description>
-            <p>
-	      Desarrollo de aplicaciones de gestión de contenidos en código Java EE con Spring y maven utilizando BBDD oracle, MongoDB y Solr e integración con entorno Amazon AWS.
-	    </p>
-            <p>
-	      Diseño de frontends con GWT con utilización de clasess CSS propias y hojas de estilo externas.
-	    </p>
-            <p>
-	      Desarrollo de servicios REST utilizando Spring en un entorno orientado al microservicio.
-	    </p>
-            <p>
-	      Desarrollo de skills para Alexa utilizando el stack de AWS (Lambda, API Gateway, ElasticCache, DynamoDB, etc.).
-	    </p>
-	    <p>
-	      Configuración de proyectos en Jenkins para su integración automatizada con los diferentes proyectos.
-	    </p>
+            <parraph>
+              <ul>
+                <li>
+	               Recepción de muestra biológicas así como su adecuada preparación para su posterior procesado y distribución en las distintas áreas y laboratorios externos.
+                </li>
+                <li>
+Manejo y mantenimiento de los equipos ROCHE: COBAS 6000, COBAS u600, COBAS u411, COBAS p612, Sysmex XN-1000, Sysmex SP-10, Stago STA compact MAX, AliFax, Siemens PFA100, Quintron Breathe Tracker, H. Pylori POC One, Kryptor Gold.
+                </li>
+                <li>
+Validación técnica de resultados propios de laboratorio de urgencia.
+                </li>
+                <li>
+Responsable del stock del área de hematología y coagulación a través del sistema interno de compras.
+                </li>
+                <li>
+Colaboración con el facultativo del departamento de Andrología
+                </li>
+                <li>
+Conocimientos de banco de sangre así como el manejo y mantenimiento del equipo de ORTHO Autovue.
+                </li>
+                <li>
+Manejo del sistema informático CUN y gDL.
+                </li>
+                <li>
+Realización de PNT's de hemostasia en colaboración con el facultativo de hematología.
+                </li>
+                <li>
+Labores de docencia como tutora de prácticas.
+                </li>
+              </ul>
+            </parraph>
           </description>
         </project>
       </projects>
     </experience>
     <experience>
-      <company>Arelance</company>
+      <company>Hospital Universitario de Torrejón de Ardoz</company>
       <projects>
-	<project title="Indra - Ministerio de Justicia" workplace="Madrid" start="09-2016" end="04-2017">
-	  <description>
-	    <p>
-	      Desarrollo de aplicaciones web para el sector público mediante Java J2EE utilizando el framework Struts con base de datos Oracle y desarrollo de front mediante HTML, JSP y Javascript.
-	    </p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>Indizen</company>
-      <projects>
-	<project title="Soluciones Banco Santander" workplace="Madrid" start="12-2015" end="06-2016">
-	  <description>
-	    <p>
-	      Desarrollo de aplicaciones de gestión de recursos para el Banco Santander mediante tecnologías J2EE, bases de datos Oracle y parte del entorno Hibernate, así como HTML y CSS como parte del desarrollo front.
-	    </p>
-	    <p>
-	      Desarrollo de procesos Batch utilizando como entrada y salida ficheros CSV o en formato Excel, utilizando también técnicas de programación multihilo para la generación de estos informes desde la propia aplicación web.
-	    </p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>TCP Sistemas e Ingeniería (UST Global)</company>
-      <projects>
-	<project title="Telefónica Telco 3.0" workplace="Madrid" start="06-2014" end="12-2015">
-	  <description>
-	    <p>
-	      Desarrollo de servicios REST mediante Java J2EE para su integración con front AngularJS y desarrollo de pruebas Jasmine sobre los mismos.
-	    </p>
-	    <p>
-	      Desarrollo de Webservices mediante J2EE con acceso a bases de datos mediante SQL o CriteriaQuery y desarrollo de pruebas unitarias mediante JUnit y Mockito.
-	    </p>
-	    <p>
-	      Desarrollo de pruebas funcionales mediante SOAP con funciones de coordinación de equipo y capacitación.
-	    </p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>Worten</company>
-      <projects>
-	<project title="Servicio técnico Worten Soluciona" workplace="Toledo/Talavera de la Reina, Toledo" start="07-2013" end="09-2013">
-	  <description>
-	    <p>
-	      Servicio técnico diagnosticando y/o reparando electrodomésticos, ordenadores y otros dispositivos electrónicos de cara al cliente.
-	    </p>
-	  </description>
-	</project>
-      </projects>
-    </experience>
-    <experience>
-      <company>Universidad de Alcalá</company>
-      <projects>
-	<project title="Módulo profesional de formación en centros de trabajo (Departamento de ciencias de la computación" workplace="Alcalá de Henares, Madrid" start="04-2012" end="06-2012">
-	  <description>
-	    <p>
-	      Módulo profesional de formación en centros de trabajo.
-	    </p>
-	  </description>
-	</project>
+        <project title="TEL" workplace="Torrejón de Ardoz" start="04-2014" end="05-2018">
+          <description>
+            <parraph>
+              <ul>
+                <li>
+	      Recepción de muestras y manejo del programa informático SIGLO.
+                </li>
+                <li>
+Manejo de los equipos, Dimension, Vidas, Centauro, ADVIA 2120, CA 1500, VesCube, Adams HA-2180, Clinitek Advantus, Vitek, MicroScan y BartAlert así como su mantenimiento, calibración y control.
+                </li>
+                <li>
+Validación técnica en las áreas de bioquímica, hematología y coagulación, orinas y microbiología.
+                </li>
+                <li>
+Realización de tinciones de Gram, Ziehl y panótico rápido y su observación al microscopio.
+                </li>
+                <li>
+Conocimientos del stock, logística del almacén, realización de pedidos y colocación de los mismos.
+                </li>
+              </ul>
+            </parraph>
+          </description>
+        </project>
       </projects>
     </experience>
   </experiences>
   <languages>
     <language level="Nativo">Castellano</language>
-    <language level="C1 (Cambridge First Certificate in English, FCE Grade A)">Inglés</language>
+    <language level="Medio">Inglés</language>
   </languages>
-  <skills type='bars' title="Lenguajes de programación">
-    <skill percent="100">Java</skill>
-    <skill percent="90">SQL</skill>
-    <skill percent="80">HTML</skill>
-    <skill percent="70">CSS</skill>
-    <skill percent="60">Javascript</skill>
-    <skill percent="50">Visual Basic</skill>
-    <skill percent="50">C#</skill>
-    <skill percent="40">C</skill>
-    <skill percent="40">COBOL</skill>
-    <skill percent="40">PL/SQL</skill>
-    <skill percent="30">Clojure</skill>
-    <skill percent="25">Lisp</skill>
-    <skill percent="20">Ruby</skill>
-    <skill percent="10">Haskell</skill>
+  <skills title="Aptitudes">
+    <skill>Trabajo en equipo</skill>
+    <skill>Responsable.</skill>
+    <skill>Colaboración con otros departamentos</skill>
+    <skill>Adaptabilidad</skill>
+    <skill>Gestión de recursos</skill>
   </skills>
-  <skills type="bars" title="Bases de datos">
-    <skill percent="100">Oracle</skill>
-    <skill percent="90">MySQL/MariaDB</skill>
-    <skill percent="80">postgres</skill>
-    <skill percent="60">MongoDB</skill>
-    <skill percent="50">Access</skill>
-    <skill percent="30">DynamoDB</skill>
-  </skills>
-  <skills>
-    <skill>Manejo avanzado de Office y otras herramientas ofimáticas.</skill>
-    <skill>Conocimientos en diseño e instalación de redes.</skill>
-    <skill>Manejo de diferentes sistemas operativos Windows</skill>
-    <skill>Manejo de sistemas operativos tipo Unix en consola y X Windows</skill>
-    <!--<skill>Conocimientos de programación en lenguajes estructurados con orientación a objetos.</skill>
-    <skill>Conocimiento de la sintaxis de varios lenguajes de programación (COBOL, JAVA, Visual Basic, C, C#, Ruby, HTML, CSS, JavaScript y PLSQL)</skill>
-    <skill>Manejo de bases de datos (Oracle, MySQL, postgres, Access)</skill>-->
-    <skill>Conocimientos de tecnología y estructura de computadores</skill>
-    <skill>Conocimientos sobre análisis de aplicaciones</skill>
-    <!--<skill>Conocimientos de lenguajes de programación funcionales (Haskell, Lisp, Clojure).</skill>-->
+  <skills title="Cursos">
+    <skill>Avances en el laboratorio para el diagnóstico de las enfermedades raras</skill>
+    <skill>Actualización en conocimientos de la enfermedad celíaca desde el laboratorio clínico.</skill>
+    <skill>Interpretación y manejo de gasometrías</skill>
+    <skill>Identificación de Stem Cell y su progenie mediante técnicas inmunofenotípicas aplicadas sobre muestras de MO.</skill>
   </skills>
 </cv>
